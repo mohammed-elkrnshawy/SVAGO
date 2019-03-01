@@ -7,4 +7,6 @@
     <string name="car">Car</string>
     <string name="super_deals">Super Deal</string>
     <string name="Proceed_Book">Proceed to Book</string>
+    <string name="single">Single</string>
+    <string name="doub">Double</string>
 </resources>

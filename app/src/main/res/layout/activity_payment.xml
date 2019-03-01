@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    tools:ignore="RtlCompat"
+    android:background="@color/colorWhite"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycle"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:padding="5dp"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_below="@id/recycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <RadioButton
+                    android:checked="true"
+                    android:textAlignment="center"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/ColorGray2"
+                    android:textSize="10.7sp"
+                    android:text="Credit Card"
+                    android:padding="15dp"
+                    android:background="@drawable/shape_gray"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:textAlignment="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/ColorGray2"
+                    android:textSize="10.7sp"
+                    android:text="Credit Card"
+                    android:padding="15dp"
+                    android:background="@drawable/shape_gray"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </RadioGroup>
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10.7sp"
+            android:textColor="@color/ColorGray2"
+            android:lineSpacingExtra="2sp"
+            android:text="Card Information"
+            />
+
+        <EditText
+            android:paddingStart="15dp"
+            android:hint="Card No"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_gray"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:paddingStart="15dp"
+                android:hint="CVV"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_gray"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+            <EditText
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:paddingStart="15dp"
+                android:hint="Ex Date"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_gray"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/shape_btn_book"
+                android:elevation="@dimen/dimenElevation"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="12sp"
+                android:text="@string/Purchase"
+                android:layout_width="250dp"
+                android:layout_height="50dp" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

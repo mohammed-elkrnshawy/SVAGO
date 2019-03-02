@@ -1,7 +1,9 @@
-package com.example.svago;
+package com.example.svago.CarPackage;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.svago.R;
 
 public class CarDetailsActivity extends AppCompatActivity {
 

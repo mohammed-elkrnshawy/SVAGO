@@ -1,8 +1,10 @@
-package com.example.svago;
+package com.example.svago.SharedPackage;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
+
+import com.example.svago.R;
 
 public class HomeActivity extends AppCompatActivity {
 

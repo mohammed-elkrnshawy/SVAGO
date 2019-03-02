@@ -1,13 +1,15 @@
-package com.example.svago;
+package com.example.svago.SharedPackage;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ClassTransferActivity extends AppCompatActivity {
+import com.example.svago.R;
+
+public class PaymentActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_class_transfer);
+        setContentView(R.layout.activity_payment);
     }
 }

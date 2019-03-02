@@ -1,13 +1,15 @@
-package com.example.svago;
+package com.example.svago.FlightPackage;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class DoneActivity extends AppCompatActivity {
+import com.example.svago.R;
+
+public class ClassTransferActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_done);
+        setContentView(R.layout.activity_class_transfer);
     }
 }

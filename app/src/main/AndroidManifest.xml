@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DoneActivity"></activity>
-        <activity android:name=".PaymentActivity" />
-        <activity android:name=".ClassTransferActivity" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".SharedPackage.DoneActivity"></activity>
+        <activity android:name=".SharedPackage.PaymentActivity" />
+        <activity android:name=".FlightPackage.ClassTransferActivity" />
+        <activity android:name=".SharedPackage.HomeActivity" />
+        <activity android:name=".SharedPackage.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

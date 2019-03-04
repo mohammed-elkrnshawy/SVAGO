@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="20dp"
+    android:layout_margin="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="130dp">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rel"
+        android:layout_marginStart="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:padding="10dp"
+            android:id="@+id/logo"
+            android:src="@drawable/logo_saudia"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logo"
+            android:layout_centerHorizontal="true"
+            android:textSize="22sp"
+            android:text="AN-89"
+            android:id="@+id/country"
+            android:layout_marginBottom="15dp"
+            />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/line"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:layout_toEndOf="@+id/rel"
+        android:layout_marginStart="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_alignParentTop="true"
+            android:layout_width="35dp"
+            android:layout_height="20dp"
+            android:id="@+id/up"
+            android:background="@drawable/shape_half_circle"
+            />
+
+
+        <RelativeLayout
+            android:background="@drawable/shape_dots_lines"
+            android:layout_below="@+id/up"
+            android:layout_above="@+id/down"
+            android:layout_centerHorizontal="true"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            />
+
+
+        <RelativeLayout
+            android:id="@+id/down"
+            android:layout_width="35dp"
+            android:layout_height="20dp"
+            android:scaleY="-1"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/shape_half_circle"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toEndOf="@+id/line"
+        android:layout_margin="10dp"
+        >
+
+
+        <RelativeLayout
+            android:id="@+id/rel1"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Suadia Arabia"
+                android:maxLines="1"
+                android:textSize="16sp"
+                android:layout_toStartOf="@+id/salary"
+                android:layout_alignParentStart="true"
+                />
+
+            <TextView
+                android:id="@+id/salary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="$150"
+                android:textColor="@color/colorPink1"
+                android:textStyle="bold"
+
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_below="@+id/rel1"
+            android:layout_marginTop="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rel3"
+                android:layout_alignParentStart="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="5:15"
+                    android:id="@+id/hour1"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/hour1"
+                    android:layout_marginTop="10dp"
+                    android:text="JED"
+                    />
+
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rel4"
+                android:layout_alignParentEnd="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="5:55"
+                    android:id="@+id/hour2"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/hour2"
+                    android:layout_marginTop="10dp"
+                    android:text="JED"
+                    />
+
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_toEndOf="@+id/rel3"
+                android:layout_toStartOf="@+id/rel4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/clock"
+                    android:text="5h , 10m"
+                    />
+
+                <View
+                    android:layout_width="120dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/clock"
+                    android:background="@color/ColorGray"
+                    android:id="@+id/v"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/v"
+                    android:layout_centerHorizontal="true"
+                    android:text="1 Stop, 2M"
+                    />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+</android.support.v7.widget.CardView>

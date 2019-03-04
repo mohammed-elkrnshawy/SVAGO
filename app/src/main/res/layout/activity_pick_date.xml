@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".Activity.PickDateActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:layout_alignParentTop="true"
+        android:textSize="16sp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/pick_your_target_date_from_here"
+        />
+
+    <com.archit.calendardaterangepicker.customviews.DateRangeCalendarView
+        android:layout_below="@+id/title"
+        android:id="@+id/calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:disable_date_color="#ABABAB"
+        custom:range_color="@color/colorPinkLight"
+        custom:selected_date_circle_color="@color/colorPink1"
+        custom:title_color="@color/colorBlack">
+    </com.archit.calendardaterangepicker.customviews.DateRangeCalendarView>
+
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
+        custom:cardElevation="10dp"
+        custom:cardBackgroundColor="@color/colorPink1"
+        custom:cardCornerRadius="35dp"
+        >
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_tick"
+            android:tint="@color/colorWhite"
+
+            />
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

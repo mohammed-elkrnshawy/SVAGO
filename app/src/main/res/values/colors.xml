@@ -8,8 +8,9 @@
     <color name="colorBlack">#172434</color>
     <color name="colorGreen1">#139600</color>
     <color name="colorGreen2">#0a4b00</color>
-    <color name="colorPink1">#ce0062</color>
+    <color name="colorPink1">#ca0062</color>
     <color name="colorPink2">#881f52</color>
+    <color name="colorPinkLight">#fad0e1</color>
     <color name="colorBlack1">#000000</color>
     <color name="colorBlack2">#545454</color>
     <color name="colorRed1">#ad0726</color>

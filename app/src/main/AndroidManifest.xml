@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.PickDateActivity"></activity>
+        <activity android:name=".SharedPackage.Activity.MainHomeActivity"></activity>
+        <activity android:name=".HotelPackage.Activities.HomeHotelActivity" />
+        <activity android:name=".FlightPackage.Activities.HomeFlightActivity" />
+        <activity android:name=".CarPackage.Activities.HomeCarActivity" />
+        <activity android:name=".SharedPackage.Activity.PickDateActivity" />
         <activity android:name=".SharedPackage.DoneActivity" />
         <activity android:name=".SharedPackage.PaymentActivity" />
         <activity android:name=".FlightPackage.ClassTransferActivity" />

@@ -53,6 +53,7 @@
             android:layout_height="match_parent">
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cardFlight"
                 android:layout_margin="10dp"
                 app:cardCornerRadius="20dp"
                 android:layout_weight="1"
@@ -106,6 +107,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cardHotel"
                 android:layout_margin="10dp"
                 app:cardCornerRadius="20dp"
                 app:cardBackgroundColor="@color/colorPrimary"
@@ -170,6 +172,7 @@
             android:layout_height="match_parent">
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cardCar"
                 android:layout_margin="10dp"
                 app:cardCornerRadius="20dp"
                 android:layout_weight="1"
@@ -223,6 +226,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cardDeal"
                 android:layout_margin="10dp"
                 app:cardCornerRadius="20dp"
                 app:cardBackgroundColor="@color/colorPrimary"
@@ -289,6 +293,7 @@
             android:layout_height="match_parent">
 
             <android.support.v7.widget.CardView
+                android:id="@+id/cardSvago"
                 app:cardBackgroundColor="@color/colorYellow"
                 android:layout_margin="10dp"
                 app:cardCornerRadius="20dp"

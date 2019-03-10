@@ -11,4 +11,7 @@
     <string name="doub">Double</string>
     <string name="Purchase">Purchase</string>
     <string name="pick_your_target_date_from_here">Pick your target date from here</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

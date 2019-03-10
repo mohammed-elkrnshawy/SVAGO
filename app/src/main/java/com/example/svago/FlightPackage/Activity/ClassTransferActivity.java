@@ -1,4 +1,4 @@
-package com.example.svago.FlightPackage;
+package com.example.svago.FlightPackage.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

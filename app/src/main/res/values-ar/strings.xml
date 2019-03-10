@@ -12,4 +12,17 @@
     <string name="doub">Double</string>
     <string name="Purchase">Purchase</string>
     <string name="pick_your_target_date_from_here">Pick your target date from here</string>
+    <string name="booking">Booking</string>
+    <string name="offers">Offers</string>
+    <string name="svago">Svago</string>
+    <string name="manage">Manage</string>
+    <string name="my_profile">My Profile</string>
+    <string name="origin">Origin</string>
+    <string name="enter_distination">Enter Distination</string>
+    <string name="one_way">One Way</string>
+    <string name="round_trip">Round Trip</string>
+    <string name="multi_city">Multi City</string>
+    <string name="flight">Flight</string>
+    <string name="hotel">Hotel</string>
+    <string name="car">Car</string>
 </resources>

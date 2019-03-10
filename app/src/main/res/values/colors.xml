@@ -18,4 +18,6 @@
     <color name="ColorPink">#bc0164</color>
     <color name="ColorGray">#cad0d6</color>
     <color name="ColorGray2">#7a7f85</color>
+    <color name="ColorGrayBar">#b4becc</color>
+    <color name="ColorBabyBlue">#cad0d6</color>
 </resources>

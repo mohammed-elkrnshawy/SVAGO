@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    android:background="@color/colorWhite"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,23 +9,26 @@
     tools:context=".CarPackage.Fragments.CarHomeFragment">
 
     <android.support.v7.widget.CardView
-        android:layout_margin="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="15dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <RelativeLayout
+            android:paddingTop="40dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <LinearLayout
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
                 android:id="@+id/lin1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="80dp"
                 android:orientation="vertical"
                 >
 
@@ -40,12 +45,12 @@
                     android:layout_centerHorizontal="true"
                     android:layout_width="1dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_height="90dp"
+                    android:layout_height="60dp"
                     />
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="25dp"
+                    android:layout_height="wrap_content"
                     android:scaleType="fitXY"
                     android:src="@drawable/ic_placeholder"
                     />
@@ -58,46 +63,43 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/lin1"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginEnd="20dp"
-                android:orientation="vertical"
-                android:layout_marginTop="55dp"
-                >
+                android:orientation="vertical">
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:paddingStart="15dp"
+                    android:layout_height="45dp"
+                    android:paddingStart="10dp"
                     android:hint="@string/origin"
                     android:background="@drawable/shape_edit_txt"
                     />
 
                 <EditText
+                    android:layout_marginTop="40dp"
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
+                    android:layout_height="45dp"
                     android:paddingStart="15dp"
-                    android:layout_marginTop="35dp"
                     android:hint="@string/enter_distination"
                     android:background="@drawable/shape_edit_txt"
                     />
 
             </LinearLayout>
 
-
             <android.support.v7.widget.CardView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_margin="20dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_margin="15dp"
                 app:cardElevation="10dp"
                 app:cardBackgroundColor="@color/colorPink1"
-                app:cardCornerRadius="35dp"
+                app:cardCornerRadius="25dp"
                 >
 
                 <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_left_arrow"
                     android:scaleX="-1"
@@ -107,9 +109,8 @@
 
             </android.support.v7.widget.CardView>
 
-
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
 
-</FrameLayout>
+</RelativeLayout>

@@ -1,4 +1,4 @@
-package com.example.svago.SharedPackage;
+package com.example.svago.SharedPackage.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

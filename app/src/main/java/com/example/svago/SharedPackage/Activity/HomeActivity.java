@@ -1,4 +1,4 @@
-package com.example.svago.SharedPackage;
+package com.example.svago.SharedPackage.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,11 +7,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.example.svago.CarPackage.Activities.HomeCarActivity;
-import com.example.svago.FlightPackage.Activities.HomeFlightActivity;
-import com.example.svago.HotelPackage.Activities.HomeHotelActivity;
 import com.example.svago.R;
-import com.example.svago.SharedPackage.Activity.MainHomeActivity;
 import com.example.svago.SharedPackage.Classes.Constant;
 
 import butterknife.BindView;

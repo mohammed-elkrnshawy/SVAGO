@@ -1,15 +1,15 @@
-package com.example.svago.CarPackage;
+package com.example.svago.SharedPackage.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.svago.R;
 
-public class CarDetailsActivity extends AppCompatActivity {
+public class DoneActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_car_details);
+        setContentView(R.layout.activity_done);
     }
 }

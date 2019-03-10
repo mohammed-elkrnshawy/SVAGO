@@ -18,7 +18,7 @@ import com.example.svago.R;
 @SuppressLint("ValidFragment")
 public class CarHomeFragment extends Fragment {
 
-    ImageView imgCar;
+    private ImageView imgCar;
 
     public CarHomeFragment(ImageView imgCar) {
        this.imgCar=imgCar;

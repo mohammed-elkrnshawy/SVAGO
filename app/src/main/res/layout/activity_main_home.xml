@@ -15,9 +15,22 @@
     </android.support.v7.widget.Toolbar>
 
     <FrameLayout
+        android:layout_above="@id/navigation"
         android:id="@+id/conainerHome"
         android:layout_below="@id/homeToolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></FrameLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground"
+        app:itemBackground="@color/colorWhite"
+        android:foreground="?attr/selectableItemBackground"
+        app:itemIconTint="@drawable/shape_bottom_nav_item_style"
+        app:itemTextColor="@drawable/shape_bottom_nav_item_style"
+        app:menu="@menu/bottom_menu" />
 
 </RelativeLayout>

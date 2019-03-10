@@ -13,7 +13,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.example.svago.CarPackage.Fragments.CarHomeFragment;
 import com.example.svago.FlightPackage.Fragments.FlightHomeFragment;
+import com.example.svago.HotelPackage.Fragments.HotelHomeFragment;
 import com.example.svago.R;
 import com.example.svago.SharedPackage.Classes.Constant;
 
@@ -56,6 +58,7 @@ public class MainHomeActivity extends AppCompatActivity {
     private void setFragmentWithType(String type) {
         if (type.equals(Constant.CarTag))
         {
+            setFragment(new CarHomeFragment(imgCar),getString(R.string.car));
         }
         else if (type.equals(Constant.FlightTag))
         {
@@ -63,7 +66,7 @@ public class MainHomeActivity extends AppCompatActivity {
         }
         else if (type.equals(Constant.HotelTag))
         {
-
+            setFragment(new HotelHomeFragment(imgHotel),getString(R.string.hotel));
         }
     }
 
@@ -80,6 +83,30 @@ public class MainHomeActivity extends AppCompatActivity {
         imgFlight=view.findViewById(R.id.imgFlight);
         imgHotel=view.findViewById(R.id.imgHotel);
         imgCar=view.findViewById(R.id.imgCar);
+        relativeFlight=view.findViewById(R.id.relativeFlight);
+        relativeHotel=view.findViewById(R.id.relativeHotel);
+        relativeCar=view.findViewById(R.id.relativeCar);
+
+        relativeCar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setFragment(new CarHomeFragment(imgCar),getString(R.string.car));
+            }
+        });
+
+        relativeFlight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setFragment(new FlightHomeFragment(imgFlight),getString(R.string.flight));
+            }
+        });
+
+        relativeHotel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setFragment(new HotelHomeFragment(imgHotel),getString(R.string.hotel));
+            }
+        });
 
         toolbar.addView(view);
     }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    >
+
+    <item android:id="@+id/booking"
+        android:title="@string/booking"
+        android:icon="@drawable/ic_tickets"/>
+
+    <item android:id="@+id/offers"
+        android:title="@string/offers"
+        android:icon="@drawable/ic_offers"/>
+
+    <item android:id="@+id/svago"
+        android:title="@string/svago"
+        android:icon="@drawable/ic_ballon"/>
+
+    <item android:id="@+id/manage"
+        android:title="@string/manage"
+        android:icon="@drawable/ic_credit_cards"/>
+
+    <item android:id="@+id/my_profile"
+        android:title="@string/my_profile"
+        android:icon="@drawable/ic_user"/>
+
+
+
+</menu>

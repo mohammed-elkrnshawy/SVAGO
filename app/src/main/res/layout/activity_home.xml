@@ -127,13 +127,14 @@
 
                     <LinearLayout
                         android:orientation="vertical"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true">
                         <ImageView
+                            android:layout_gravity="center"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_hotel1"/>
+                            android:src="@drawable/ic_hotel"/>
                         <TextView
                             android:textStyle="bold"
                             android:textAlignment="center"
@@ -141,7 +142,6 @@
                             android:layout_height="wrap_content"
                             android:textSize="14.7sp"
                             android:textColor="@color/colorWhite"
-                            android:letterSpacing="-0.02"
                             android:lineSpacingExtra="3.3sp"
                             android:text="@string/hotel"
                             />
@@ -190,13 +190,14 @@
 
                     <LinearLayout
                         android:orientation="vertical"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true">
                         <ImageView
+                            android:layout_gravity="center"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_car1"/>
+                            android:src="@drawable/ic_car"/>
                         <TextView
                             android:textStyle="bold"
                             android:textAlignment="center"

@@ -2,20 +2,12 @@
     <string name="app_name">Svago</string>
     <string name="Quote">Welcome to SVAGO</string>
     <string name="what_want">Please select waht you want</string>
-    <string name="flight">Flight</string>
-    <string name="hotel">Hotel</string>
-    <string name="car">Car</string>
     <string name="super_deals">Super Deal</string>
     <string name="Proceed_Book">Proceed to Book</string>
     <string name="single">Single</string>
     <string name="doub">Double</string>
     <string name="Purchase">Purchase</string>
     <string name="pick_your_target_date_from_here">Pick your target date from here</string>
-<<<<<<< HEAD
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-=======
     <string name="booking">Booking</string>
     <string name="offers">Offers</string>
     <string name="svago">Svago</string>
@@ -26,8 +18,7 @@
     <string name="one_way">One Way</string>
     <string name="round_trip">Round Trip</string>
     <string name="multi_city">Multi City</string>
-    <string name="flight">Flight</string>
     <string name="hotel">Hotel</string>
     <string name="car">Car</string>
->>>>>>> d87fab6433dadd13df4e9ace6852b22d096380ea
+    <string name="flight">Flight</string>
 </resources>

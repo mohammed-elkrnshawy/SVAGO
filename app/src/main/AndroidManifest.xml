@@ -9,32 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
-        <activity android:name=".SharedPackage.Activity.MainHomeActivity"></activity>
+        <activity android:name=".SharedPackage.Activity.MainHomeActivity"
+            android:label=""/>
         <activity android:name=".HotelPackage.Activities.HomeHotelActivity" />
         <activity android:name=".FlightPackage.Activities.HomeFlightActivity" />
         <activity android:name=".CarPackage.Activities.HomeCarActivity" />
         <activity android:name=".SharedPackage.Activity.PickDateActivity" />
         <activity android:name=".SharedPackage.DoneActivity" />
         <activity android:name=".SharedPackage.PaymentActivity" />
-        <activity android:name=".FlightPackage.ClassTransferActivity" />
         <activity android:name=".SharedPackage.HomeActivity" />
-        <activity android:name=".SharedPackage.SplashActivity">
-=======
         <activity android:name=".FlightPackage.Activity.FlightActivity"></activity>
-        <activity android:name=".Activity.SplashActivity">
->>>>>>> d87fab6433dadd13df4e9ace6852b22d096380ea
+        <activity android:name=".SharedPackage.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.PickDateActivity" />
-        <activity android:name=".SharedPackage.DoneActivity" />
-        <activity android:name=".SharedPackage.PaymentActivity" />
-        <activity android:name=".FlightPackage.Activity.ClassTransferActivity" />
-        <activity android:name=".SharedPackage.HomeActivity" />
     </application>
 
 </manifest>

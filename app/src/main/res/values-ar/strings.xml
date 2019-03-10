@@ -22,4 +22,9 @@
     <string name="hotel">Hotel</string>
     <string name="car">Car</string>
     <string name="flight">Flight</string>
+    <string name="ticket_status">Ticket Status</string>
+    <string name="refferance">Refferance</string>
+    <string name="e_ticket">e-Ticket</string>
+    <string name="terminal">Terminal</string>
+    <string name="gate">Gate</string>
 </resources>

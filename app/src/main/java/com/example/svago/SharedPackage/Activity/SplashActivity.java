@@ -1,4 +1,4 @@
-package com.example.svago.SharedPackage;
+package com.example.svago.SharedPackage.Activity;
 
 import android.content.Intent;
 import android.os.CountDownTimer;

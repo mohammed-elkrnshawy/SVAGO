@@ -11,15 +11,12 @@
         android:theme="@style/AppTheme">
         <activity android:name=".SharedPackage.Activity.MainHomeActivity"
             android:label=""/>
-        <activity android:name=".HotelPackage.Activities.HomeHotelActivity" />
-        <activity android:name=".FlightPackage.Activities.HomeFlightActivity" />
-        <activity android:name=".CarPackage.Activities.HomeCarActivity" />
         <activity android:name=".SharedPackage.Activity.PickDateActivity" />
-        <activity android:name=".SharedPackage.DoneActivity" />
-        <activity android:name=".SharedPackage.PaymentActivity" />
-        <activity android:name=".SharedPackage.HomeActivity" />
+        <activity android:name=".SharedPackage.Activity.DoneActivity" />
+        <activity android:name=".SharedPackage.Activity.PaymentActivity" />
+        <activity android:name=".SharedPackage.Activity.HomeActivity" />
         <activity android:name=".FlightPackage.Activity.FlightActivity"></activity>
-        <activity android:name=".SharedPackage.SplashActivity">
+        <activity android:name=".SharedPackage.Activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

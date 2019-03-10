@@ -1,4 +1,4 @@
-package com.example.svago.Classes;
+package com.example.svago.SharedPackage.Classes;
 
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;

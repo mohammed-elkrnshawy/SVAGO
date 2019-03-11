@@ -39,4 +39,5 @@
     <string name="phone">Phone No</string>
     <string name="email">Email</string>
     <string name="promo_code">Promo Code</string>
+    <string name="f_b_details">Flight and Baggage details</string>
 </resources>

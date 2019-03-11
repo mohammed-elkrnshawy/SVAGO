@@ -24,4 +24,20 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ticket_status">Ticket Status</string>
+    <string name="refferance">Refferance</string>
+    <string name="e_ticket">e-Ticket</string>
+    <string name="terminal">Terminal</string>
+    <string name="gate">Gate</string>
+    <string name="payment_success">Payment Success!</string>
+    <string name="details">Details</string>
+    <string name="booking_information">Booking Information</string>
+    <string name="personal_information">Personal Information</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="phone">Phone No</string>
+    <string name="email">Email</string>
+    <string name="promo_code">Promo Code</string>
+    <string name="f_b_details">Flight and Baggage details</string>
 </resources>

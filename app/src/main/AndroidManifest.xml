@@ -9,9 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".SharedPackage.Activity.MainHomeActivity"
             android:windowSoftInputMode="stateVisible|adjustResize"
             android:label=""/>
+=======
+        <activity android:name=".SharedPackage.Activity.TripDetailsActivity"></activity>
+        <activity android:name=".SharedPackage.Activity.WaitingSearchActivity" />
+        <activity android:name=".SharedPackage.Activity.BookingInformationActivity" />
+        <activity android:name=".SharedPackage.Activity.PaymentSuccessActivity" />
+        <activity android:name=".SharedPackage.Activity.SearchActivity" />
+        <activity android:name=".SharedPackage.Activity.TicketStatusActivity" />
+        <activity
+            android:name=".SharedPackage.Activity.MainHomeActivity"
+            android:label="" />
+>>>>>>> ab060840101ad6740b7409532c64aa9eb7439b3b
         <activity android:name=".SharedPackage.Activity.PickDateActivity" />
         <activity android:name=".SharedPackage.Activity.DoneActivity" />
         <activity android:name=".SharedPackage.Activity.PaymentActivity" />

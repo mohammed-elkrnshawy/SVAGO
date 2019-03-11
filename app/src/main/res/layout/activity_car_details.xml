@@ -11,7 +11,7 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"></android.support.v7.widget.Toolbar>
+        android:layout_height="?android:attr/actionBarSize"/>
 
     <android.support.v7.widget.CardView
         android:elevation="25dp"
@@ -37,6 +37,7 @@
             android:layout_height="wrap_content"
             android:textSize="12sp"
             android:textColor="#313841"
+                android:textStyle="bold"
             android:letterSpacing="-0.02"
             android:lineSpacingExtra="2.7sp"
                 android:text="Mercedes Benz E Class"
@@ -63,7 +64,8 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_user"/>
+
+                    android:src="@drawable/ic_person"/>
 
                 <TextView
                     android:padding="5dp"
@@ -146,6 +148,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="14.7sp"
                     android:textColor="#172434"
+                    android:layout_marginTop="10dp"
                     android:letterSpacing="-0.02"
                     android:lineSpacingExtra="3.3sp"
                     android:gravity="center_horizontal"

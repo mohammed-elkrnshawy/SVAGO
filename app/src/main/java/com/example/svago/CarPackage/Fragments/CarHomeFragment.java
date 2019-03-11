@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.svago.R;
 
@@ -19,9 +20,11 @@ import com.example.svago.R;
 public class CarHomeFragment extends Fragment {
 
     private ImageView imgCar;
+    private TextView txtCar;
 
-    public CarHomeFragment(ImageView imgCar) {
+    public CarHomeFragment(ImageView imgCar,TextView txtCar) {
        this.imgCar=imgCar;
+       this.txtCar=txtCar;
     }
 
 
@@ -35,12 +38,14 @@ public class CarHomeFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        txtCar.setTextColor(ContextCompat.getColor(getContext(), R.color.ColorPink));
         imgCar.setColorFilter(ContextCompat.getColor(getContext(), R.color.ColorPink), android.graphics.PorterDuff.Mode.SRC_IN);
     }
 
     @Override
     public void onPause() {
         super.onPause();
+        txtCar.setTextColor(ContextCompat.getColor(getContext(), R.color.ColorGray));
         imgCar.setColorFilter(ContextCompat.getColor(getContext(), R.color.ColorGray), android.graphics.PorterDuff.Mode.SRC_IN);
     }
 

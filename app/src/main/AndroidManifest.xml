@@ -10,12 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SharedPackage.Activity.MainHomeActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize"
             android:label=""/>
         <activity android:name=".SharedPackage.Activity.PickDateActivity" />
         <activity android:name=".SharedPackage.Activity.DoneActivity" />
         <activity android:name=".SharedPackage.Activity.PaymentActivity" />
         <activity android:name=".SharedPackage.Activity.HomeActivity" />
-        <activity android:name=".FlightPackage.Activity.FlightActivity"></activity>
         <activity android:name=".SharedPackage.Activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

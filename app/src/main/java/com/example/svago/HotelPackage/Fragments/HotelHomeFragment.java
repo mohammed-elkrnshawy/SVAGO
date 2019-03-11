@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.svago.R;
 
@@ -19,9 +20,11 @@ import com.example.svago.R;
 public class HotelHomeFragment extends Fragment {
 
     private ImageView imgHotel;
+    private TextView txtHotel;
 
-    public HotelHomeFragment(ImageView imgHotel) {
+    public HotelHomeFragment(ImageView imgHotel,TextView txtHotel) {
        this.imgHotel=imgHotel;
+       this.txtHotel=txtHotel;
     }
 
 
@@ -35,12 +38,14 @@ public class HotelHomeFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        txtHotel.setTextColor(ContextCompat.getColor(getContext(), R.color.ColorPink));
         imgHotel.setColorFilter(ContextCompat.getColor(getContext(), R.color.ColorPink), android.graphics.PorterDuff.Mode.SRC_IN);
     }
 
     @Override
     public void onPause() {
         super.onPause();
+        txtHotel.setTextColor(ContextCompat.getColor(getContext(), R.color.ColorGray));
         imgHotel.setColorFilter(ContextCompat.getColor(getContext(), R.color.ColorGray), android.graphics.PorterDuff.Mode.SRC_IN);
     }
 

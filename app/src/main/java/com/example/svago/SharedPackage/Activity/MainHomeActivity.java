@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.svago.CarPackage.Fragments.CarHomeFragment;
@@ -30,6 +31,7 @@ public class MainHomeActivity extends AppCompatActivity {
 
     private RelativeLayout relativeFlight,relativeHotel,relativeCar;
     private ImageView imgFlight,imgHotel,imgCar;
+    private TextView txtFlight,txtHotel,txtCar;
 
 
 
@@ -58,15 +60,15 @@ public class MainHomeActivity extends AppCompatActivity {
     private void setFragmentWithType(String type) {
         if (type.equals(Constant.CarTag))
         {
-            setFragment(new CarHomeFragment(imgCar),getString(R.string.car));
+            setFragment(new CarHomeFragment(imgCar,txtCar),getString(R.string.car));
         }
         else if (type.equals(Constant.FlightTag))
         {
-            setFragment(new FlightHomeFragment(imgFlight),getString(R.string.flight));
+            setFragment(new FlightHomeFragment(imgFlight,txtFlight),getString(R.string.flight));
         }
         else if (type.equals(Constant.HotelTag))
         {
-            setFragment(new HotelHomeFragment(imgHotel),getString(R.string.hotel));
+            setFragment(new HotelHomeFragment(imgHotel,txtHotel),getString(R.string.hotel));
         }
     }
 
@@ -83,6 +85,11 @@ public class MainHomeActivity extends AppCompatActivity {
         imgFlight=view.findViewById(R.id.imgFlight);
         imgHotel=view.findViewById(R.id.imgHotel);
         imgCar=view.findViewById(R.id.imgCar);
+
+        txtFlight=view.findViewById(R.id.txtFlight);
+        txtHotel=view.findViewById(R.id.txtHotel);
+        txtCar=view.findViewById(R.id.txtCar);
+
         relativeFlight=view.findViewById(R.id.relativeFlight);
         relativeHotel=view.findViewById(R.id.relativeHotel);
         relativeCar=view.findViewById(R.id.relativeCar);
@@ -90,21 +97,21 @@ public class MainHomeActivity extends AppCompatActivity {
         relativeCar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setFragment(new CarHomeFragment(imgCar),getString(R.string.car));
+                setFragment(new CarHomeFragment(imgCar,txtCar),getString(R.string.car));
             }
         });
 
         relativeFlight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setFragment(new FlightHomeFragment(imgFlight),getString(R.string.flight));
+                setFragment(new FlightHomeFragment(imgFlight,txtFlight),getString(R.string.flight));
             }
         });
 
         relativeHotel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setFragment(new HotelHomeFragment(imgHotel),getString(R.string.hotel));
+                setFragment(new HotelHomeFragment(imgHotel,txtHotel),getString(R.string.hotel));
             }
         });
 

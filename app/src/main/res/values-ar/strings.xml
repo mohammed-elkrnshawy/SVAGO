@@ -27,4 +27,6 @@
     <string name="e_ticket">e-Ticket</string>
     <string name="terminal">Terminal</string>
     <string name="gate">Gate</string>
+    <string name="payment_success">Payment Success!</string>
+    <string name="details">Details</string>
 </resources>

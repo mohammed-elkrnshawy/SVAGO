@@ -7,22 +7,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorWhite"
-    tools:context=".SharedPackage.Activity.BookingInformationActivity">
+    tools:context=".FlightPackage.Activities.BookingInformationActivity">
 
 
     <RelativeLayout
+        android:layout_marginTop="10dp"
         android:id="@+id/rel"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         >
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="8dp"
             android:src="@drawable/ic_left_arrow"
-            android:padding="4dp"
+            android:padding="6dp"
             android:id="@+id/Back"
             />
 
@@ -37,109 +38,131 @@
 
     </RelativeLayout>
 
-
-    <LinearLayout
-        android:layout_below="@+id/rel"
-        android:layout_marginTop="10dp"
-        android:orientation="vertical"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
+    <ScrollView
+        android:layout_below="@id/rel"
+        android:fillViewport="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/personal_information"
-            />
-
-
-        <EditText
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/shape_edit_txt"
-            android:hint="@string/first_name"
-            android:paddingStart="15dp"
-            />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/shape_edit_txt"
-            android:hint="@string/last_name"
-            android:paddingStart="15dp"
-            />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/shape_edit_txt"
-            android:hint="@string/date_of_birth"
-            android:paddingStart="15dp"
-            />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/shape_edit_txt"
-            android:hint="@string/phone"
-            android:paddingStart="15dp"
-            />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/shape_edit_txt"
-            android:hint="@string/email"
-            android:paddingStart="15dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/promo_code"
-            android:layout_marginTop="25dp"
-            />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/shape_edit_txt"
-            android:hint="@string/promo_code"
-            android:paddingStart="15dp"
-            />
-
-    </LinearLayout>
+            android:layout_height="match_parent">
 
 
-    <android.support.v7.widget.CardView
-        android:layout_margin="50dp"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        app:cardBackgroundColor="@color/colorPink1"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="10dp"
-        >
+            <LinearLayout
+                android:id="@+id/lin"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_left_arrow"
-            android:scaleX="-1"
-            android:tint="@color/colorWhite"
 
-            />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/personal_information"
+                    />
 
-    </android.support.v7.widget.CardView>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_edit_txt"
+                    android:hint="@string/first_name"
+                    android:paddingStart="15dp"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_edit_txt"
+                    android:hint="@string/last_name"
+                    android:paddingStart="15dp"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_edit_txt"
+                    android:hint="@string/date_of_birth"
+                    android:paddingStart="15dp"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_edit_txt"
+                    android:hint="@string/phone"
+                    android:paddingStart="15dp"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_edit_txt"
+                    android:hint="@string/email"
+                    android:paddingStart="15dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/promo_code"
+                    android:layout_marginTop="25dp"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_edit_txt"
+                    android:hint="@string/promo_code"
+                    android:paddingStart="15dp"
+                    />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_marginBottom="25dp"
+                android:layout_below="@+id/lin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardClick"
+                    android:layout_margin="15dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    app:cardBackgroundColor="@color/colorPink1"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="10dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_left_arrow"
+                        android:scaleX="-1"
+                        android:tint="@color/colorWhite"
+
+                        />
+
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

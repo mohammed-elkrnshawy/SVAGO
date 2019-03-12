@@ -18,7 +18,7 @@
             android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity android:name=".FlightPackage.Activities.TripDetailsActivity" />
         <activity android:name=".SharedPackage.Activity.WaitingSearchActivity" />
-        <activity android:name=".SharedPackage.Activity.BookingInformationActivity" />
+        <activity android:name=".FlightPackage.Activities.BookingInformationActivity" />
         <activity android:name=".SharedPackage.Activity.PaymentSuccessActivity" />
         <activity android:name=".SharedPackage.Activity.TicketStatusActivity" />
         <activity android:name=".SharedPackage.Activity.PickDateActivity" />

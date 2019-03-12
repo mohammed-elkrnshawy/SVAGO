@@ -9,17 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SharedPackage.Activity.MainHomeActivity"
-            android:windowSoftInputMode="stateVisible|adjustResize"
-            android:label=""/>
-        <activity android:name=".SharedPackage.Activity.TripDetailsActivity"></activity>
+        <activity android:name=".HotelPackage.Activities.HotelResultActivity"></activity>
+        <activity android:name=".FlightPackage.Activities.FlightResultActivity" />
+        <activity android:name=".CarPackage.Activities.CarResultActivity" />
+        <activity
+            android:name=".SharedPackage.Activity.MainHomeActivity"
+            android:label=""
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity android:name=".FlightPackage.Activities.TripDetailsActivity" />
         <activity android:name=".SharedPackage.Activity.WaitingSearchActivity" />
         <activity android:name=".SharedPackage.Activity.BookingInformationActivity" />
         <activity android:name=".SharedPackage.Activity.PaymentSuccessActivity" />
-        <activity android:name=".SharedPackage.Activity.SearchActivity" />
         <activity android:name=".SharedPackage.Activity.TicketStatusActivity" />
         <activity android:name=".SharedPackage.Activity.PickDateActivity" />
-        <activity android:name=".SharedPackage.Activity.DoneActivity" />
         <activity android:name=".SharedPackage.Activity.PaymentActivity" />
         <activity android:name=".SharedPackage.Activity.HomeActivity" />
         <activity android:name=".SharedPackage.Activity.SplashActivity">

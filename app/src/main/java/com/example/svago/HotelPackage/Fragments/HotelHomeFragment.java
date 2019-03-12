@@ -2,9 +2,11 @@ package com.example.svago.HotelPackage.Fragments;
 
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.svago.R;
+import com.example.svago.SharedPackage.Activity.WaitingSearchActivity;
+import com.example.svago.SharedPackage.Classes.Constant;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +29,10 @@ public class HotelHomeFragment extends Fragment {
 
     private ImageView imgHotel;
     private TextView txtHotel;
+    private View view;
+
+
+    @BindView(R.id.cardClick) CardView cardClick;
 
     public HotelHomeFragment(ImageView imgHotel,TextView txtHotel) {
        this.imgHotel=imgHotel;
@@ -32,8 +44,21 @@ public class HotelHomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_hotel_home, container, false);
+        view= inflater.inflate(R.layout.fragment_hotel_home, container, false);
+        ButterKnife.bind(this,view);
+
+
+        return view;
     }
+
+
+    @OnClick({R.id.cardClick}) void onClick()
+    {
+        Intent intent=new Intent(getContext(), WaitingSearchActivity.class);
+        intent.putExtra(Constant.TypeTag,Constant.HotelTag);
+        startActivity(intent);
+    }
+
 
     @Override
     public void onResume() {

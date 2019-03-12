@@ -2,10 +2,12 @@ package com.example.svago.FlightPackage.Fragments;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.svago.R;
+import com.example.svago.SharedPackage.Activity.WaitingSearchActivity;
+import com.example.svago.SharedPackage.Classes.Constant;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
 @SuppressLint("ValidFragment")
@@ -21,6 +29,10 @@ public class FlightHomeFragment extends Fragment {
 
     private TextView txtFlight;
     private ImageView imgFlight;
+    private View view;
+
+    @BindView(R.id.cardClick)
+    CardView cardClick;
 
     public FlightHomeFragment(ImageView imgFlight,TextView txtFlight) {
         this.imgFlight=imgFlight;
@@ -30,8 +42,22 @@ public class FlightHomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_flight_home, container, false);
+        view= inflater.inflate(R.layout.fragment_flight_home, container, false);
+        ButterKnife.bind(this,view);
+
+        return view;
     }
+
+    @OnClick({R.id.cardClick}) void onClick()
+    {
+        Intent intent=new Intent(getContext(), WaitingSearchActivity.class);
+        intent.putExtra(Constant.TypeTag,Constant.FlightTag);
+        startActivity(intent);
+    }
+
+
+
+
 
     @Override
     public void onResume() {

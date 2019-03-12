@@ -1,15 +1,15 @@
-package com.example.svago.SharedPackage.Activity;
+package com.example.svago.FlightPackage.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.svago.R;
 
-public class DoneActivity extends AppCompatActivity {
+public class TripDetailsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_done);
+        setContentView(R.layout.activity_trip_details);
     }
 }

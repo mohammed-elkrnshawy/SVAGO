@@ -7,6 +7,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.R;
 import com.example.svago.SharedPackage.Classes.Constant;
 
@@ -22,6 +23,8 @@ public class HomeActivity extends AppCompatActivity {
     @BindView(R.id.cardHotel) CardView cardHotel;
     @BindView(R.id.cardSvago) CardView cardSvago;
 
+    private userData userObject;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,12 +32,29 @@ public class HomeActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
+        getIntentData();
+    }
+
+    private void getIntentData() {
+        Bundle bundle=getIntent().getExtras();
+        if (!bundle.isEmpty()){
+            userObject=(userData) bundle.get(Constant.userFlag);
+            if (userObject.getToken()==null){
+                Constant.isLogin=false;
+            }else {
+                Constant.isLogin=true;
+            }
+        }
     }
 
     @OnClick({R.id.cardHotel, R.id.cardSvago,R.id.cardFlight,R.id.cardDeal,R.id.cardCar})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.cardSvago:
+                Intent Svago=new Intent(HomeActivity.this, MainHomeActivity.class);
+                Svago.putExtra(Constant.TypeTag,Constant.SvagoTag);
+                Svago.putExtra(Constant.userFlag,userObject);
+                startActivity(Svago);
                 break;
             case R.id.cardHotel:
                 Intent Hotel=new Intent(HomeActivity.this, MainHomeActivity.class);

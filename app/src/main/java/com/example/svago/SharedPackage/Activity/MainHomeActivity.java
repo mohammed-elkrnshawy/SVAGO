@@ -2,12 +2,15 @@ package com.example.svago.SharedPackage.Activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -19,6 +22,7 @@ import com.example.svago.FlightPackage.Fragments.FlightHomeFragment;
 import com.example.svago.HotelPackage.Fragments.HotelHomeFragment;
 import com.example.svago.R;
 import com.example.svago.SharedPackage.Classes.Constant;
+import com.example.svago.SvagoPackage.SvagoFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,6 +31,8 @@ public class MainHomeActivity extends AppCompatActivity {
 
     @BindView(R.id.homeToolbar)
     Toolbar toolbar;
+    @BindView(R.id.navigation)
+    BottomNavigationView navigation;
 
 
     private RelativeLayout relativeFlight,relativeHotel,relativeCar;
@@ -41,12 +47,12 @@ public class MainHomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_home);
         ButterKnife.bind(this);
         initComponents();
+        onBottomItemClicked();
         setToolBar();
         getIntentData();
     }
 
     private void initComponents() {
-
     }
 
     private void getIntentData() {
@@ -69,6 +75,10 @@ public class MainHomeActivity extends AppCompatActivity {
         else if (type.equals(Constant.HotelTag))
         {
             setFragment(new HotelHomeFragment(imgHotel,txtHotel),getString(R.string.hotel));
+        }
+        else if (type.equals(Constant.SvagoTag))
+        {
+            setFragment(new SvagoFragment(),Constant.SvagoTag);
         }
     }
 
@@ -117,4 +127,19 @@ public class MainHomeActivity extends AppCompatActivity {
 
         toolbar.addView(view);
     }
+
+    private void onBottomItemClicked(){
+        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.svago:
+                        setFragment(new SvagoFragment(),Constant.SvagoTag);
+                        return true;
+                }
+                return false ;
+            }
+        });
+    }
+
 }

@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.R;
+import com.example.svago.SharedPackage.Activity.HomeActivity;
 import com.example.svago.SharedPackage.Activity.MainHomeActivity;
 import com.example.svago.SharedPackage.Classes.Constant;
 
@@ -53,10 +54,13 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
         registerPresenter=new RegisterPresenter(this);
     }
 
-    @OnClick({R.id.cartRegister}) void onButtonClick(View view){
+    @OnClick({R.id.cartRegister,R.id.txtLogin}) void onButtonClick(View view){
         switch (view.getId()){
             case R.id.cartRegister:
                 registerPresenter.validData();
+                break;
+            case R.id.txtLogin:
+                finish();
                 break;
         }
     }
@@ -105,7 +109,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
 
     @Override
     public void successRegister(userData userData) {
-        Intent intent=new Intent(this, MainHomeActivity.class);
+        Intent intent=new Intent(this, HomeActivity.class);
         intent.putExtra(Constant.userFlag,userData);
         startActivity(intent);
         finishAffinity();

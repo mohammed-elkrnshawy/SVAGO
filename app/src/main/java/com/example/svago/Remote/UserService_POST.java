@@ -17,5 +17,13 @@ public interface UserService_POST {
             @Query("device_token") String device_token,
             @Query("language") String language
     );
+
+    @POST("auth/login")
+    Call<AuthResponse> Login(
+            @Query("email") String email,
+            @Query("password") String password,
+            @Query("language") String language,
+            @Query("device_token") String device_token
+    );
 }
 

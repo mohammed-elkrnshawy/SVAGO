@@ -45,4 +45,8 @@
     <string name="haveaccount">Have an account ?</string>
     <string name="login_now">Login Now</string>
     <string name="requiredField">Required Field</string>
+    <string name="LoginToYourAccount">Login To Your Account :</string>
+    <string name="ForgetPassword">Forget Password ?</string>
+    <string name="Donthaveaccount">Don\'t have an account ?</string>
+    <string name="SignUp_Now">SignUp Now</string>
 </resources>

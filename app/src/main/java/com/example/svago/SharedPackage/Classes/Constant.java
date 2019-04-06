@@ -5,4 +5,5 @@ public class Constant {
     public static String CarTag="CarTag";
     public static String HotelTag="HotelTag";
     public static String FlightTag="FlightTag";
+    public static String userFlag="userData";
 }

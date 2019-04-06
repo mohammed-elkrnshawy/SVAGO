@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
 
+import com.example.svago.AuthPackage.RegisterActivity;
 import com.example.svago.R;
 
 public class SplashActivity extends AppCompatActivity {
@@ -24,7 +25,7 @@ public class SplashActivity extends AppCompatActivity {
 
             public void onFinish() {
 
-                Intent intent = new Intent(SplashActivity.this , HomeActivity.class) ;
+                Intent intent = new Intent(SplashActivity.this , RegisterActivity.class) ;
                 startActivity(intent);
                 finish();
 

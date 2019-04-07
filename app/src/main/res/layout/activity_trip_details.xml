@@ -4,24 +4,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
-    tools:context=".SharedPackage.Activity.TripDetailsActivity">
-
+    tools:context=".FlightPackage.Activities.TripDetailsActivity">
 
     <RelativeLayout
+        android:layout_marginTop="10dp"
         android:id="@+id/rel"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         >
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="8dp"
             android:src="@drawable/ic_left_arrow"
-            android:padding="4dp"
+            android:padding="6dp"
             android:id="@+id/Back"
             />
 
@@ -36,7 +35,6 @@
 
     </RelativeLayout>
 
-
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,460 +42,471 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="25dp"
         app:cardCornerRadius="45dp"
-        app:cardElevation="10dp"
+        app:cardElevation="10dp">
 
-        >
-
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginEnd="25dp"
-            >
-
+            android:fillViewport="true">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                >
+                android:layout_height="match_parent">
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/logo_saudia"
-                    android:padding="10dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_alignParentStart="true"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="Saudia Airlines"
-                    android:textColor="@color/colorBlack"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:text="330$"
-                    />
-
-            </RelativeLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textColor="@color/colorBlack"
-                android:textSize="18sp"
-                android:text="06 Jun, Mon"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:text="Flight: AN 78"
-                android:textColor="@color/colorPink1"
-                />
-
-            <RelativeLayout
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="25dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RelativeLayout
-                    android:id="@+id/rel3"
-                    android:layout_alignParentStart="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorBlack"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:text="JED"
-                        android:id="@+id/hour1"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/hour1"
-                        android:layout_marginTop="10dp"
-                        android:text="Jeddah"
-                        />
-
-
-
-                </RelativeLayout>
-
-
-                <RelativeLayout
-                    android:id="@+id/rel4"
-                    android:layout_alignParentEnd="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorBlack"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:text="HEB"
-                        android:id="@+id/hour2"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/hour2"
-                        android:layout_marginTop="10dp"
-                        android:text="JED"
-                        />
-
-
-
-                </RelativeLayout>
-
-
-                <RelativeLayout
-                    android:layout_toEndOf="@+id/rel3"
-                    android:layout_toStartOf="@+id/rel4"
+                <LinearLayout
+                    android:id="@+id/lin"
                     android:layout_width="match_parent"
-                    android:layout_centerVertical="true"
-                    android:layout_height="wrap_content">
-
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/v"
-                        android:layout_centerHorizontal="true"
-                        android:text="1 Stop, 2M"
-                        />
-
-                </RelativeLayout>
-
-
-            </RelativeLayout>
-
-
-            <RelativeLayout
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="25dp"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RelativeLayout
-                    android:id="@+id/rel6"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorBlack"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:text="5:88"
-                        android:id="@+id/hour"
-                        />
-
-
-
-
-                </RelativeLayout>
-
-
-                <RelativeLayout
-                    android:id="@+id/rel7"
-                    android:layout_alignParentEnd="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorBlack"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:text="5:55"
-                        android:id="@+id/hour5"
-                        />
-
-
-
-
-                </RelativeLayout>
-
-
-                <RelativeLayout
-                    android:layout_toEndOf="@+id/rel6"
-                    android:layout_toStartOf="@+id/rel7"
-                    android:layout_width="match_parent"
-                    android:layout_centerVertical="true"
-                    android:layout_height="wrap_content">
-
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/v"
-                        android:layout_centerHorizontal="true"
-                        android:text="6h 10m"
-                        />
-
-                </RelativeLayout>
-
-
-            </RelativeLayout>
-
-
-
-
-
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textColor="@color/colorBlack"
-                android:textSize="18sp"
-                android:layout_marginTop="25dp"
-                android:text="06 Jun, Mon"
-                />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:text="Flight: AN 78"
-                    android:layout_alignParentEnd="true"
-                    android:textColor="@color/colorPink1"
-                    />
+                    android:orientation="vertical"
+                    android:layout_marginEnd="25dp"
+                    >
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Outbound"
-                    android:layout_marginStart="25dp"
-                    android:textColor="@color/colorPink1"
-                    />
 
-            </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        >
 
-            <RelativeLayout
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="25dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/logo_saudia"
+                            android:padding="10dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_alignParentStart="true"
+                            />
 
-                <RelativeLayout
-                    android:id="@+id/rel50"
-                    android:layout_alignParentStart="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Saudia Airlines"
+                            android:textColor="@color/colorBlack"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:text="330$"
+                            />
+
+                    </RelativeLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
                         android:textColor="@color/colorBlack"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:text="JED"
-                        android:id="@+id/hour10"
+                        android:textSize="18sp"
+                        android:text="06 Jun, Mon"
                         />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/hour10"
-                        android:layout_marginTop="10dp"
-                        android:text="Jeddah"
+                        android:layout_gravity="end"
+                        android:text="Flight: AN 78"
+                        android:textColor="@color/colorPink1"
                         />
 
+                    <RelativeLayout
+                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="25dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:id="@+id/rel3"
+                            android:layout_alignParentStart="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:text="JED"
+                                android:id="@+id/hour1"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_below="@+id/hour1"
+                                android:layout_marginTop="10dp"
+                                android:text="Jeddah"
+                                />
 
 
-                </RelativeLayout>
+
+                        </RelativeLayout>
 
 
-                <RelativeLayout
-                    android:id="@+id/rel40"
-                    android:layout_alignParentEnd="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                        <RelativeLayout
+                            android:id="@+id/rel4"
+                            android:layout_alignParentEnd="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:text="HEB"
+                                android:id="@+id/hour2"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_below="@+id/hour2"
+                                android:layout_marginTop="10dp"
+                                android:text="JED"
+                                />
+
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:layout_toEndOf="@+id/rel3"
+                            android:layout_toStartOf="@+id/rel4"
+                            android:layout_width="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_height="wrap_content">
+
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/v"
+                                android:layout_centerHorizontal="true"
+                                android:text="1 Stop, 2M"
+                                />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="25dp"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:id="@+id/rel6"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:text="5:88"
+                                android:id="@+id/hour"
+                                />
+
+
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/rel7"
+                            android:layout_alignParentEnd="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:text="5:55"
+                                android:id="@+id/hour5"
+                                />
+
+
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:layout_toEndOf="@+id/rel6"
+                            android:layout_toStartOf="@+id/rel7"
+                            android:layout_width="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_height="wrap_content">
+
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/v"
+                                android:layout_centerHorizontal="true"
+                                android:text="6h 10m"
+                                />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
                         android:textColor="@color/colorBlack"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:text="HEB"
-                        android:id="@+id/hour20"
+                        android:textSize="18sp"
+                        android:layout_marginTop="25dp"
+                        android:text="06 Jun, Mon"
                         />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:text="Flight: AN 78"
+                            android:layout_alignParentEnd="true"
+                            android:textColor="@color/colorPink1"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Outbound"
+                            android:layout_marginStart="25dp"
+                            android:textColor="@color/colorPink1"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="25dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:id="@+id/rel50"
+                            android:layout_alignParentStart="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:text="JED"
+                                android:id="@+id/hour10"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_below="@+id/hour10"
+                                android:layout_marginTop="10dp"
+                                android:text="Jeddah"
+                                />
+
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/rel40"
+                            android:layout_alignParentEnd="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:text="HEB"
+                                android:id="@+id/hour20"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_below="@+id/hour20"
+                                android:layout_marginTop="10dp"
+                                android:text="JED"
+                                />
+
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:layout_toEndOf="@+id/rel50"
+                            android:layout_toStartOf="@+id/rel40"
+                            android:layout_width="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_height="wrap_content">
+
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/v"
+                                android:layout_centerHorizontal="true"
+                                android:text="1 Stop, 2M"
+                                />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="25dp"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:id="@+id/rel60"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:text="5:88"
+                                android:id="@+id/hour30"
+                                />
+
+
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/rel70"
+                            android:layout_alignParentEnd="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:text="5:55"
+                                android:id="@+id/hour50"
+                                />
+
+
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:layout_toEndOf="@+id/rel60"
+                            android:layout_toStartOf="@+id/rel70"
+                            android:layout_width="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_height="wrap_content">
+
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:text="6h 10m"
+                                />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/hour20"
-                        android:layout_marginTop="10dp"
-                        android:text="JED"
+                        android:text="@string/f_b_details"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:textColor="#3a9cff"
                         />
 
 
-
-                </RelativeLayout>
-
+                </LinearLayout>
 
                 <RelativeLayout
-                    android:layout_toEndOf="@+id/rel50"
-                    android:layout_toStartOf="@+id/rel40"
+                    android:layout_marginBottom="25dp"
+                    android:layout_below="@+id/lin"
                     android:layout_width="match_parent"
-                    android:layout_centerVertical="true"
-                    android:layout_height="wrap_content">
-
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/v"
+                    android:layout_height="match_parent">
+                    <Button
+                        android:id="@+id/btnProcess"
+                        android:layout_margin="15dp"
                         android:layout_centerHorizontal="true"
-                        android:text="1 Stop, 2M"
-                        />
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/shape_btn_book"
+                        android:elevation="@dimen/dimenElevation"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="12sp"
+                        android:text="@string/Proceed_Book"
+                        android:layout_width="250dp"
+                        android:layout_height="50dp" />
 
                 </RelativeLayout>
 
 
             </RelativeLayout>
 
-
-            <RelativeLayout
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="25dp"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RelativeLayout
-                    android:id="@+id/rel60"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorBlack"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:text="5:88"
-                        android:id="@+id/hour30"
-                        />
-
-
-
-
-                </RelativeLayout>
-
-
-                <RelativeLayout
-                    android:id="@+id/rel70"
-                    android:layout_alignParentEnd="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorBlack"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:text="5:55"
-                        android:id="@+id/hour50"
-                        />
-
-
-
-
-                </RelativeLayout>
-
-
-                <RelativeLayout
-                    android:layout_toEndOf="@+id/rel60"
-                    android:layout_toStartOf="@+id/rel70"
-                    android:layout_width="match_parent"
-                    android:layout_centerVertical="true"
-                    android:layout_height="wrap_content">
-
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:text="6h 10m"
-                        />
-
-                </RelativeLayout>
-
-
-            </RelativeLayout>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/f_b_details"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:textColor="#3a9cff"
-                />
-
-
-        </LinearLayout>
-
-
-        <Button
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/shape_btn_book"
-            android:elevation="@dimen/dimenElevation"
-            android:layout_gravity="bottom|center"
-            android:textAlignment="center"
-            android:textColor="@color/colorWhite"
-            android:textSize="12sp"
-            android:text="@string/Proceed_Book"
-            android:layout_width="250dp"
-            android:layout_height="50dp" />
-
+        </ScrollView>
 
     </android.support.v7.widget.CardView>
 

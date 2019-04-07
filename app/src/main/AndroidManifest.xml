@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.svago">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,17 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SharedPackage.Activity.TripDetailsActivity"></activity>
-        <activity android:name=".SharedPackage.Activity.WaitingSearchActivity" />
-        <activity android:name=".SharedPackage.Activity.BookingInformationActivity" />
-        <activity android:name=".SharedPackage.Activity.PaymentSuccessActivity" />
-        <activity android:name=".SharedPackage.Activity.SearchActivity" />
-        <activity android:name=".SharedPackage.Activity.TicketStatusActivity" />
+        <activity android:name=".AuthPackage.LoginActivity"></activity>
+        <activity android:name=".AuthPackage.RegisterActivity" />
+        <activity android:name=".HotelPackage.Activities.HotelResultActivity" />
+        <activity android:name=".FlightPackage.Activities.FlightResultActivity" />
+        <activity android:name=".CarPackage.Activities.CarResultActivity" />
         <activity
             android:name=".SharedPackage.Activity.MainHomeActivity"
-            android:label="" />
+            android:label=""
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity android:name=".FlightPackage.Activities.TripDetailsActivity" />
+        <activity android:name=".SharedPackage.Activity.WaitingSearchActivity" />
+        <activity android:name=".FlightPackage.Activities.BookingInformationActivity" />
+        <activity android:name=".SharedPackage.Activity.PaymentSuccessActivity" />
+        <activity android:name=".SharedPackage.Activity.TicketStatusActivity" />
         <activity android:name=".SharedPackage.Activity.PickDateActivity" />
-        <activity android:name=".SharedPackage.Activity.DoneActivity" />
         <activity android:name=".SharedPackage.Activity.PaymentActivity" />
         <activity android:name=".SharedPackage.Activity.HomeActivity" />
         <activity android:name=".SharedPackage.Activity.SplashActivity">

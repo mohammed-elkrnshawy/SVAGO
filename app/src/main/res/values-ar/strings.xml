@@ -38,4 +38,15 @@
     <string name="email">Email</string>
     <string name="promo_code">Promo Code</string>
     <string name="f_b_details">Flight and Baggage details</string>
+    <string name="SignUpwithSVAGO">SignUp with SVAGO  :</string>
+    <string name="name">Name</string>
+    <string name="country">Country</string>
+    <string name="password">Password</string>
+    <string name="haveaccount">Have an account ?</string>
+    <string name="login_now">Login Now</string>
+    <string name="requiredField">Required Field</string>
+    <string name="LoginToYourAccount">Login To Your Account :</string>
+    <string name="ForgetPassword">Forget Password ?</string>
+    <string name="Donthaveaccount">Don\'t have an account ?</string>
+    <string name="SignUp_Now">SignUp Now</string>
 </resources>

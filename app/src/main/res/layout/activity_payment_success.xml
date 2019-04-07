@@ -37,7 +37,7 @@
         android:background="@drawable/shape_btn_book"
         android:elevation="@dimen/dimenElevation"
         android:layout_gravity="center"
-        android:id="@+id/Details"
+        android:id="@+id/btnDetails"
         android:textAlignment="center"
         android:textColor="@color/colorWhite"
         android:textSize="12sp"

@@ -29,20 +29,20 @@
                 android:layout_height="match_parent">
 
                 <LinearLayout
+                    android:gravity="center"
                     android:id="@+id/lin1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="10dp"
                     android:orientation="vertical"
                     >
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:padding="2.5dp"
+                        android:layout_width="20dp"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_round"
-                        />
+                        android:src="@drawable/ic_round" />
 
                     <RelativeLayout
                         android:background="@drawable/shape_dots_lines"
@@ -51,13 +51,13 @@
                         android:layout_centerHorizontal="true"
                         android:layout_width="1dp"
                         android:layout_gravity="center_horizontal"
-                        android:layout_height="60dp"
+                        android:layout_height="55dp"
                         />
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:padding="2.5dp"
+                        android:layout_width="20dp"
                         android:layout_height="wrap_content"
-                        android:scaleType="fitXY"
                         android:src="@drawable/ic_placeholder"
                         />
 
@@ -68,10 +68,11 @@
                         android:layout_centerHorizontal="true"
                         android:layout_width="1dp"
                         android:layout_gravity="center_horizontal"
-                        android:layout_height="60dp"
+                        android:layout_height="55dp"
                         />
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:padding="2.5dp"
+                        android:layout_width="20dp"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_send_mail"
                         />
@@ -83,11 +84,12 @@
                         android:layout_centerHorizontal="true"
                         android:layout_width="1dp"
                         android:layout_gravity="center_horizontal"
-                        android:layout_height="60dp"
+                        android:layout_height="55dp"
                         />
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:padding="2.5dp"
+                        android:layout_width="20dp"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_calender"
                         />
@@ -99,11 +101,12 @@
                         android:layout_centerHorizontal="true"
                         android:layout_width="1dp"
                         android:layout_gravity="center_horizontal"
-                        android:layout_height="60dp"
+                        android:layout_height="55dp"
                         />
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:padding="2.5dp"
+                        android:layout_width="20dp"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_baby"
                         />
@@ -120,10 +123,11 @@
                     android:orientation="vertical">
 
                     <EditText
+                        android:textColor="@color/colorBlack"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:paddingStart="10dp"
-                        android:hint="@string/origin"
+                        android:hint="Alexandria"
                         android:background="@drawable/shape_edit_txt"
                         />
 
@@ -138,16 +142,18 @@
 
 
                     <LinearLayout
-                        android:paddingStart="15dp"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="2dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="40dp"
                         android:orientation="horizontal"
                         android:layout_marginTop="40dp"
                         >
 
                         <TextView
+                            android:textSize="12sp"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:textColor="@color/colorBlack"
                             android:text="@string/one_way"
                             android:background="@drawable/shape_send_email"
@@ -158,8 +164,7 @@
                             android:textSize="12sp"
                             android:layout_marginStart="8dp"
                             android:layout_width="wrap_content"
-                            android:textAlignment="center"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:textColor="@color/colorBlack"
                             android:text="@string/round_trip"
                             android:background="@drawable/shape_send_email"
@@ -169,11 +174,11 @@
                     </LinearLayout>
 
                     <EditText
-                        android:layout_marginTop="40dp"
+                        android:layout_marginTop="45dp"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:paddingStart="15dp"
-                        android:hint="@string/enter_distination"
+                        android:hint="11 Jun 2018    -   Return Date"
                         android:background="@drawable/shape_edit_txt"
                         />
 
@@ -182,7 +187,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:paddingStart="15dp"
-                        android:hint="@string/enter_distination"
+                        android:hint="Economy          -        0 Traveler"
                         android:background="@drawable/shape_edit_txt"
                         />
 
@@ -195,6 +200,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
                     <android.support.v7.widget.CardView
+                        android:id="@+id/cardClick"
                         android:layout_margin="50dp"
                         android:layout_width="50dp"
                         android:layout_height="50dp"

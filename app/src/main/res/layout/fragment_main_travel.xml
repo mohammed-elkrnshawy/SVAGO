@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TravelPayPackage.MainTravelFragment">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:background="@color/colorWhite"
+        android:layout_height="?actionBarSize">
+
+        <RelativeLayout
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:padding="10dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_width="wrap_content"
+                android:id="@+id/relativeFlight"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_plane"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/imgFlight"
+                    />
+
+                <TextView
+                    android:id="@+id/txtFlight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/imgFlight"
+                    android:text="@string/flight"
+                    android:layout_centerVertical="true"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:padding="10dp"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:id="@+id/relativeHotel"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_hotel1"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/imgHotel"
+                    />
+
+                <TextView
+                    android:id="@+id/txtHotel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/imgHotel"
+                    android:text="@string/hotel"
+                    android:textColor="@color/ColorGrayBar"
+                    android:layout_centerVertical="true"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:padding="10dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_width="wrap_content"
+                android:id="@+id/relativeCar"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_car1"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/imgCar"
+                    />
+
+                <TextView
+                    android:id="@+id/txtCar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/imgCar"
+                    android:text="@string/car"
+                    android:layout_centerVertical="true"
+                    android:textStyle="bold"
+                    android:textColor="@color/ColorGrayBar"
+                    android:textSize="16sp"
+                    />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:background="@color/colorWhite"
+        android:layout_above="@id/navigation"
+        android:id="@+id/conainerTravel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
+
+</LinearLayout>

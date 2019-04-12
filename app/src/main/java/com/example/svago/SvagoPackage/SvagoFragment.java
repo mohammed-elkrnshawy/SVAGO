@@ -49,7 +49,6 @@ public class SvagoFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        MainHomeActivity.toolbar.setVisibility(View.GONE);
     }
 
 }

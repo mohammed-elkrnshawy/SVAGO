@@ -181,7 +181,7 @@
                         android:layout_gravity="center"
                         android:textColor="@color/colorWhite"
                         android:text="1400 $"
-                        android:textSize="18sp"
+                        android:textSize="14sp"
                         />
 
 
@@ -281,7 +281,7 @@
                         android:layout_gravity="center"
                         android:textColor="@color/colorWhite"
                         android:text="1400 $"
-                        android:textSize="18sp"
+                        android:textSize="14sp"
                         />
 
 

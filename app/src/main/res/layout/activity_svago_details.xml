@@ -30,15 +30,14 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:padding="5dp"
                 android:textAlignment="center"
-                android:id="@+id/txtNameCar"
-                android:layout_marginTop="20.7dp"
+                android:id="@+id/txtTitle"
+                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:textColor="#313841"
-                android:letterSpacing="-0.02"
-                android:lineSpacingExtra="2.7sp"
+                android:textSize="14sp"
+                android:textColor="@color/colorBlack"
                 android:text="Mercedes Benz E Class"
                 />
 
@@ -50,13 +49,92 @@
                 android:src="@drawable/_ic_try_car"/>
 
             <LinearLayout
-                android:orientation="vertical"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:id="@+id/line"
                 android:layout_marginTop="5dp"
                 android:layout_below="@id/photo_Img"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:tint="@color/colorPrimary"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_user"/>
 
                 <TextView
+                    android:layout_marginStart="3dp"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/ColorPink"
+                    android:id="@+id/txtPassenger"
+                    android:text="4"
+                    />
+
+                <ImageView
+                    android:layout_marginStart="10dp"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_door"/>
+
+                <TextView
+                    android:layout_marginStart="3dp"
+                    android:id="@+id/txtDoor"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/ColorPink"
+                    android:text="4"
+                    />
+
+                <ImageView
+                    android:layout_marginStart="10dp"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_gear_shift"/>
+
+                <TextView
+                    android:id="@+id/txtGear"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:textColor="@color/ColorPink"
+                    android:text="4"
+                    />
+
+                <ImageView
+                    android:layout_marginStart="10dp"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_ice_crystal"/>
+
+                <TextView
+                    android:id="@+id/txtAir"
+                    android:layout_marginStart="3dp"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/ColorPink"
+                    android:text="Yes"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/line"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtModel"
                     android:layout_marginBottom="5dp"
                     android:textStyle="bold"
                     android:textAlignment="center"
@@ -70,19 +148,10 @@
                     android:text="06 Jun, Mon "
                     />
 
-                <TextView
-                    android:layout_marginBottom="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="10.7sp"
-                    android:textColor="@color/ColorPink"
-                    android:letterSpacing="-0.02"
-                    android:lineSpacingExtra="2sp"
-                    android:gravity="center_horizontal"
-                    android:text="Car No: 55 78"
-                    />
+
 
                 <TextView
+                    android:id="@+id/txtPrice"
                     android:textStyle="bold"
                     android:layout_marginBottom="5dp"
                     android:layout_width="match_parent"
@@ -96,6 +165,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/txtAddress"
                     android:layout_marginBottom="5dp"
                     android:textAlignment="center"
                     android:layout_width="match_parent"
@@ -105,38 +175,46 @@
                     android:letterSpacing="-0.02"
                     android:lineSpacingExtra="-1.3sp"
                     android:gravity="center_horizontal"
-                    android:text="HBE
-Alexandira"
+                    android:text="HBE"
                     />
+
 
                 <TextView
+                    android:id="@+id/txtDriver"
+                    android:layout_marginBottom="5dp"
                     android:textStyle="bold"
                     android:textAlignment="center"
-                    android:layout_marginBottom="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="13.3sp"
-                    android:textColor="#313841"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimary"
                     android:letterSpacing="-0.02"
-                    android:lineSpacingExtra="2.7sp"
+                    android:lineSpacingExtra="3.3sp"
                     android:gravity="center_horizontal"
-                    android:text="06:00"
+                    android:text="06 Jun, Mon "
                     />
 
-                <Button
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:paddingEnd="30dp"
-                    android:paddingStart="30dp"
-                    android:background="@drawable/shape_btn_book"
-                    android:elevation="25dp"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="12sp"
-                    android:text="@string/Proceed_Book"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <Button
+                        android:id="@+id/btnProcess"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:paddingEnd="30dp"
+                        android:paddingStart="30dp"
+                        android:background="@drawable/shape_btn_book"
+                        android:elevation="25dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="12sp"
+                        android:text="@string/Proceed_Book"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
 
             </LinearLayout>
 

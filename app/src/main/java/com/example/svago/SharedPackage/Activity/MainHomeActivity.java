@@ -21,23 +21,23 @@ import com.example.svago.CarPackage.Fragments.CarHomeFragment;
 import com.example.svago.FlightPackage.Fragments.FlightHomeFragment;
 import com.example.svago.HotelPackage.Fragments.HotelHomeFragment;
 import com.example.svago.Models.SharedResponses.userData;
+import com.example.svago.OfferPackage.OfferFragment;
 import com.example.svago.R;
 import com.example.svago.SharedPackage.Classes.Constant;
 import com.example.svago.SidePackage.MoreFragment;
 import com.example.svago.SvagoPackage.SvagoFragment;
+import com.example.svago.TravelPayPackage.MainTravelFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainHomeActivity extends AppCompatActivity {
 
-    public static Toolbar toolbar;
-
-
     @BindView(R.id.navigation)
     BottomNavigationView navigation;
 
     private static userData userObject;
+    private String stringType;
     private RelativeLayout relativeFlight,relativeHotel,relativeCar;
     private ImageView imgFlight,imgHotel,imgCar;
     private TextView txtFlight,txtHotel,txtCar;
@@ -52,80 +52,41 @@ public class MainHomeActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         initComponents();
         onBottomItemClicked();
-        setToolBar();
         getIntentData();
     }
 
     private void initComponents() {
-        toolbar=findViewById(R.id.homeToolbar);
     }
 
     private void getIntentData() {
         Bundle bundle=getIntent().getExtras();
         if (!bundle.isEmpty()) {
             userObject=(userData)bundle.getSerializable(Constant.userFlag);
-            setFragmentWithType(bundle.getString(Constant.TypeTag));
+            stringType=bundle.getString(Constant.TypeTag);
+            setFragmentWithType(stringType);
         }
     }
 
     private void setFragmentWithType(String type) {
         if (type.equals(Constant.CarTag)) {
-            setFragment(new CarHomeFragment(imgCar,txtCar),getString(R.string.car));
+            navigation.setSelectedItemId(R.id.booking);
         } else if (type.equals(Constant.FlightTag)) {
-            setFragment(new FlightHomeFragment(imgFlight,txtFlight),getString(R.string.flight));
+            navigation.setSelectedItemId(R.id.booking);
         } else if (type.equals(Constant.HotelTag)) {
-            setFragment(new HotelHomeFragment(imgHotel,txtHotel),getString(R.string.hotel));
+            navigation.setSelectedItemId(R.id.booking);
         } else if (type.equals(Constant.SvagoTag)) {
-            setFragment(new SvagoFragment(),Constant.SvagoTag);
+            navigation.setSelectedItemId(R.id.svago);
+        }else if (type.equals(Constant.OfferTag)) {
+            navigation.setSelectedItemId(R.id.offers);
         }
     }
 
     private void setFragment(Fragment fragment, String Title) {
             fragmentBundle.putSerializable(Constant.userFlag,userObject);
+            fragmentBundle.putString(Constant.TypeTag,stringType);
             fragment.setArguments(fragmentBundle);
-        getSupportFragmentManager().beginTransaction().replace(R.id.conainerHome,fragment).addToBackStack(Title)
-                .commitAllowingStateLoss();
-    }
-
-    private void setToolBar(){
-        setSupportActionBar(toolbar);
-        final LayoutInflater inflator = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflator.inflate(R.layout.bar_home, null);
-
-        imgFlight=view.findViewById(R.id.imgFlight);
-        imgHotel=view.findViewById(R.id.imgHotel);
-        imgCar=view.findViewById(R.id.imgCar);
-
-        txtFlight=view.findViewById(R.id.txtFlight);
-        txtHotel=view.findViewById(R.id.txtHotel);
-        txtCar=view.findViewById(R.id.txtCar);
-
-        relativeFlight=view.findViewById(R.id.relativeFlight);
-        relativeHotel=view.findViewById(R.id.relativeHotel);
-        relativeCar=view.findViewById(R.id.relativeCar);
-
-        relativeCar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setFragment(new CarHomeFragment(imgCar,txtCar),getString(R.string.car));
-            }
-        });
-
-        relativeFlight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setFragment(new FlightHomeFragment(imgFlight,txtFlight),getString(R.string.flight));
-            }
-        });
-
-        relativeHotel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setFragment(new HotelHomeFragment(imgHotel,txtHotel),getString(R.string.hotel));
-            }
-        });
-
-        toolbar.addView(view);
+            getSupportFragmentManager().beginTransaction().replace(R.id.conainerHome,fragment).addToBackStack(Title)
+                    .commitAllowingStateLoss();
     }
 
     private void onBottomItemClicked(){
@@ -133,6 +94,12 @@ public class MainHomeActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
+                    case R.id.booking:
+                        setFragment(new MainTravelFragment(),Constant.TravelTag);
+                        return true;
+                        case R.id.offers:
+                        setFragment(new OfferFragment(),Constant.TravelTag);
+                        return true;
                     case R.id.svago:
                         setFragment(new SvagoFragment(),Constant.SvagoTag);
                         return true;

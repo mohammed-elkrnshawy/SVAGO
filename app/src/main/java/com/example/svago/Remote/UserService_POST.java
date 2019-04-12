@@ -1,6 +1,7 @@
 package com.example.svago.Remote;
 
 
+import com.example.svago.Models.CarDetailsResponses.CarDetailsResponse;
 import com.example.svago.Models.LoginResponses.AuthResponse;
 import com.example.svago.Models.SvagoResponses.SvagoResponse;
 
@@ -8,6 +9,7 @@ import retrofit2.Call;
 import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface UserService_POST {
@@ -42,6 +44,13 @@ public interface UserService_POST {
 
     @POST("svago/list")
     Call<SvagoResponse> svagoList(
+            @Query("currency_id") int currency_id
+    );
+
+    @Headers({ "Content-Type: application/json;charset=UTF-8"})
+    @POST("cars/{id}")
+    Call<CarDetailsResponse> carDetails(
+            @Path("id") int carID,
             @Query("currency_id") int currency_id
     );
 }

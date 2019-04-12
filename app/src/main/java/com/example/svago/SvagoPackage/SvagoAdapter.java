@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.svago.CarPackage.Activities.CarDetailsActivity;
 import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.Models.SvagoResponses.SvagoData;
 import com.example.svago.R;
@@ -51,14 +52,27 @@ public class SvagoAdapter extends RecyclerView.Adapter<SvagoAdapter.ViewHolder> 
             holder.layoutCar.setVisibility(View.GONE);
         }
 
-        holder.viewParent.setOnClickListener(new View.OnClickListener() {
+        //region ClickRegion
+        holder.layoutCar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(context,SvagoDetailsActivity.class);
+                Intent intent=new Intent(context, CarDetailsActivity.class);
+                intent.putExtra(Constant.userFlag,userObject);
+                intent.putExtra("carID",svagoDataList.get(position).getId());
+                context.startActivity(intent);
+            }
+        });
+
+        holder.layoutTrip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(context, SvagoDetailsActivity.class);
                 intent.putExtra(Constant.userFlag,userObject);
                 context.startActivity(intent);
             }
         });
+        //endregion
+
     }
 
 

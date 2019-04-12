@@ -50,91 +50,9 @@
                 android:src="@drawable/_ic_try_car"/>
 
             <LinearLayout
-                android:layout_marginBottom="5dp"
-                android:gravity="center"
-                android:id="@+id/line"
-                android:layout_marginTop="5dp"
-                android:layout_below="@id/photo_Img"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_user"/>
-
-                <TextView
-                    android:padding="5dp"
-                    android:gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="12.7sp"
-                    android:textColor="@color/ColorPink"
-                    android:letterSpacing="-0.02"
-                    android:lineSpacingExtra="2.7sp"
-                    android:text="4"
-                    />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_door"/>
-
-                <TextView
-                    android:padding="5dp"
-                    android:gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="12.7sp"
-                    android:textColor="@color/ColorPink"
-                    android:letterSpacing="-0.02"
-                    android:lineSpacingExtra="2.7sp"
-                    tools:text="4"
-                    />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_gear_shift"/>
-
-                <TextView
-                    android:padding="5dp"
-                    android:gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="12.7sp"
-                    android:textColor="@color/ColorPink"
-                    android:letterSpacing="-0.02"
-                    android:lineSpacingExtra="2.7sp"
-                    android:text="4"
-                    />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_ice_crystal"/>
-
-                <TextView
-                    android:padding="5dp"
-                    android:gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="12.7sp"
-                    android:textColor="@color/ColorPink"
-                    android:letterSpacing="-0.02"
-                    android:lineSpacingExtra="2.7sp"
-                    android:text="Yes"
-                    />
-
-
-            </LinearLayout>
-
-            <LinearLayout
                 android:orientation="vertical"
                 android:layout_marginTop="5dp"
-                android:layout_below="@id/line"
+                android:layout_below="@id/photo_Img"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 

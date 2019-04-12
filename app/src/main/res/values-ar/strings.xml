@@ -51,4 +51,6 @@
     <string name="SignUp_Now">SignUp Now</string>
     <string name="more">More</string>
     <string name="save">Save</string>
+    <string name="withDriver">With Driver</string>
+    <string name="noDriver">No Driver</string>
 </resources>

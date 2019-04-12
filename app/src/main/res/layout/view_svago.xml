@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    android:layout_margin="10dp"
+    app:cardElevation="10dp"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearCar"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
+
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:id="@+id/rel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <TextView
+                    android:textAlignment="center"
+                    android:id="@+id/txtNameCar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Home Home Home"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/colorPink2"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    />
+
+                <ImageView
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/imgCar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/txtNameCar"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/mercedes"
+                    />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:id="@+id/lin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/ic_person"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5"
+                        android:layout_marginStart="3dp"
+                        android:textColor="@color/colorPink2"
+                        />
+
+                    <ImageView
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/ic_door"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5"
+                        android:layout_marginStart="3dp"
+                        android:textColor="@color/colorPink2"
+                        />
+
+
+                    <ImageView
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/ic_gear_shift"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5"
+                        android:layout_marginStart="3dp"
+                        android:textColor="@color/colorPink2"
+                        />
+
+                    <ImageView
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/ic_ice_crystal"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5"
+                        android:layout_marginStart="3dp"
+                        android:textColor="@color/colorPink2"
+                        />
+
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/reel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lin"
+                    android:layout_marginTop="15dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/pin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_placeholder"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/pin"
+                        android:layout_marginStart="5dp"
+                        android:textSize="12sp"
+                        android:text="Borg El Alarb Airport"
+                        />
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.CardView
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/reel"
+                    app:cardCornerRadius="15dp"
+                    android:layout_marginTop="15dp"
+                    app:cardBackgroundColor="@color/ColorPink"
+                    app:cardElevation="10dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/colorWhite"
+                        android:text="1400 $"
+                        android:textSize="18sp"
+                        />
+
+
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearTrip"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
+
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <TextView
+                    android:textAlignment="center"
+                    android:id="@+id/txtNameTrip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Home Home Home"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/colorPink2"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    />
+
+                <ImageView
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/imgTrip"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/txtNameTrip"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/mercedes"
+                    />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <RelativeLayout
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/reel2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/pin2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_placeholder"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/pin2"
+                        android:layout_marginStart="5dp"
+                        android:textSize="12sp"
+                        android:text="Borg El Alarb Airport"
+                        />
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.CardView
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/reel2"
+                    app:cardCornerRadius="15dp"
+                    android:layout_marginTop="15dp"
+                    app:cardBackgroundColor="@color/ColorPink"
+                    app:cardElevation="10dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/colorWhite"
+                        android:text="1400 $"
+                        android:textSize="18sp"
+                        />
+
+
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

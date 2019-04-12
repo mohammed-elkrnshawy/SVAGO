@@ -49,4 +49,6 @@
     <string name="ForgetPassword">Forget Password ?</string>
     <string name="Donthaveaccount">Don\'t have an account ?</string>
     <string name="SignUp_Now">SignUp Now</string>
+    <string name="more">More</string>
+    <string name="save">Save</string>
 </resources>

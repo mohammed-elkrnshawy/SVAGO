@@ -20,8 +20,10 @@ import android.widget.Toast;
 import com.example.svago.CarPackage.Fragments.CarHomeFragment;
 import com.example.svago.FlightPackage.Fragments.FlightHomeFragment;
 import com.example.svago.HotelPackage.Fragments.HotelHomeFragment;
+import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.R;
 import com.example.svago.SharedPackage.Classes.Constant;
+import com.example.svago.SidePackage.MoreFragment;
 import com.example.svago.SvagoPackage.SvagoFragment;
 
 import butterknife.BindView;
@@ -29,15 +31,17 @@ import butterknife.ButterKnife;
 
 public class MainHomeActivity extends AppCompatActivity {
 
-    @BindView(R.id.homeToolbar)
-    Toolbar toolbar;
+    public static Toolbar toolbar;
+
+
     @BindView(R.id.navigation)
     BottomNavigationView navigation;
 
-
+    private static userData userObject;
     private RelativeLayout relativeFlight,relativeHotel,relativeCar;
     private ImageView imgFlight,imgHotel,imgCar;
     private TextView txtFlight,txtHotel,txtCar;
+    private Bundle fragmentBundle=new Bundle();
 
 
 
@@ -53,36 +57,32 @@ public class MainHomeActivity extends AppCompatActivity {
     }
 
     private void initComponents() {
+        toolbar=findViewById(R.id.homeToolbar);
     }
 
     private void getIntentData() {
         Bundle bundle=getIntent().getExtras();
-        if (!bundle.isEmpty())
-        {
+        if (!bundle.isEmpty()) {
+            userObject=(userData)bundle.getSerializable(Constant.userFlag);
             setFragmentWithType(bundle.getString(Constant.TypeTag));
         }
     }
 
     private void setFragmentWithType(String type) {
-        if (type.equals(Constant.CarTag))
-        {
+        if (type.equals(Constant.CarTag)) {
             setFragment(new CarHomeFragment(imgCar,txtCar),getString(R.string.car));
-        }
-        else if (type.equals(Constant.FlightTag))
-        {
+        } else if (type.equals(Constant.FlightTag)) {
             setFragment(new FlightHomeFragment(imgFlight,txtFlight),getString(R.string.flight));
-        }
-        else if (type.equals(Constant.HotelTag))
-        {
+        } else if (type.equals(Constant.HotelTag)) {
             setFragment(new HotelHomeFragment(imgHotel,txtHotel),getString(R.string.hotel));
-        }
-        else if (type.equals(Constant.SvagoTag))
-        {
+        } else if (type.equals(Constant.SvagoTag)) {
             setFragment(new SvagoFragment(),Constant.SvagoTag);
         }
     }
 
     private void setFragment(Fragment fragment, String Title) {
+            fragmentBundle.putSerializable(Constant.userFlag,userObject);
+            fragment.setArguments(fragmentBundle);
         getSupportFragmentManager().beginTransaction().replace(R.id.conainerHome,fragment).addToBackStack(Title)
                 .commitAllowingStateLoss();
     }
@@ -136,10 +136,17 @@ public class MainHomeActivity extends AppCompatActivity {
                     case R.id.svago:
                         setFragment(new SvagoFragment(),Constant.SvagoTag);
                         return true;
+                    case R.id.more:
+                        setFragment(new MoreFragment(),getString(R.string.more));
+                        return true;
                 }
                 return false ;
             }
         });
+    }
+
+    public static void updateUserData(userData userData){
+        userObject=userData;
     }
 
 }

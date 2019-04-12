@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AuthPackage.LoginActivity"></activity>
+        <activity android:name=".SvagoPackage.SvagoDetailsActivity"></activity>
+        <activity android:name=".SidePackage.ProfilePackage.EditProfileActivity" />
+        <activity android:name=".AuthPackage.LoginActivity" />
         <activity android:name=".AuthPackage.RegisterActivity" />
         <activity android:name=".HotelPackage.Activities.HotelResultActivity" />
         <activity android:name=".FlightPackage.Activities.FlightResultActivity" />

@@ -5,22 +5,10 @@
     android:background="@color/colorWhite"
     android:layout_height="?actionBarSize">
 
-    <ImageView
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10sp"
-        android:tint="@color/colorBlack"
-        android:src="@drawable/ic_symbol"
-        android:layout_centerVertical="true"
-        android:id="@+id/menu"
-        />
-
     <RelativeLayout
         android:layout_marginEnd="5dp"
         android:layout_marginStart="5dp"
         android:gravity="center"
-        android:layout_toEndOf="@id/menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -118,7 +106,6 @@
 
 
     </RelativeLayout>
-
 
 
 </RelativeLayout>

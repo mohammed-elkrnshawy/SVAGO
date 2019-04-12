@@ -8,4 +8,5 @@ public class Constant {
     public static String FlightTag="FlightTag";
     public static String SvagoTag="SvagoTag";
     public static String userFlag="userData";
+    public static int editProfile=5;
 }

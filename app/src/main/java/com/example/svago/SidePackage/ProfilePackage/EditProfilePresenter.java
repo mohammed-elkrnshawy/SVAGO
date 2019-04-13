@@ -36,7 +36,7 @@ public class EditProfilePresenter {
     public void callEditProfile(final userData userData) {
         Call<AuthResponse> call=userServicePost.EditProfile(
                 "Bearer"+userData.getToken(),
-                userData.getUsername(),userData.getEmail(),userData.getPassword(),userData.getPhone(),2);
+                userData.getUsername(),userData.getEmail(),userData.getPhone());
         call.enqueue(new Callback<AuthResponse>() {
             @Override
             public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {

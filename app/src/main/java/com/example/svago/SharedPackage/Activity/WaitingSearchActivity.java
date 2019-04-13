@@ -1,21 +1,14 @@
 package com.example.svago.SharedPackage.Activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.CountDownTimer;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.view.WindowManager;
 
-import com.example.svago.CarPackage.Activities.CarResultActivity;
-import com.example.svago.CarPackage.Fragments.CarHomeFragment;
-import com.example.svago.FlightPackage.Activities.FlightResultActivity;
-import com.example.svago.FlightPackage.Fragments.FlightHomeFragment;
-import com.example.svago.HotelPackage.Activities.HotelResultActivity;
-import com.example.svago.HotelPackage.Fragments.HotelHomeFragment;
+import com.example.svago.TravelPayPackage.CarPackage.Activities.CarResultActivity;
+import com.example.svago.TravelPayPackage.FlightPackage.Activities.FlightResultActivity;
+import com.example.svago.TravelPayPackage.HotelPackage.Activities.HotelResultActivity;
 import com.example.svago.R;
 import com.example.svago.SharedPackage.Classes.Constant;
 

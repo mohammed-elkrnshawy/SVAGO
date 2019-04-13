@@ -1,4 +1,4 @@
-package com.example.svago.FlightPackage.Activities;
+package com.example.svago.TravelPayPackage.FlightPackage.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

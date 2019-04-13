@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HotelPackage.Activities.HotelResultActivity">
+    tools:context=".TravelPayPackage.HotelPackage.Activities.HotelResultActivity">
 
     <include layout="@layout/view_room"
         android:id="@+id/rowClick"/>

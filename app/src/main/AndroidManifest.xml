@@ -15,17 +15,17 @@
         <activity android:name=".SidePackage.ProfilePackage.EditProfileActivity" />
         <activity android:name=".AuthPackage.LoginActivity" />
         <activity android:name=".AuthPackage.RegisterActivity" />
-        <activity android:name=".HotelPackage.Activities.HotelResultActivity" />
-        <activity android:name=".FlightPackage.Activities.FlightResultActivity" />
-        <activity android:name=".CarPackage.Activities.CarResultActivity" />
+        <activity android:name=".TravelPayPackage.HotelPackage.Activities.HotelResultActivity" />
+        <activity android:name=".TravelPayPackage.FlightPackage.Activities.FlightResultActivity" />
+        <activity android:name=".TravelPayPackage.CarPackage.Activities.CarResultActivity" />
         <activity
             android:name=".SharedPackage.Activity.MainHomeActivity"
             android:label=""
             android:windowSoftInputMode="stateVisible|adjustResize" />
-        <activity android:name=".FlightPackage.Activities.TripDetailsActivity" />
-        <activity android:name=".CarPackage.Activities.CarDetailsActivity"/>
+        <activity android:name=".TravelPayPackage.FlightPackage.Activities.TripDetailsActivity" />
+        <activity android:name=".TravelPayPackage.CarPackage.Activities.CarDetailsActivity"/>
         <activity android:name=".SharedPackage.Activity.WaitingSearchActivity" />
-        <activity android:name=".FlightPackage.Activities.BookingInformationActivity" />
+        <activity android:name=".TravelPayPackage.FlightPackage.Activities.BookingInformationActivity" />
         <activity android:name=".SharedPackage.Activity.PaymentSuccessActivity" />
         <activity android:name=".SharedPackage.Activity.TicketStatusActivity" />
         <activity android:name=".SharedPackage.Activity.PickDateActivity" />

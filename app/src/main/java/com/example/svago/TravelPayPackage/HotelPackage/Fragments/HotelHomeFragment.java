@@ -1,4 +1,4 @@
-package com.example.svago.HotelPackage.Fragments;
+package com.example.svago.TravelPayPackage.HotelPackage.Fragments;
 
 
 import android.annotation.SuppressLint;

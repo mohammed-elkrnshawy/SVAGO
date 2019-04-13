@@ -1,15 +1,15 @@
-package com.example.svago.CarPackage.Activities;
+package com.example.svago.TravelPayPackage.FlightPackage.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.svago.R;
 
-public class CarResultActivity extends AppCompatActivity {
+public class ClassTransferActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_car_result);
+        setContentView(R.layout.activity_class_transfer);
     }
 }

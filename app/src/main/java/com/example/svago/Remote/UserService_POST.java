@@ -30,9 +30,7 @@ public interface UserService_POST {
             @Header("Authorization") String Authorization,
             @Query("name") String name,
             @Query("email") String email,
-            @Query("password") String password,
-            @Query("phone") String phone,
-            @Query("country") int country
+            @Query("phone") String phone
     );
 
     @POST("auth/login")

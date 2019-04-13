@@ -1,7 +1,6 @@
 package com.example.svago.TravelPayPackage;
 
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,9 +10,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.svago.CarPackage.Fragments.CarHomeFragment;
-import com.example.svago.FlightPackage.Fragments.FlightHomeFragment;
-import com.example.svago.HotelPackage.Fragments.HotelHomeFragment;
+import com.example.svago.TravelPayPackage.CarPackage.Fragments.CarHomeFragment;
+import com.example.svago.TravelPayPackage.FlightPackage.Fragments.FlightHomeFragment;
+import com.example.svago.TravelPayPackage.HotelPackage.Fragments.HotelHomeFragment;
 import com.example.svago.R;
 import com.example.svago.SharedPackage.Classes.Constant;
 

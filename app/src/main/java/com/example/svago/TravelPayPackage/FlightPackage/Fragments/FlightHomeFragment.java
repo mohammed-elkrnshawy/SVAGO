@@ -1,5 +1,4 @@
-package com.example.svago.CarPackage.Fragments;
-
+package com.example.svago.TravelPayPackage.FlightPackage.Fragments;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -21,46 +20,37 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-@SuppressLint("ValidFragment")
-public class CarHomeFragment extends Fragment {
 
-    private ImageView imgCar;
-    private TextView txtCar;
+@SuppressLint("ValidFragment")
+public class FlightHomeFragment extends Fragment {
+
+    private TextView txtFlight;
+    private ImageView imgFlight;
     private View view;
 
-    @BindView(R.id.cardClick) CardView cardClick;
+    @BindView(R.id.cardClick)
+    CardView cardClick;
 
-    public CarHomeFragment(ImageView imgCar,TextView txtCar) {
-       this.imgCar=imgCar;
-       this.txtCar=txtCar;
+    public FlightHomeFragment(ImageView imgFlight,TextView txtFlight) {
+        this.imgFlight=imgFlight;
+        this.txtFlight=txtFlight;
     }
 
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view= inflater.inflate(R.layout.fragment_car_home, container, false);
+        view= inflater.inflate(R.layout.fragment_flight_home, container, false);
         ButterKnife.bind(this,view);
 
         return view;
     }
 
-
     @OnClick({R.id.cardClick}) void onClick()
     {
         Intent intent=new Intent(getContext(), WaitingSearchActivity.class);
-        intent.putExtra(Constant.TypeTag,Constant.CarTag);
+        intent.putExtra(Constant.TypeTag,Constant.FlightTag);
         startActivity(intent);
     }
-
-
-
-
-
 
 
 
@@ -69,17 +59,14 @@ public class CarHomeFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        txtCar.setTextColor(ContextCompat.getColor(getContext(), R.color.ColorPink));
-        imgCar.setColorFilter(ContextCompat.getColor(getContext(), R.color.ColorPink), android.graphics.PorterDuff.Mode.SRC_IN);
+        txtFlight.setTextColor(ContextCompat.getColor(getContext(), R.color.ColorPink));
+        imgFlight.setColorFilter(ContextCompat.getColor(getContext(), R.color.ColorPink), android.graphics.PorterDuff.Mode.SRC_IN);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        txtCar.setTextColor(ContextCompat.getColor(getContext(), R.color.ColorGray));
-        imgCar.setColorFilter(ContextCompat.getColor(getContext(), R.color.ColorGray), android.graphics.PorterDuff.Mode.SRC_IN);
+        txtFlight.setTextColor(ContextCompat.getColor(getContext(), R.color.ColorGray));
+        imgFlight.setColorFilter(ContextCompat.getColor(getContext(), R.color.ColorGray), android.graphics.PorterDuff.Mode.SRC_IN);
     }
-
-
-
 }

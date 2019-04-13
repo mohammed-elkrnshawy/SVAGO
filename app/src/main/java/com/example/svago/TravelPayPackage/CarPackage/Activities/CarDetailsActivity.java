@@ -1,4 +1,4 @@
-package com.example.svago.CarPackage.Activities;
+package com.example.svago.TravelPayPackage.CarPackage.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

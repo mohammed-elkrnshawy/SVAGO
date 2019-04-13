@@ -1,25 +1,16 @@
 package com.example.svago.SharedPackage.Activity;
 
-import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.GravityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.svago.CarPackage.Fragments.CarHomeFragment;
-import com.example.svago.FlightPackage.Fragments.FlightHomeFragment;
-import com.example.svago.HotelPackage.Fragments.HotelHomeFragment;
+import com.example.svago.GuidePackage.GuideFragment;
 import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.OfferPackage.OfferFragment;
 import com.example.svago.R;
@@ -102,6 +93,9 @@ public class MainHomeActivity extends AppCompatActivity {
                         return true;
                     case R.id.svago:
                         setFragment(new SvagoFragment(),Constant.SvagoTag);
+                        return true;
+                    case R.id.guide:
+                        setFragment(new GuideFragment(),Constant.GuideTag);
                         return true;
                     case R.id.more:
                         setFragment(new MoreFragment(),getString(R.string.more));

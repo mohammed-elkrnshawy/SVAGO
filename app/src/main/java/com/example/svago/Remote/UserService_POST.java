@@ -34,6 +34,12 @@ public interface UserService_POST {
             @Query("phone") String phone
     );
 
+    @Headers({ "Content-Type: application/json;charset=UTF-8"})
+    @POST("auth/profile")
+    Call<AuthResponse> getUser(
+            @Header("Authorization") String Authorization
+    );
+
     @POST("auth/login")
     Call<AuthResponse> Login(
             @Query("email") String email,
@@ -74,6 +80,8 @@ public interface UserService_POST {
             @Query("description") String description ,
             @Query("budget") String budget
     );
+
+
 
 }
 

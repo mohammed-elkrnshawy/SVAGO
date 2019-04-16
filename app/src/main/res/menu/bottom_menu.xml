@@ -22,8 +22,8 @@
         android:icon="@drawable/ic_credit_cards"/>
 
     <item android:id="@+id/more"
-        android:title="@string/my_profile"
-        android:icon="@drawable/ic_user"/>
+        android:title="@string/more"
+        android:icon="@drawable/ic_more"/>
 
 
 

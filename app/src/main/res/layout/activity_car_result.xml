@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CarPackage.Activities.CarResultActivity">
+    tools:context=".TravelPayPackage.CarPackage.Activities.CarResultActivity">
 
     <include layout="@layout/view_offer"
         android:id="@+id/rowClick"/>

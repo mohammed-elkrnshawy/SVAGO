@@ -17,11 +17,11 @@
         android:title="@string/svago"
         android:icon="@drawable/ic_ballon"/>
 
-    <item android:id="@+id/manage"
+    <item android:id="@+id/guide"
         android:title="@string/manage"
         android:icon="@drawable/ic_credit_cards"/>
 
-    <item android:id="@+id/my_profile"
+    <item android:id="@+id/more"
         android:title="@string/my_profile"
         android:icon="@drawable/ic_user"/>
 

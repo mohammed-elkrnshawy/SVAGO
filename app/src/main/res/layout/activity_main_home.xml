@@ -7,18 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".SharedPackage.Activity.MainHomeActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:layout_marginStart="-20dp"
-        android:id="@+id/homeToolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize">
-    </android.support.v7.widget.Toolbar>
 
     <FrameLayout
         android:background="@color/colorWhite"
         android:layout_above="@id/navigation"
         android:id="@+id/conainerHome"
-        android:layout_below="@id/homeToolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></FrameLayout>
 

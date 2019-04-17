@@ -1,8 +1,6 @@
 package com.example.svago.SharedPackage.Activity;
 
-import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -17,11 +15,10 @@ import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.OfferPackage.OfferFragment;
 import com.example.svago.R;
 import com.example.svago.SharedPackage.Classes.Constant;
-import com.example.svago.SidePackage.MoreFragment;
+import com.example.svago.SidePackage.MorePackage.MoreFragment;
 import com.example.svago.SvagoPackage.SvagoFragment;
 import com.example.svago.TravelPayPackage.MainTravelFragment;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainHomeActivity extends AppCompatActivity {

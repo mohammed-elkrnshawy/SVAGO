@@ -67,4 +67,10 @@
     <string name="get_location">Get Location</string>
     <string name="required_field">Required Field</string>
     <string name="guide_requested">Guide requested</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="language">Language</string>
+    <string name="terms_and_conditions">Terms and conditions</string>
+    <string name="about">About Us</string>
+    <string name="logout">Logout</string>
+    <string name="version">Version</string>
 </resources>

@@ -57,5 +57,4 @@ dependencies {
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
 
 
-
 }

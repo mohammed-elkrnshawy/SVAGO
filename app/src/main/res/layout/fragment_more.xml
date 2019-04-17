@@ -23,49 +23,4 @@
         android:layout_height="wrap_content"
         android:text="@string/my_profile"/>
 
-    <TextView
-        android:id="@+id/txtContact"
-        android:padding="10dp"
-        android:textSize="14dp"
-        android:textColor="@color/colorBlack"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/Contact_us"/>
-
-    <TextView
-        android:id="@+id/txtLanguage"
-        android:padding="10dp"
-        android:textSize="14dp"
-        android:textColor="@color/colorBlack"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/Language"/>
-
-    <TextView
-        android:id="@+id/txtAbout"
-        android:padding="10dp"
-        android:textSize="14dp"
-        android:textColor="@color/colorBlack"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/About_Us"/>
-
-    <TextView
-        android:id="@+id/txtTerms"
-        android:padding="10dp"
-        android:textSize="14dp"
-        android:textColor="@color/colorBlack"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/my_Terms"/>
-
-    <TextView
-        android:id="@+id/txtVersion"
-        android:padding="10dp"
-        android:textSize="14dp"
-        android:textColor="@color/colorBlack"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/Version"/>
-
 </LinearLayout>

@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.R;
 import com.example.svago.SharedPackage.Classes.Constant;
+import com.example.svago.SidePackage.ProfilePackage.ProfileFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,19 +22,9 @@ import butterknife.OnClick;
  */
 public class MoreFragment extends Fragment {
 
-    @BindView(R.id.txtContact)
-    TextView txtContact;
-    @BindView(R.id.txtLanguage)
-    TextView txtLanguage;
-    @BindView(R.id.txtAbout)
-    TextView txtAbout;
-    @BindView(R.id.txtTerms)
-    TextView txtTerms;
-    @BindView(R.id.txtLogout)
-    TextView txtLogout;
     private View view;
     private userData userObject;
-    private Bundle bundleExtra = new Bundle();
+    private Bundle bundleExtra=new Bundle();
 
     @BindView(R.id.txtProfile)
     TextView txtProfile;
@@ -42,25 +33,18 @@ public class MoreFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_more, container, false);
-        ButterKnife.bind(this, view);
+        // Inflate the layout for this fragment
+        view= inflater.inflate(R.layout.fragment_more, container, false);
+        ButterKnife.bind(this,view);
         getIntentData();
         return view;
     }
 
     private void getIntentData() {
-        Bundle bundle = getArguments();
-        if (!bundle.isEmpty()) {
-            userObject = (userData) bundle.getSerializable(Constant.userFlag);
+        Bundle bundle=getArguments();
+        if (!bundle.isEmpty()){
+            userObject=(userData) bundle.getSerializable(Constant.userFlag);
         }
-    }
-
-
-    private void setFragment(Fragment fragment, String Title) {
-        bundleExtra.putSerializable(Constant.userFlag, userObject);
-        fragment.setArguments(bundleExtra);
-        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.conainerHome, fragment).addToBackStack(Title)
-                .commitAllowingStateLoss();
     }
 
 
@@ -68,6 +52,7 @@ public class MoreFragment extends Fragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.txtProfile:
+                setFragment(new ProfileFragment(),getString(R.string.my_profile));
                 break;
             case R.id.txtContact:
                 break;
@@ -80,5 +65,12 @@ public class MoreFragment extends Fragment {
             case R.id.txtLogout:
                 break;
         }
+    }
+
+    private void setFragment(Fragment fragment, String Title) {
+        bundleExtra.putSerializable(Constant.userFlag,userObject);
+        fragment.setArguments(bundleExtra);
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.conainerHome,fragment).addToBackStack(Title)
+                .commitAllowingStateLoss();
     }
 }

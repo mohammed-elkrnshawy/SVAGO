@@ -88,7 +88,7 @@ public class MainHomeActivity extends AppCompatActivity {
                         setFragment(new MainTravelFragment(),Constant.TravelTag);
                         return true;
                         case R.id.offers:
-                        setFragment(new OfferFragment(),Constant.TravelTag);
+                        setFragment(new OfferFragment(),Constant.OfferTag);
                         return true;
                     case R.id.svago:
                         setFragment(new SvagoFragment(),Constant.SvagoTag);

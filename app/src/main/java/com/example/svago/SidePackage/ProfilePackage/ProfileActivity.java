@@ -1,4 +1,4 @@
-package com.example.svago.SharedPackage.Activity.ProfilePackage;
+package com.example.svago.SidePackage.ProfilePackage;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

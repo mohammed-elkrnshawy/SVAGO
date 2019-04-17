@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SharedPackage.Activity.ContactUs.ContactUSActivity"></activity>
-        <activity android:name=".SharedPackage.Activity.ProfilePackage.ProfileActivity" />
+        <activity android:name=".SidePackage.ProfilePackage.ProfileActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

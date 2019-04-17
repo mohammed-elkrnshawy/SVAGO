@@ -71,6 +71,9 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(Flight);
                 break;
             case R.id.cardDeal:
+                Intent Offers=new Intent(HomeActivity.this, MainHomeActivity.class);
+                Offers.putExtra(Constant.TypeTag,Constant.OfferTag);
+                startActivity(Offers);
                 break;
         }
     }

@@ -22,8 +22,6 @@
     <string name="car">Car</string>
     <string name="flight">Flight</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ticket_status">Ticket Status</string>
     <string name="refferance">Refferance</string>
     <string name="e_ticket">e-Ticket</string>
@@ -75,5 +73,6 @@
     <string name="about">About Us</string>
     <string name="logout">Logout</string>
     <string name="version">Version</string>
+    <string name="profile">Profile</string>
 
 </resources>

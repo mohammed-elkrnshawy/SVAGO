@@ -11,7 +11,11 @@ import android.widget.TextView;
 import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.R;
 import com.example.svago.SharedPackage.Classes.Constant;
+import com.example.svago.SidePackage.AboutUsPackage.AboutUsFragment;
+import com.example.svago.SidePackage.ContactUsPackage.ContactUsFragment;
+import com.example.svago.SidePackage.LanguagePackage.LanguageFragment;
 import com.example.svago.SidePackage.ProfilePackage.ProfileFragment;
+import com.example.svago.SidePackage.TermsPackage.TermsFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,6 +29,7 @@ public class MoreFragment extends Fragment {
     private View view;
     private userData userObject;
     private Bundle bundleExtra=new Bundle();
+    MorePresenter morePresenter ;
 
     @BindView(R.id.txtProfile)
     TextView txtProfile;
@@ -36,16 +41,12 @@ public class MoreFragment extends Fragment {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_more, container, false);
         ButterKnife.bind(this,view);
-        getIntentData();
+        morePresenter = new MorePresenter(getActivity()) ;
+        morePresenter.getIntentData(this);
         return view;
     }
 
-    private void getIntentData() {
-        Bundle bundle=getArguments();
-        if (!bundle.isEmpty()){
-            userObject=(userData) bundle.getSerializable(Constant.userFlag);
-        }
-    }
+
 
 
     @OnClick({R.id.txtProfile, R.id.txtContact, R.id.txtLanguage, R.id.txtAbout, R.id.txtTerms, R.id.txtLogout})
@@ -55,12 +56,16 @@ public class MoreFragment extends Fragment {
                 setFragment(new ProfileFragment(),getString(R.string.my_profile));
                 break;
             case R.id.txtContact:
+                setFragment(new ContactUsFragment() , getString(R.string.contact_us));
                 break;
             case R.id.txtLanguage:
+                setFragment(new LanguageFragment() , getString(R.string.language));
                 break;
             case R.id.txtAbout:
+                setFragment(new AboutUsFragment() , getString(R.string.about));
                 break;
             case R.id.txtTerms:
+                setFragment(new TermsFragment() , getString(R.string.terms_and_conditions));
                 break;
             case R.id.txtLogout:
                 break;

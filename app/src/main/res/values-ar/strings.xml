@@ -74,5 +74,11 @@
     <string name="logout">Logout</string>
     <string name="version">Version</string>
     <string name="profile">Profile</string>
+    <string name="send">send</string>
+    <string name="message">Message</string>
+    <string name="select_your_language">Select Your Language :</string>
+    <string name="english">English</string>
+    <string name="arabic">Arabic</string>
+    <string name="turkish">Turkish</string>
 
 </resources>

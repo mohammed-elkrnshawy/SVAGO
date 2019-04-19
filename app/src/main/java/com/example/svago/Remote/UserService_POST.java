@@ -3,6 +3,7 @@ package com.example.svago.Remote;
 
 import com.example.svago.Models.CarDetailsResponses.CarDetailsResponse;
 import com.example.svago.Models.LoginResponses.AuthResponse;
+import com.example.svago.Models.OrderCarResponses.OrderCarResponse;
 import com.example.svago.Models.ResponseStatus.ResponseStatus;
 import com.example.svago.Models.SvagoResponses.SvagoResponse;
 import com.example.svago.Models.TripDetailsResponses.TripDetailsResponse;
@@ -67,6 +68,17 @@ public interface UserService_POST {
     Call<TripDetailsResponse> TripDetails(
             @Path("id") int carID,
             @Query("currency_id") int currency_id
+    );
+
+    @Headers({ "Content-Type: application/json;charset=UTF-8"})
+    @POST("payments/car")
+    Call<OrderCarResponse> orderCar(
+            @Header("Authorization") String Authorization,
+            @Query("car_id") int car_id,
+            @Query("from") String from,
+            @Query("to") String to,
+            @Query("lat") double lat,
+            @Query("lng") double lng
     );
 
     @Headers({ "Content-Type: application/json;charset=UTF-8"})

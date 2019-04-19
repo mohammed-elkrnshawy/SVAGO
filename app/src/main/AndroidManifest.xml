@@ -6,7 +6,9 @@
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality.
     -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -16,16 +18,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SharedPackage.Activity.ContactUs.ContactUSActivity"></activity>
+        <activity android:name=".SvagoPackage.CarPackage.CarOrderActivity"></activity>
+        <activity android:name=".SharedPackage.Activity.ContactUs.ContactUSActivity" />
         <activity android:name=".SidePackage.ProfilePackage.ProfileActivity" />
-        <!--
-             The API key for Google Maps-based APIs is defined as a string resource.
-             (See the file "res/values/google_maps_api.xml").
-             Note that the API key is linked to the encryption key used to sign the APK.
-             You need a different API key for each encryption key, including the release key that is used to
-             sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/.
-        -->
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
@@ -33,19 +29,18 @@
         <activity
             android:name=".SharedPackage.Activity.MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".SvagoPackage.SvagoDetailsActivity" />
+        <activity android:name=".SvagoPackage.TripPackage.SvagoDetailsActivity" />
         <activity android:name=".SidePackage.ProfilePackage.EditProfileActivity" />
         <activity android:name=".AuthPackage.LoginPackage.LoginActivity" />
         <activity android:name=".AuthPackage.RegisterPackage.RegisterActivity" />
         <activity android:name=".TravelPayPackage.HotelPackage.Activities.HotelResultActivity" />
         <activity android:name=".TravelPayPackage.FlightPackage.Activities.FlightResultActivity" />
-        <activity android:name=".TravelPayPackage.CarPackage.Activities.CarResultActivity" />
         <activity
             android:name=".SharedPackage.Activity.MainHomeActivity"
             android:label=""
-            android:windowSoftInputMode="stateAlwaysHidden|stateVisible" /> <!-- stateVisible|adjustResize -->
+            android:windowSoftInputMode="stateAlwaysHidden|stateVisible" />
         <activity android:name=".TravelPayPackage.FlightPackage.Activities.TripDetailsActivity" />
-        <activity android:name=".TravelPayPackage.CarPackage.Activities.CarDetailsActivity" />
+        <activity android:name=".SvagoPackage.CarPackage.CarDetailsActivity" />
         <activity android:name=".SharedPackage.Activity.WaitingSearchActivity" />
         <activity android:name=".TravelPayPackage.FlightPackage.Activities.BookingInformationActivity" />
         <activity android:name=".SharedPackage.Activity.PaymentSuccessActivity" />

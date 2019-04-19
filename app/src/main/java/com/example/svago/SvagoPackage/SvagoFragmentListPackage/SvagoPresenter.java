@@ -1,14 +1,13 @@
-package com.example.svago.SvagoPackage;
+package com.example.svago.SvagoPackage.SvagoFragmentListPackage;
 
 import android.support.v7.widget.LinearLayoutManager;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.Models.SvagoResponses.SvagoData;
 import com.example.svago.Models.SvagoResponses.SvagoResponse;
 import com.example.svago.Remote.ApiUtlis;
 import com.example.svago.Remote.UserService_POST;
-import com.example.svago.SharedPackage.Classes.Constant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,10 +24,10 @@ public class SvagoPresenter {
     private List<SvagoData> svagoDataList=new ArrayList<>();
     private LinearLayoutManager linearLayoutManager;
 
-    public SvagoPresenter(SvagoFragment svagoFragment){
+    public SvagoPresenter(SvagoFragment svagoFragment, userData userData){
         this.view=svagoFragment;
         userServicePost= ApiUtlis.getUserServices_Post();
-        svagoAdapter=new SvagoAdapter(svagoDataList,view.getContext());
+        svagoAdapter=new SvagoAdapter(svagoDataList,view.getContext(),userData);
     }
 
 

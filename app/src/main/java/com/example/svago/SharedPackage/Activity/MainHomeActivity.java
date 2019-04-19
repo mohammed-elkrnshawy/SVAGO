@@ -16,7 +16,7 @@ import com.example.svago.OfferPackage.OfferFragment;
 import com.example.svago.R;
 import com.example.svago.SharedPackage.Classes.Constant;
 import com.example.svago.SidePackage.MorePackage.MoreFragment;
-import com.example.svago.SvagoPackage.SvagoFragment;
+import com.example.svago.SvagoPackage.SvagoFragmentListPackage.SvagoFragment;
 import com.example.svago.TravelPayPackage.MainTravelFragment;
 
 import butterknife.ButterKnife;

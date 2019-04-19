@@ -1,4 +1,4 @@
-package com.example.svago.TravelPayPackage.CarPackage.Activities;
+package com.example.svago.SvagoPackage.CarPackage;
 
 import com.example.svago.Models.CarDetailsResponses.CarData;
 

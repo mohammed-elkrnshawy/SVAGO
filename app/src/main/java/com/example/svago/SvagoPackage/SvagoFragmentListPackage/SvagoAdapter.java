@@ -1,4 +1,4 @@
-package com.example.svago.SvagoPackage;
+package com.example.svago.SvagoPackage.SvagoFragmentListPackage;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.example.svago.TravelPayPackage.CarPackage.Activities.CarDetailsActivity;
+import com.example.svago.SvagoPackage.TripPackage.SvagoDetailsActivity;
+import com.example.svago.SvagoPackage.CarPackage.CarDetailsActivity;
 import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.Models.SvagoResponses.SvagoData;
 import com.example.svago.R;
@@ -24,9 +25,10 @@ public class SvagoAdapter extends RecyclerView.Adapter<SvagoAdapter.ViewHolder> 
     private Context context ;
     private userData userObject;
 
-    public SvagoAdapter(List<SvagoData> cartList, Context context) {
+    public SvagoAdapter(List<SvagoData> cartList, Context context,userData userObject) {
         this.svagoDataList = cartList;
         this.context = context;
+        this.userObject=userObject;
     }
 
     @NonNull

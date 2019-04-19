@@ -35,8 +35,8 @@
             android:label="@string/title_activity_maps" />
         <activity android:name=".SvagoPackage.SvagoDetailsActivity" />
         <activity android:name=".SidePackage.ProfilePackage.EditProfileActivity" />
-        <activity android:name=".AuthPackage.LoginActivity" />
-        <activity android:name=".AuthPackage.RegisterActivity" />
+        <activity android:name=".AuthPackage.LoginPackage.LoginActivity" />
+        <activity android:name=".AuthPackage.RegisterPackage.RegisterActivity" />
         <activity android:name=".TravelPayPackage.HotelPackage.Activities.HotelResultActivity" />
         <activity android:name=".TravelPayPackage.FlightPackage.Activities.FlightResultActivity" />
         <activity android:name=".TravelPayPackage.CarPackage.Activities.CarResultActivity" />

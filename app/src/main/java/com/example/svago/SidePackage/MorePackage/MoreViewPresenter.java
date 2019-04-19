@@ -2,7 +2,9 @@ package com.example.svago.SidePackage.MorePackage;
 
 import android.support.v4.app.Fragment;
 
+import com.example.svago.Models.SharedResponses.userData;
+
 public interface MoreViewPresenter {
 
-    void getIntentData(Fragment fragment);
+    userData getIntentData(Fragment fragment);
 }

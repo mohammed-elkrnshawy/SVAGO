@@ -1,7 +1,7 @@
-package com.example.svago.AuthPackage;
+package com.example.svago.AuthPackage.LoginPackage;
 
 import android.app.Dialog;
-import android.view.View;
+import android.content.SharedPreferences;
 import android.widget.Toast;
 
 import com.example.svago.Models.LoginResponses.AuthResponse;
@@ -12,6 +12,8 @@ import com.example.svago.SharedPackage.Classes.SharedUtils;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class LoginPresenter {
 
@@ -39,6 +41,7 @@ public class LoginPresenter {
             public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
                 if (response.isSuccessful()){
                     if (response.body().getStatus()==200){
+                        SharedPreferencesPut(response.body().getData().getToken());
                         view.successLogin(response.body().getData());
                         progressDialog.dismiss();
                     }else {
@@ -61,5 +64,12 @@ public class LoginPresenter {
 
     public void openRegister() {
         view.openRegister();
+    }
+
+    private void SharedPreferencesPut(String UserUID) {
+        SharedPreferences.Editor editor = view.getSharedPreferences(view.getPackageName(), MODE_PRIVATE).edit();
+        editor.putString("Token", UserUID);
+        editor.putBoolean("isLogin", true);
+        editor.apply();
     }
 }

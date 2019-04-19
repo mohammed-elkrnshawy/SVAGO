@@ -22,7 +22,8 @@ public class userData implements Serializable {
     private String phone;
     @Expose
     private String country;
-
+    @Expose
+    private int countryID;
 
     public String getLanguage() {
         return language;
@@ -78,5 +79,13 @@ public class userData implements Serializable {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public void setCountryID(int countryID) {
+        this.countryID = countryID;
+    }
+
+    public int getCountryID() {
+        return countryID;
     }
 }

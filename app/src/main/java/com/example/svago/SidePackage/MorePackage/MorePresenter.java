@@ -14,9 +14,7 @@ import com.example.svago.SharedPackage.Classes.Constant;
 
 public class MorePresenter implements MoreViewPresenter {
 
-    private View view;
     private userData userObject;
-    private Bundle bundleExtra=new Bundle();
     private Context context ;
 
     public MorePresenter(Context context) {
@@ -24,10 +22,12 @@ public class MorePresenter implements MoreViewPresenter {
     }
 
     @Override
-    public void getIntentData(Fragment fragment) {
+    public userData getIntentData(Fragment fragment) {
         Bundle bundle = fragment.getArguments();
         if (!bundle.isEmpty()){
             userObject=(userData) bundle.getSerializable(Constant.userFlag);
         }
+
+        return userObject;
     }
 }

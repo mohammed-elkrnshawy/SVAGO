@@ -10,6 +10,8 @@ public class AuthResponse {
     @Expose
     private userData data;
     @Expose
+    private userData date;
+    @Expose
     private int status;
     @Expose
     private String error;
@@ -36,5 +38,9 @@ public class AuthResponse {
 
     public void setError(String error) {
         this.error = error;
+    }
+
+    public userData getDate() {
+        return date;
     }
 }

@@ -6,16 +6,15 @@ import android.content.res.Configuration;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.example.svago.AuthPackage.LoginActivity;
-import com.example.svago.AuthPackage.RegisterActivity;
+import com.example.svago.AuthPackage.LoginPackage.LoginActivity;
 import com.example.svago.Models.LoginResponses.AuthResponse;
 import com.example.svago.R;
-import com.example.svago.Remote.UserService;
+import com.example.svago.Remote.ApiUtlis;
 import com.example.svago.Remote.UserService_POST;
+import com.example.svago.SharedPackage.Classes.Constant;
 import com.example.svago.SharedPackage.Classes.LanguageType;
 
 import java.util.Locale;
@@ -61,14 +60,19 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
-    private void getUser(String token) {
+    private void getUser(final String token) {
+        userService= ApiUtlis.getUserServices_Post();
         Call<AuthResponse> call = userService.getUser("Bearer "+token);
         call.enqueue(new Callback<AuthResponse>() {
             @Override
             public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
                 if (response.isSuccessful()){
                     if (response.body().getStatus()==200){
-
+                        response.body().getDate().setToken(token);
+                        Intent intent=new Intent(SplashActivity.this, HomeActivity.class);
+                        intent.putExtra(Constant.userFlag,response.body().getDate());
+                        startActivity(intent);
+                        finishAffinity();
                     }else {
                         Toast.makeText(SplashActivity.this, response.body().getError(), Toast.LENGTH_SHORT).show();
                     }

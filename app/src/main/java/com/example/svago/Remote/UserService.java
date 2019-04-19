@@ -1,6 +1,21 @@
 package com.example.svago.Remote;
 
 
+import com.example.svago.Models.CountriesResponses.CountriesResponse;
+import com.example.svago.Models.LoginResponses.AuthResponse;
+
+import retrofit2.Call;
+import retrofit2.http.GET;
+import retrofit2.http.Header;
+import retrofit2.http.Headers;
+import retrofit2.http.POST;
+import retrofit2.http.Query;
+
 public interface UserService {
 
+    @Headers({ "Content-Type: application/json;charset=UTF-8"})
+    @GET("resources/countries")
+    Call<CountriesResponse> getCountry(
+            //@Header("Authorization") String Authorization
+    );
 }

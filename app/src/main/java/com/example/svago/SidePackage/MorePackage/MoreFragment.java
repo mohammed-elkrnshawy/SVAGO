@@ -42,7 +42,7 @@ public class MoreFragment extends Fragment {
         view= inflater.inflate(R.layout.fragment_more, container, false);
         ButterKnife.bind(this,view);
         morePresenter = new MorePresenter(getActivity()) ;
-        morePresenter.getIntentData(this);
+        userObject=morePresenter.getIntentData(this);
         return view;
     }
 

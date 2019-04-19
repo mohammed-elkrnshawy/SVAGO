@@ -1,4 +1,4 @@
-package com.example.svago.AuthPackage;
+package com.example.svago.AuthPackage.RegisterPackage;
 
 import android.app.Dialog;
 import android.widget.Toast;
@@ -32,7 +32,8 @@ public class RegisterPresenter {
     public void callRegister(userData userData) {
         progressDialog.show();
         Call<AuthResponse> call=userServicePost.Register(
-                userData.getUsername(),userData.getEmail(),userData.getPassword(),"token","en");
+                userData.getUsername(),userData.getEmail(),userData.getPassword(),
+                "token","en",userData.getCountryID(),userData.getPhone());
         call.enqueue(new Callback<AuthResponse>() {
             @Override
             public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {

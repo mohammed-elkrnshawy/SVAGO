@@ -22,7 +22,9 @@ public interface UserService_POST {
             @Query("email") String email,
             @Query("password") String password,
             @Query("device_token") String device_token,
-            @Query("language") String language
+            @Query("language") String language,
+            @Query("country") int country,
+            @Query("phone") String phone
     );
 
     @Headers({ "Content-Type: application/json;charset=UTF-8"})

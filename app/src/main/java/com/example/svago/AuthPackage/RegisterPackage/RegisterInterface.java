@@ -1,4 +1,4 @@
-package com.example.svago.AuthPackage;
+package com.example.svago.AuthPackage.RegisterPackage;
 
 import com.example.svago.Models.SharedResponses.userData;
 

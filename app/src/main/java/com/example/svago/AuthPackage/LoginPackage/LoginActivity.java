@@ -1,4 +1,4 @@
-package com.example.svago.AuthPackage;
+package com.example.svago.AuthPackage.LoginPackage;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.svago.AuthPackage.RegisterPackage.RegisterActivity;
 import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.R;
 import com.example.svago.SharedPackage.Activity.HomeActivity;
@@ -80,7 +81,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
 
     @Override
     public void openRegister() {
-        startActivity(new Intent(this,RegisterActivity.class));
+        startActivity(new Intent(this, RegisterActivity.class));
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.example.svago.AuthPackage;
+package com.example.svago.AuthPackage.RegisterPackage;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,15 +6,20 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.svago.AuthPackage.LoginPackage.LoginActivity;
+import com.example.svago.Models.CountriesResponses.CountyData;
 import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.R;
 import com.example.svago.SharedPackage.Activity.HomeActivity;
-import com.example.svago.SharedPackage.Activity.MainHomeActivity;
 import com.example.svago.SharedPackage.Classes.Constant;
+import com.example.svago.SharedPackage.Classes.CountryAdapterHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,7 +30,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
     @BindView(R.id.edtName)
     EditText edtName;
     @BindView(R.id.edtCountry)
-    EditText edtCountry;
+    Spinner edtCountry;
     @BindView(R.id.edtEmail)
     EditText edtEmail;
     @BindView(R.id.edtPhone)
@@ -39,7 +44,9 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
     @BindView(R.id.txtLogin)
     TextView txtLogin;
 
+    private CountryAdapterHelper adapterHelper;
     private RegisterPresenter registerPresenter;
+    private CountyData countyData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +59,23 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
 
     private void initComponents() {
         registerPresenter=new RegisterPresenter(this);
+        adapterHelper=new CountryAdapterHelper(this);
+        adapterHelper.PrepareSpinner(edtCountry);
+        SelectItems();
+    }
+
+    private void SelectItems() {
+        edtCountry.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                countyData=(CountyData) parent.getItemAtPosition(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     @OnClick({R.id.cartRegister,R.id.txtLogin}) void onButtonClick(View view){
@@ -70,12 +94,6 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
         if(TextUtils.isEmpty(edtName.getText())){
             edtName.setError(getResources().getString(R.string.requiredField));
             edtName.requestFocus();
-            return;
-        }
-
-        if(TextUtils.isEmpty(edtCountry.getText().toString().trim())){
-            edtCountry.setError(getResources().getString(R.string.requiredField));
-            edtCountry.requestFocus();
             return;
         }
 
@@ -101,15 +119,15 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
         userData.setEmail(edtEmail.getText().toString().trim());
         userData.setUsername(edtName.getText().toString().trim());
         userData.setPassword(edtPassword.getText().toString().trim());
-        userData.setCountry(edtCountry.getText().toString().trim());
+        userData.setCountry(countyData.getTitle());
         userData.setPhone(edtPhone.getText().toString().trim());
-
+        userData.setCountryID(countyData.getId());
         registerPresenter.callRegister(userData);
     }
 
     @Override
     public void successRegister(userData userData) {
-        Intent intent=new Intent(this, HomeActivity.class);
+        Intent intent=new Intent(this, LoginActivity.class);
         intent.putExtra(Constant.userFlag,userData);
         startActivity(intent);
         finishAffinity();

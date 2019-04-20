@@ -12,6 +12,8 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class SharedClass {
     private static Dialog progressDialog ;
+    public static String Currency="";
+    public static int CurrencyID ;
 
     public static String getLocalization(Context context)
     {

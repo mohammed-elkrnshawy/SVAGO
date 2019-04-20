@@ -16,7 +16,7 @@
 
         <RelativeLayout
             android:id="@+id/rel"
-            android:layout_width="200dp"
+            android:layout_width="175dp"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             >
@@ -24,7 +24,8 @@
 
             <LinearLayout
                 android:id="@+id/lin"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
@@ -40,6 +41,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
                     android:text="5"
+                    android:id="@+id/txtPassenger"
                     android:textColor="@color/colorPink2" />
 
                 <ImageView
@@ -50,6 +52,7 @@
                     android:src="@drawable/ic_door" />
 
                 <TextView
+                    android:id="@+id/txtDoor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
@@ -69,6 +72,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
                     android:text="5"
+                    android:id="@+id/txtGear"
                     android:textColor="@color/colorPink2" />
 
                 <ImageView
@@ -83,6 +87,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
                     android:text="5"
+                    android:id="@+id/txtCrystal"
                     android:textColor="@color/colorPink2" />
 
 
@@ -94,6 +99,7 @@
                 android:layout_below="@+id/lin"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
+                android:id="@+id/image"
                 android:layout_marginBottom="3dp"
                 android:src="@drawable/mercedes"
                 />
@@ -104,7 +110,9 @@
         <RelativeLayout
             android:layout_alignParentEnd="true"
             android:layout_toEndOf="@+id/rel"
-            android:layout_margin="10dp"
+            android:layout_margin="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -123,7 +131,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/name"
                 android:layout_marginTop="15dp"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="25dp"
                 >
 
                 <ImageView
@@ -140,50 +148,80 @@
                     android:layout_toEndOf="@+id/pin"
                     android:layout_marginStart="10dp"
                     android:textSize="12sp"
+                    android:id="@+id/txtLocation"
                     android:text="Borg El Alarb Airport"
                     />
 
             </RelativeLayout>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/reel"
+                android:layout_marginTop="30dp"
+                android:textSize="10sp"
+                android:text=""
+                android:visibility="visible"
+                android:id="@+id/txtDuration"
+                />
+
             <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
+                android:layout_toEndOf="@+id/txtDuration"
+                android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_below="@+id/reel"
-                app:cardCornerRadius="15dp"
+                app:cardCornerRadius="17dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="15dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginStart="15dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="1dp"
                 app:cardBackgroundColor="@color/ColorPink"
                 app:cardElevation="10dp"
-                app:contentPadding="5dp"
+                app:contentPadding="8dp"
                 >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start|center"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
                     android:textColor="@color/colorWhite"
                     android:text="1800 $"
-                    android:textSize="18sp"
+                    android:textSize="10sp"
+                    android:id="@+id/txtPrice"
                     />
 
 
                 <TextView
+                    android:layout_toEndOf="@+id/txtPrice"
                     android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textColor="@color/colorWhite"
                     android:text="-"
+                    android:id="@+id/o"
+                    android:layout_marginStart="4dp"
                     />
 
                 <TextView
+                    android:layout_toEndOf="@+id/o"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end|center"
                     android:textColor="@color/colorWhite"
                     android:text="1400 $"
-                    android:textSize="18sp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="4dp"
+                    android:id="@+id/txtOffer"
+                    android:textSize="10sp"
                     />
+
+                </RelativeLayout>
 
 
             </android.support.v7.widget.CardView>

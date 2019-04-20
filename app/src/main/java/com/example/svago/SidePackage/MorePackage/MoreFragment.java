@@ -13,6 +13,7 @@ import com.example.svago.R;
 import com.example.svago.SharedPackage.Classes.Constant;
 import com.example.svago.SidePackage.AboutUsPackage.AboutUsFragment;
 import com.example.svago.SidePackage.ContactUsPackage.ContactUsFragment;
+import com.example.svago.SidePackage.CurrenciesPackage.CurrenciesFragment;
 import com.example.svago.SidePackage.LanguagePackage.LanguageFragment;
 import com.example.svago.SidePackage.ProfilePackage.ProfileFragment;
 import com.example.svago.SidePackage.TermsPackage.TermsFragment;
@@ -38,7 +39,6 @@ public class MoreFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_more, container, false);
         ButterKnife.bind(this,view);
         morePresenter = new MorePresenter(getActivity()) ;
@@ -49,7 +49,7 @@ public class MoreFragment extends Fragment {
 
 
 
-    @OnClick({R.id.txtProfile, R.id.txtContact, R.id.txtLanguage, R.id.txtAbout, R.id.txtTerms, R.id.txtLogout})
+    @OnClick({R.id.txtProfile, R.id.txtContact, R.id.txtLanguage, R.id.txtAbout, R.id.txtTerms, R.id.txtLogout , R.id.txtCurrency})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.txtProfile:
@@ -66,6 +66,9 @@ public class MoreFragment extends Fragment {
                 break;
             case R.id.txtTerms:
                 setFragment(new TermsFragment() , getString(R.string.terms_and_conditions));
+                break;
+            case R.id.txtCurrency:
+                setFragment(new CurrenciesFragment() , getString(R.string.currencies));
                 break;
             case R.id.txtLogout:
                 break;

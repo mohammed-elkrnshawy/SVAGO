@@ -80,5 +80,7 @@
     <string name="english">English</string>
     <string name="arabic">Arabic</string>
     <string name="turkish">Turkish</string>
+    <string name="days_with">Days with :</string>
+    <string name="currencies">Currencies</string>
 
 </resources>

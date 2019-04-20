@@ -1,7 +1,6 @@
-package com.example.svago.OfferPackage;
+package com.example.svago.SidePackage.CurrenciesPackage;
 
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
@@ -16,29 +15,25 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class OfferFragment extends Fragment {
+public class CurrenciesFragment extends Fragment {
 
 
-    @BindView(R.id.recycleOffer)
-    RecyclerView recycleOffer;
+    @BindView(R.id.recycleCurrency)
+    RecyclerView recycleCurrency;
     @BindView(R.id.bar)
     ProgressBar bar;
     Unbinder unbinder;
-    OfferPresenter mOfferPresenter;
+
+    CurrenciesPresenter mCurrenciesPresenter ;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_offer, container, false);
+        View view = inflater.inflate(R.layout.fragment_currencies, container, false);
         unbinder = ButterKnife.bind(this, view);
-        mOfferPresenter = new OfferPresenter(getActivity() , bar);
-        mOfferPresenter.setRecycle(recycleOffer);
-        SharedPreferences prefs = getActivity().getSharedPreferences(getActivity().getPackageName(), getActivity().MODE_PRIVATE);
-        mOfferPresenter.callOffers(prefs.getInt("CurrencyID" , 1) , recycleOffer);
-
+        mCurrenciesPresenter = new CurrenciesPresenter(getActivity() , bar) ;
+        mCurrenciesPresenter.setRecycle(recycleCurrency);
+        mCurrenciesPresenter.callCurrencies(recycleCurrency);
         return view;
     }
 

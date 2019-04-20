@@ -70,7 +70,7 @@ public class SvagoDetailsPresenter implements SvagoDetailsInterface {
 
     @Override
     public void onProcessClick() {
-        Intent intent=new Intent(view, CarOrderActivity.class);
+        Intent intent=new Intent(view, TripOrderActivity.class);
         intent.putExtra("tripData",tripData);
         intent.putExtra(Constant.userFlag,userObject);
         view.startActivity(intent);

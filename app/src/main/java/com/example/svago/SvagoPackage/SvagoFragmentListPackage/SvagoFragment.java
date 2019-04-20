@@ -11,6 +11,9 @@ import android.view.ViewGroup;
 import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.R;
 import com.example.svago.SharedPackage.Classes.Constant;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -53,6 +56,16 @@ public class SvagoFragment extends Fragment {
     private void initComponents() {
         svagoPresenter=new SvagoPresenter(this,userObject);
         svagoPresenter.callData();
+        //region ImageLoader
+        DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
+                .cacheInMemory(true)
+                .cacheOnDisk(true)
+                .build();
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getContext().getApplicationContext())
+                .defaultDisplayImageOptions(defaultOptions)
+                .build();
+        ImageLoader.getInstance().init(config);
+        //endregion
     }
 
     @Override

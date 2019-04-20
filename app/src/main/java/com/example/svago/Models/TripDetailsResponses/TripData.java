@@ -17,7 +17,7 @@ public class TripData implements Serializable {
     @Expose
     private String from;
     @Expose
-    private Long id;
+    private int id;
     @Expose
     private String image;
     @Expose
@@ -65,11 +65,11 @@ public class TripData implements Serializable {
         this.from = from;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

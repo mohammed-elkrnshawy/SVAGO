@@ -73,7 +73,7 @@ public interface UserService_POST {
     @Headers({ "Content-Type: application/json;charset=UTF-8"})
     @POST("trips/{id}")
     Call<TripDetailsResponse> TripDetails(
-            @Path("id") int carID,
+            @Path("id") int tripID,
             @Query("currency_id") int currency_id
     );
 

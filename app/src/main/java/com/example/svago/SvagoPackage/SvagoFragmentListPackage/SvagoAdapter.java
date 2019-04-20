@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.svago.SvagoPackage.TripPackage.SvagoDetailsActivity;
@@ -16,6 +17,7 @@ import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.Models.SvagoResponses.SvagoData;
 import com.example.svago.R;
 import com.example.svago.SharedPackage.Classes.Constant;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
@@ -41,8 +43,10 @@ public class SvagoAdapter extends RecyclerView.Adapter<SvagoAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         if (svagoDataList.get(position).getType().equals("car")){
+            ImageLoader.getInstance().displayImage(svagoDataList.get(position).getImage(),holder.imgCar);
             holder.layoutTrip.setVisibility(View.GONE);
         }else {
+            ImageLoader.getInstance().displayImage(svagoDataList.get(position).getImage(),holder.imgTrip);
             holder.layoutCar.setVisibility(View.GONE);
         }
 
@@ -80,12 +84,15 @@ public class SvagoAdapter extends RecyclerView.Adapter<SvagoAdapter.ViewHolder> 
 
         LinearLayout layoutTrip,layoutCar;
         CardView viewParent;
+        ImageView imgCar,imgTrip;
 
         public ViewHolder(View view) {
             super(view);
             layoutTrip=view.findViewById(R.id.linearTrip);
             layoutCar=view.findViewById(R.id.linearCar);
             viewParent=view.findViewById(R.id.parent);
+            imgTrip=view.findViewById(R.id.imgTrip);
+            imgCar=view.findViewById(R.id.imgCar);
         }
     }
 }

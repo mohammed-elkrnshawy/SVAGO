@@ -8,6 +8,7 @@ import android.widget.Button;
 import com.example.svago.R;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class SvagoDetailsActivity extends AppCompatActivity {
@@ -21,7 +22,7 @@ public class SvagoDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_svago_details);
-
+        ButterKnife.bind(this);
         detailsPresenter=new SvagoDetailsPresenter(this);
         detailsPresenter.getIntentData(getIntent().getExtras());
         detailsPresenter.getData();

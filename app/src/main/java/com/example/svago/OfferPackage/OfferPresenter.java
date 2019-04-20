@@ -15,6 +15,10 @@ import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.Remote.ApiUtlis;
 import com.example.svago.Remote.UserService;
 import com.example.svago.Remote.UserService_POST;
+import com.example.svago.SharedPackage.Classes.Constant;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,17 +45,27 @@ public class OfferPresenter implements OfferViewPresenter {
         this.bar = bar ;
         userService = ApiUtlis.getUserServices_Post() ;
         offerList = new ArrayList<>() ;
+        initView();
     }
 
     @Override
     public void initView() {
-
+        //region ImageLoader
+        DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
+                .cacheInMemory(true)
+                .cacheOnDisk(true)
+                .build();
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context.getApplicationContext())
+                .defaultDisplayImageOptions(defaultOptions)
+                .build();
+        ImageLoader.getInstance().init(config);
+        //endregion
     }
 
     @Override
     public void getData(Bundle bundle) {
         if (bundle != null){
-            userData = (userData) bundle.get("data") ;
+            userData = (userData) bundle.get(Constant.userFlag) ;
         }
     }
 
@@ -60,7 +74,7 @@ public class OfferPresenter implements OfferViewPresenter {
         layoutManager = new LinearLayoutManager(context) ;
         recycle.setLayoutManager(layoutManager);
         recycle.setHasFixedSize(true);
-        mOfferAdapter = new OfferAdapter(context , offerList);
+        mOfferAdapter = new OfferAdapter(context , offerList,userData);
         recycle.setAdapter(mOfferAdapter);
     }
 

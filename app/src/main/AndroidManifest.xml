@@ -43,7 +43,7 @@
         <activity
             android:name=".SharedPackage.Activity.MainHomeActivity"
             android:label=""
-            android:windowSoftInputMode="stateAlwaysHidden|stateVisible" /> <!-- stateVisible|adjustResize -->
+            android:windowSoftInputMode="adjustPan" /> <!-- stateVisible|adjustResize -->
         <activity android:name=".TravelPayPackage.FlightPackage.Activities.TripDetailsActivity" />
         <activity android:name=".TravelPayPackage.CarPackage.Activities.CarDetailsActivity" />
         <activity android:name=".SharedPackage.Activity.WaitingSearchActivity" />

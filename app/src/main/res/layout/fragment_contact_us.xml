@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/rel"
     android:background="@color/colorWhite"
     tools:context=".SidePackage.ContactUsPackage.ContactUsFragment">
 
@@ -23,11 +24,13 @@
         android:layout_marginEnd="15dp"
         android:layout_marginTop="40dp"
         android:hint="@string/name"
+        android:id="@+id/EdtName"
         android:padding="8dp"
         android:layout_marginBottom="20dp"
         />
 
         <EditText
+            android:id="@+id/EdtEmail"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/shape_edit_txt"
@@ -35,10 +38,12 @@
             android:layout_marginEnd="15dp"
             android:hint="@string/email"
             android:padding="8dp"
+            android:inputType="textEmailAddress"
             android:layout_marginBottom="20dp"
             />
 
         <EditText
+            android:id="@+id/EdtMessage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_edit_txt"

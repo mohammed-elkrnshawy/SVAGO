@@ -45,7 +45,7 @@ public class LanguageFragment extends Fragment {
                 mLanguagePresenter.chooseLanguage("arabic","ar");
                 break;
             case R.id.Turkish:
-//                mLanguagePresenter.chooseLanguage("arabic","ar");
+                mLanguagePresenter.chooseLanguage("turkish","tr");
                 break;
         }
     }

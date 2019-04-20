@@ -82,6 +82,6 @@
     <string name="turkish">Turkish</string>
     <string name="days_with">Days with :</string>
     <string name="currencies">Currencies</string>
-    <string name="sent_success">تم إرسال رسالتك بنجاح</string>
+    <string name="sent_success">The message sent successfully</string>
 
 </resources>

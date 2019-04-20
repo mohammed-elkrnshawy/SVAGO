@@ -131,7 +131,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/name"
                 android:layout_marginTop="15dp"
-                android:layout_marginStart="25dp"
                 >
 
                 <ImageView

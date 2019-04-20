@@ -1,13 +1,13 @@
-package com.example.svago.SidePackage.TermsPackage;
+package com.example.svago.SidePackage.CurrenciesPackage;
 
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.ProgressBar;
 
 import com.example.svago.R;
 
@@ -15,26 +15,25 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class TermsFragment extends Fragment {
+public class CurrenciesFragment extends Fragment {
 
 
-    @BindView(R.id.logo)
-    ImageView logo;
-    @BindView(R.id.about)
-    TextView about;
+    @BindView(R.id.recycleCurrency)
+    RecyclerView recycleCurrency;
+    @BindView(R.id.bar)
+    ProgressBar bar;
     Unbinder unbinder;
-    TermsPresenter mTermsPresenter ;
+
+    CurrenciesPresenter mCurrenciesPresenter ;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_terms, container, false);
+        View view = inflater.inflate(R.layout.fragment_currencies, container, false);
         unbinder = ButterKnife.bind(this, view);
-        mTermsPresenter = new TermsPresenter(getActivity());
-        mTermsPresenter.callTerms(about);
+        mCurrenciesPresenter = new CurrenciesPresenter(getActivity() , bar) ;
+        mCurrenciesPresenter.setRecycle(recycleCurrency);
+        mCurrenciesPresenter.callCurrencies(recycleCurrency);
         return view;
     }
 

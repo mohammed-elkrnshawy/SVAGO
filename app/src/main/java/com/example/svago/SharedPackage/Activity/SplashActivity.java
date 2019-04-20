@@ -74,7 +74,7 @@ public class SplashActivity extends AppCompatActivity {
                         startActivity(intent);
                         finishAffinity();
                     }else {
-                        Toast.makeText(SplashActivity.this, response.code()+"", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(SplashActivity.this,LoginActivity.class));
                     }
                 }else {
                     Toast.makeText(SplashActivity.this, response.message(), Toast.LENGTH_SHORT).show();

@@ -1,11 +1,12 @@
 
 package com.example.svago.Models.TripDetailsResponses;
 
+import java.io.Serializable;
 import java.util.List;
 import com.google.gson.annotations.Expose;
 
 @SuppressWarnings("unused")
-public class TripData {
+public class TripData implements Serializable {
 
     @Expose
     private String address;

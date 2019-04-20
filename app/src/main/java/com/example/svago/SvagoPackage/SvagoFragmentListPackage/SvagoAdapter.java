@@ -62,6 +62,7 @@ public class SvagoAdapter extends RecyclerView.Adapter<SvagoAdapter.ViewHolder> 
             public void onClick(View v) {
                 Intent intent=new Intent(context, SvagoDetailsActivity.class);
                 intent.putExtra(Constant.userFlag,userObject);
+                intent.putExtra("tripID",svagoDataList.get(position).getId());
                 context.startActivity(intent);
             }
         });

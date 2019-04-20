@@ -82,6 +82,14 @@ public interface UserService_POST {
     );
 
     @Headers({ "Content-Type: application/json;charset=UTF-8"})
+    @POST("payments/trip")
+    Call<OrderCarResponse> orderTrip(
+            @Header("Authorization") String Authorization,
+            @Query("trip_id") int trip_id,
+            @Query("tickets") int tickets
+    );
+
+    @Headers({ "Content-Type: application/json;charset=UTF-8"})
     @POST("guides/order")
     Call<ResponseStatus> requestGuide(
             @Header("Authorization") String Authorization,

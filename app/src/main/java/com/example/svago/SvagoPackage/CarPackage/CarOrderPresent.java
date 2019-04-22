@@ -92,7 +92,7 @@ public class CarOrderPresent implements CarOrderInterface {
                 if (response.isSuccessful()){
                     if (response.body().getStatus()==200){
                         Intent intent=new Intent(view, PaymentActivity.class);
-                        intent.putExtra("URL",response.body().getDate().getUrl());
+                        intent.putExtra("URL",response.body().getData().getUrl());
                         view.startActivity(intent);
                     }else {
                         Toast.makeText(view, response.code()+"", Toast.LENGTH_SHORT).show();

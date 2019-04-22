@@ -118,7 +118,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
                 android:paddingStart="15dp"
-                android:hint="Ex Date"
+                android:hint="Ex Data"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/shape_gray"
                 android:layout_width="match_parent"

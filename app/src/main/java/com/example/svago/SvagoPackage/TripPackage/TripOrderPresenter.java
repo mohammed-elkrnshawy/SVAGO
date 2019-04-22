@@ -67,7 +67,7 @@ public class TripOrderPresenter implements TripOrderInterface {
                         intent.putExtra("URL",response.body().getDate().getUrl());
                         view.startActivity(intent);
                     }else {
-                        Toast.makeText(view, response.code()+"", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(view, response.body().getError(), Toast.LENGTH_SHORT).show();
                     }
                 }else {
                     Toast.makeText(view, response.message(), Toast.LENGTH_SHORT).show();

@@ -68,9 +68,9 @@ public class SplashActivity extends AppCompatActivity {
             public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
                 if (response.isSuccessful()){
                     if (response.body().getStatus()==200){
-                        response.body().getDate().setToken(token);
+                        response.body().getData().setToken(token);
                         Intent intent=new Intent(SplashActivity.this, HomeActivity.class);
-                        intent.putExtra(Constant.userFlag,response.body().getDate());
+                        intent.putExtra(Constant.userFlag,response.body().getData());
                         startActivity(intent);
                         finishAffinity();
                     }else {

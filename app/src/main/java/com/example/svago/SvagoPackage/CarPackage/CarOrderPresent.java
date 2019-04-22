@@ -95,7 +95,7 @@ public class CarOrderPresent implements CarOrderInterface {
                         intent.putExtra("URL",response.body().getData().getUrl());
                         view.startActivity(intent);
                     }else {
-                        Toast.makeText(view, response.code()+"", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(view, response.body().getError(), Toast.LENGTH_SHORT).show();
                     }
                 }else {
                     Toast.makeText(view, response.message(), Toast.LENGTH_SHORT).show();

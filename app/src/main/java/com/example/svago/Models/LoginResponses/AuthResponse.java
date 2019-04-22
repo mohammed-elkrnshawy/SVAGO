@@ -10,8 +10,6 @@ public class AuthResponse {
     @Expose
     private userData data;
     @Expose
-    private userData date;
-    @Expose
     private int status;
     @Expose
     private String error;
@@ -40,7 +38,4 @@ public class AuthResponse {
         this.error = error;
     }
 
-    public userData getDate() {
-        return date;
-    }
 }

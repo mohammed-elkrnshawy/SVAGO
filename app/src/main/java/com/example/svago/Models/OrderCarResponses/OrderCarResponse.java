@@ -13,6 +13,8 @@ public class OrderCarResponse {
     @SerializedName("status")
     @Expose
     private Long status;
+    @Expose
+    private String error;
 
     public Data getData() {
         return data;
@@ -30,4 +32,7 @@ public class OrderCarResponse {
         this.status = status;
     }
 
+    public String getError() {
+        return error;
+    }
 }

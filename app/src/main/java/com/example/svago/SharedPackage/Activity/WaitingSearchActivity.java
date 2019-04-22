@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
 
-import com.example.svago.TravelPayPackage.CarPackage.Activities.CarResultActivity;
 import com.example.svago.TravelPayPackage.FlightPackage.Activities.FlightResultActivity;
 import com.example.svago.TravelPayPackage.HotelPackage.Activities.HotelResultActivity;
 import com.example.svago.R;
@@ -51,8 +50,8 @@ public class WaitingSearchActivity extends AppCompatActivity {
     private void setActivityWithType(String type) {
         if (type.equals(Constant.CarTag))
         {
-            startActivity(new Intent(this, CarResultActivity.class));
-            finish();
+            /*startActivity(new Intent(this, CarResultActivity.class));
+            finish();*/
         }
         else if (type.equals(Constant.FlightTag))
         {

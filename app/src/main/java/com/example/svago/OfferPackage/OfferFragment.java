@@ -38,7 +38,6 @@ public class OfferFragment extends Fragment {
         mOfferPresenter.setRecycle(recycleOffer);
         SharedPreferences prefs = getActivity().getSharedPreferences(getActivity().getPackageName(), getActivity().MODE_PRIVATE);
         mOfferPresenter.callOffers(prefs.getInt("CurrencyID" , 1) , recycleOffer);
-
         return view;
     }
 

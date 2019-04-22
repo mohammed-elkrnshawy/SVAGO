@@ -1,12 +1,13 @@
 
 package com.example.svago.Models.CarDetailsResponses;
 
+import java.io.Serializable;
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 @SuppressWarnings("unused")
-public class CarData {
+public class CarData implements Serializable {
 
     @Expose
     private String ac;
@@ -19,7 +20,7 @@ public class CarData {
     @SerializedName("has_driver")
     private Boolean hasDriver;
     @Expose
-    private Long id;
+    private int id;
     @Expose
     private String image;
     @Expose
@@ -77,11 +78,11 @@ public class CarData {
         this.hasDriver = hasDriver;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

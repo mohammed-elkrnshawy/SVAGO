@@ -83,5 +83,6 @@
     <string name="days_with">Days with :</string>
     <string name="currencies">Currencies</string>
     <string name="sent_success">تم إرسال رسالتك بنجاح</string>
+    <string name="number_of_tickets">Number Of Tickets</string>
 
 </resources>

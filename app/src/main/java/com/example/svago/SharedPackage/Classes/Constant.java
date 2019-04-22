@@ -12,4 +12,5 @@ public class Constant {
     public static String OfferTag="OfferTag";
     public static String userFlag="userData";
     public static int editProfile=5;
+    public final static int openMap=1;
 }

@@ -1,10 +1,12 @@
-package com.example.svago.TravelPayPackage.CarPackage.Activities;
+package com.example.svago.SvagoPackage.CarPackage;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.svago.Models.CarDetailsResponses.CarData;
 import com.example.svago.Models.SharedResponses.userData;
@@ -20,6 +22,7 @@ public class CarDetailsActivity extends AppCompatActivity implements CarDetailsI
     private int carID;
     private userData userObject;
     private CarDetailsPresenter carDetailsPresenter;
+    private CarData carData;
 
     @BindView(R.id.btnProcess)
     Button btnProcess;
@@ -65,6 +68,7 @@ public class CarDetailsActivity extends AppCompatActivity implements CarDetailsI
 
     @Override
     public void setData(CarData carData) {
+        this.carData=carData;
         txtNameCar.setText(carData.getName());
         txtDoor.setText(carData.getDoors());
         txtGear.setText(carData.getGears());
@@ -83,6 +87,10 @@ public class CarDetailsActivity extends AppCompatActivity implements CarDetailsI
     @OnClick({R.id.btnProcess}) void onClick(View view){
         switch (view.getId()){
             case R.id.btnProcess:
+                Intent intent=new Intent(CarDetailsActivity.this,CarOrderActivity.class);
+                intent.putExtra("carData",carData);
+                intent.putExtra(Constant.userFlag,userObject);
+                startActivity(intent);
                 break;
         }
     }

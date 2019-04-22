@@ -1,11 +1,12 @@
 
 package com.example.svago.Models.TripDetailsResponses;
 
+import java.io.Serializable;
 import java.util.List;
 import com.google.gson.annotations.Expose;
 
 @SuppressWarnings("unused")
-public class TripData {
+public class TripData implements Serializable {
 
     @Expose
     private String address;
@@ -16,7 +17,7 @@ public class TripData {
     @Expose
     private String from;
     @Expose
-    private Long id;
+    private int id;
     @Expose
     private String image;
     @Expose
@@ -64,11 +65,11 @@ public class TripData {
         this.from = from;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

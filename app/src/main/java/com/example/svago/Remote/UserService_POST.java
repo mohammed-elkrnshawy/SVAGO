@@ -3,6 +3,7 @@ package com.example.svago.Remote;
 
 import com.example.svago.Models.CarDetailsResponses.CarDetailsResponse;
 import com.example.svago.Models.LoginResponses.AuthResponse;
+import com.example.svago.Models.OrderCarResponses.OrderCarResponse;
 import com.example.svago.Models.ResponseOffers.ResponseOffers;
 import com.example.svago.Models.ResponseSimple.ResponseSimple;
 import com.example.svago.Models.ResponseStatus.ResponseStatus;
@@ -72,8 +73,27 @@ public interface UserService_POST {
     @Headers({ "Content-Type: application/json;charset=UTF-8"})
     @POST("trips/{id}")
     Call<TripDetailsResponse> TripDetails(
-            @Path("id") int carID,
+            @Path("id") int tripID,
             @Query("currency_id") int currency_id
+    );
+
+    @Headers({ "Content-Type: application/json;charset=UTF-8"})
+    @POST("payments/car")
+    Call<OrderCarResponse> orderCar(
+            @Header("Authorization") String Authorization,
+            @Query("car_id") int car_id,
+            @Query("from") String from,
+            @Query("to") String to,
+            @Query("lat") double lat,
+            @Query("lng") double lng
+    );
+
+    @Headers({ "Content-Type: application/json;charset=UTF-8"})
+    @POST("payments/trip")
+    Call<OrderCarResponse> orderTrip(
+            @Header("Authorization") String Authorization,
+            @Query("trip_id") int trip_id,
+            @Query("tickets") int tickets
     );
 
     @Headers({ "Content-Type: application/json;charset=UTF-8"})

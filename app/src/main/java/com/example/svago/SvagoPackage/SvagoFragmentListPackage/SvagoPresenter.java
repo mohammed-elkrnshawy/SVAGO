@@ -1,6 +1,9 @@
 package com.example.svago.SvagoPackage.SvagoFragmentListPackage;
 
+import android.app.Dialog;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.svago.Models.SharedResponses.userData;
@@ -8,6 +11,7 @@ import com.example.svago.Models.SvagoResponses.SvagoData;
 import com.example.svago.Models.SvagoResponses.SvagoResponse;
 import com.example.svago.Remote.ApiUtlis;
 import com.example.svago.Remote.UserService_POST;
+import com.example.svago.SharedPackage.Classes.SharedUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +36,7 @@ public class SvagoPresenter {
 
 
     private void callSvagoList(final int page){
+        view.progress.setVisibility(View.VISIBLE);
         Call<SvagoResponse> svagoResponseCall=userServicePost.svagoList(2);
         svagoResponseCall.enqueue(new Callback<SvagoResponse>() {
             @Override
@@ -45,17 +50,21 @@ public class SvagoPresenter {
                         svagoDataList.addAll(response.body().getData());
                         svagoAdapter.notifyDataSetChanged();
 
+                        view.progress.setVisibility(View.GONE);
 
                     }else {
+                        view.progress.setVisibility(View.GONE);
                         Toast.makeText(view.getContext(), "Not 200", Toast.LENGTH_SHORT).show();
                     }
                 }else {
-                    Toast.makeText(view.getContext(), "Error", Toast.LENGTH_SHORT).show();
+                    view.progress.setVisibility(View.GONE);
+                    Toast.makeText(view.getContext(), response.message(), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<SvagoResponse> call, Throwable t) {
+                view.progress.setVisibility(View.GONE);
                 Toast.makeText(view.getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

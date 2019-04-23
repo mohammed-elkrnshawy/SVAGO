@@ -10,8 +10,8 @@ public class OrderCarResponse {
     private Date date;
     @Expose
     private Long status;
-    @Expose
-    private String error;
+@Expose
+private String error;
 
     public Date getDate() {
         return date;

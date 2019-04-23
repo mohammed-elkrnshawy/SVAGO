@@ -4,6 +4,7 @@ package com.example.svago.Remote;
 import com.example.svago.Models.CarDetailsResponses.CarDetailsResponse;
 import com.example.svago.Models.LoginResponses.AuthResponse;
 import com.example.svago.Models.OrderCarResponses.OrderCarResponse;
+import com.example.svago.Models.OrderTripResponses.OrderTripResponse;
 import com.example.svago.Models.ResponseOffers.ResponseOffers;
 import com.example.svago.Models.ResponseSimple.ResponseSimple;
 import com.example.svago.Models.ResponseStatus.ResponseStatus;
@@ -90,7 +91,7 @@ public interface UserService_POST {
 
     @Headers({ "Content-Type: application/json;charset=UTF-8"})
     @POST("payments/trip")
-    Call<OrderCarResponse> orderTrip(
+    Call<OrderTripResponse> orderTrip(
             @Header("Authorization") String Authorization,
             @Query("trip_id") int trip_id,
             @Query("tickets") int tickets

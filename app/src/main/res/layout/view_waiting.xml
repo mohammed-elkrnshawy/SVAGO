@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<com.agrawalsuneet.loaderspack.loaders.CurvesLoader
+    android:layout_gravity="center"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ProgressBar
-        android:indeterminateTint="@color/colorPrimary"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-</RelativeLayout>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:curves_animDuration="1000"
+    app:curves_curveColor="@color/ColorPink"
+    app:curves_curveSweepAngle="160"
+    app:curves_curveWidth="5dp"
+    app:curves_distanceBetweenCurves="5dp"
+    app:curves_interpolator="@android:anim/linear_interpolator"
+    app:curves_noOfCurves="5"
+    app:curves_outermostCurveRadius="80dp" />

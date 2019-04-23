@@ -1,8 +1,7 @@
 package com.example.svago.SvagoPackage.CarPackage;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
-import android.content.Context;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.DatePicker;
@@ -17,6 +16,7 @@ import com.example.svago.Remote.UserService_POST;
 import com.example.svago.SharedPackage.Activity.MapsActivity;
 import com.example.svago.SharedPackage.Activity.PaymentActivity;
 import com.example.svago.SharedPackage.Classes.Constant;
+import com.example.svago.SharedPackage.Classes.SharedUtils;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.Calendar;
@@ -27,6 +27,7 @@ import retrofit2.Response;
 
 public class CarOrderPresent implements CarOrderInterface {
 
+    private Dialog progressDialog;
     private UserService_POST userService_post;
     private CarOrderActivity view;
     private userData userObject;
@@ -36,6 +37,7 @@ public class CarOrderPresent implements CarOrderInterface {
     public CarOrderPresent(CarOrderActivity context){
         this.view=context;
         userService_post= ApiUtlis.getUserServices_Post();
+        progressDialog= SharedUtils.ShowWaiting(view,progressDialog);
     }
 
     @Override
@@ -81,6 +83,7 @@ public class CarOrderPresent implements CarOrderInterface {
 
     @Override
     public void callConfirmOrder() {
+        progressDialog.show();
         Call<OrderCarResponse> call=userService_post.orderCar(
                 "Bearer "+userObject.getToken(),carData.getId(),view.edtFrom.getText().toString().trim(),
                 view.edtTo.getText().toString().trim(),lat,lng
@@ -94,10 +97,13 @@ public class CarOrderPresent implements CarOrderInterface {
                         Intent intent=new Intent(view, PaymentActivity.class);
                         intent.putExtra("URL",response.body().getDate().getUrl());
                         view.startActivity(intent);
+                        progressDialog.dismiss();
                     }else {
+                        progressDialog.dismiss();
                         Toast.makeText(view, response.body().getError(), Toast.LENGTH_SHORT).show();
                     }
                 }else {
+                    progressDialog.dismiss();
                     Toast.makeText(view, response.message(), Toast.LENGTH_SHORT).show();
                 }
             }
@@ -105,6 +111,7 @@ public class CarOrderPresent implements CarOrderInterface {
             @Override
             public void onFailure(Call<OrderCarResponse> call, Throwable t) {
                 Toast.makeText(view, t.getMessage(), Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
             }
         });
     }

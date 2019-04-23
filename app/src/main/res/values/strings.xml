@@ -88,5 +88,6 @@
     <string name="currencies">Currencies</string>
     <string name="sent_success">The message sent successfully</string>
     <string name="number_of_tickets">Number Of Tickets</string>
+    <string name="day">Day</string>
 
 </resources>

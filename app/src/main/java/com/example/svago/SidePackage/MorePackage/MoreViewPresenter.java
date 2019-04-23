@@ -7,4 +7,6 @@ import com.example.svago.Models.SharedResponses.userData;
 public interface MoreViewPresenter {
 
     userData getIntentData(Fragment fragment);
+
+    void SharedPreferencesPut(String s);
 }

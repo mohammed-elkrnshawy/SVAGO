@@ -17,6 +17,7 @@ import com.example.svago.Remote.UserService_POST;
 import com.example.svago.SharedPackage.Activity.MapsActivity;
 import com.example.svago.SharedPackage.Activity.PaymentActivity;
 import com.example.svago.SharedPackage.Classes.Constant;
+import com.example.svago.SharedPackage.Classes.SharedClass;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.Calendar;
@@ -65,7 +66,7 @@ public class CarOrderPresent implements CarOrderInterface {
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
 
-                        textView.setText(year + "-" + String.format("%02d",monthOfYear) + "-" + String.format("%02d",dayOfMonth));
+                        textView.setText(String.format("%d-%s-%s", year, String.format("%02d", monthOfYear), String.format("%02d", dayOfMonth)));
                     }
                 }, mYear, mMonth, mDay);
         datePickerDialog.getDatePicker().setMinDate(Calendar.getInstance().getTimeInMillis());
@@ -81,6 +82,7 @@ public class CarOrderPresent implements CarOrderInterface {
 
     @Override
     public void callConfirmOrder() {
+        SharedClass.ShowWaiting(view);
         Call<OrderCarResponse> call=userService_post.orderCar(
                 "Bearer "+userObject.getToken(),carData.getId(),view.edtFrom.getText().toString().trim(),
                 view.edtTo.getText().toString().trim(),lat,lng
@@ -89,6 +91,7 @@ public class CarOrderPresent implements CarOrderInterface {
         call.enqueue(new Callback<OrderCarResponse>() {
             @Override
             public void onResponse(Call<OrderCarResponse> call, Response<OrderCarResponse> response) {
+                SharedClass.hideWaiting();
                 if (response.isSuccessful()){
                     if (response.body().getStatus()==200){
                         Intent intent=new Intent(view, PaymentActivity.class);
@@ -104,6 +107,7 @@ public class CarOrderPresent implements CarOrderInterface {
 
             @Override
             public void onFailure(Call<OrderCarResponse> call, Throwable t) {
+                SharedClass.hideWaiting();
                 Toast.makeText(view, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

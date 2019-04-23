@@ -2,16 +2,20 @@ package com.example.svago.SvagoPackage.TripPackage;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.widget.Toast;
 
 import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.Models.TripDetailsResponses.TripData;
 import com.example.svago.Models.TripDetailsResponses.TripDetailsResponse;
+import com.example.svago.R;
 import com.example.svago.Remote.ApiUtlis;
 import com.example.svago.Remote.UserService_POST;
 import com.example.svago.SharedPackage.Classes.Constant;
+import com.example.svago.SharedPackage.Classes.SharedClass;
 import com.example.svago.SvagoPackage.CarPackage.CarDetailsActivity;
 import com.example.svago.SvagoPackage.CarPackage.CarOrderActivity;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,6 +28,7 @@ public class SvagoDetailsPresenter implements SvagoDetailsInterface {
     private SvagoDetailsActivity view;
     private userData userObject;
     private UserService_POST userServicePost;
+    GridLayoutManager layoutManager ;
 
     public SvagoDetailsPresenter(SvagoDetailsActivity activity){
         this.view=activity;
@@ -40,14 +45,16 @@ public class SvagoDetailsPresenter implements SvagoDetailsInterface {
 
     @Override
     public void getData() {
+        SharedClass.ShowWaiting(view);
         Call<TripDetailsResponse> call=userServicePost.TripDetails(tripID,1);
         call.enqueue(new Callback<TripDetailsResponse>() {
             @Override
             public void onResponse(Call<TripDetailsResponse> call, Response<TripDetailsResponse> response) {
+                SharedClass.hideWaiting();
                 if (response.isSuccessful()){
                     if (response.body().getStatus()==200){
                         tripData=response.body().getData().getTrip();
-                        setData();
+                        setData(tripData);
                     }else {
                         Toast.makeText(view, response.code()+"", Toast.LENGTH_SHORT).show();
                     }
@@ -58,14 +65,23 @@ public class SvagoDetailsPresenter implements SvagoDetailsInterface {
 
             @Override
             public void onFailure(Call<TripDetailsResponse> call, Throwable t) {
+                SharedClass.hideWaiting();
                 Toast.makeText(view,t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     @Override
-    public void setData() {
-
+    public void setData(TripData data) {
+        view.toolbarTitle .setText(data.getTitle());
+        view.txtTitle.setText(data.getTitle());
+        ImageLoader.getInstance().displayImage(data.getImage() , view.photoImg);
+        view.date1.setText(data.getFrom());
+        view.date2.setText(data.getTo());
+        view.duration.setText(String.format("%d %s", data.getDuration(), view.getString(R.string.day)));
+        view.txtDesc.setText(data.getDescription());
+        ImagesAdapter mImagesAdapter = new ImagesAdapter(data.getImages() , view);
+        view.imageRec.setAdapter(mImagesAdapter);
     }
 
     @Override
@@ -74,5 +90,13 @@ public class SvagoDetailsPresenter implements SvagoDetailsInterface {
         intent.putExtra("tripData",tripData);
         intent.putExtra(Constant.userFlag,userObject);
         view.startActivity(intent);
+    }
+
+    @Override
+    public void setRecycler() {
+        layoutManager = new GridLayoutManager(view , 3 , GridLayoutManager.VERTICAL , true ) ;
+        view.imageRec.setLayoutManager(layoutManager);
+        view.imageRec.setHasFixedSize(true);
+
     }
 }

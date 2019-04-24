@@ -12,12 +12,14 @@
         android:id="@+id/recycleOffer"
         />
 
-    <ProgressBar
+    <com.agrawalsuneet.loaderspack.loaders.CurvesLoader
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:id="@+id/progress"
         android:layout_alignParentBottom="true"
-        android:id="@+id/bar"
-        />
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp">
+    </com.agrawalsuneet.loaderspack.loaders.CurvesLoader>
+
 
 </RelativeLayout>

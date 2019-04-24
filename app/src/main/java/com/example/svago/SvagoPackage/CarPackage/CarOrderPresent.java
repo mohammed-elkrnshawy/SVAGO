@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 import com.example.svago.Models.CarDetailsResponses.CarData;
 import com.example.svago.Models.OrderCarResponses.OrderCarResponse;
 import com.example.svago.Models.SharedResponses.userData;
+import com.example.svago.R;
 import com.example.svago.Remote.ApiUtlis;
 import com.example.svago.Remote.UserService_POST;
 import com.example.svago.SharedPackage.Activity.MapsActivity;
@@ -84,7 +86,27 @@ public class CarOrderPresent implements CarOrderInterface {
 
     @Override
     public void callConfirmOrder() {
+
+        if(TextUtils.isEmpty(view.edtLocation.getText().toString().trim())){
+            view.edtLocation.setError(view.getResources().getString(R.string.requiredField));
+            view.edtLocation.requestFocus();
+            return;
+        }
+
+        if(TextUtils.isEmpty(view.edtFrom.getText().toString().trim())){
+            view.edtFrom.setError(view.getResources().getString(R.string.requiredField));
+            view.edtFrom.requestFocus();
+            return;
+        }
+
+        if(TextUtils.isEmpty(view.edtTo.getText().toString().trim())){
+            view.edtTo.setError(view.getResources().getString(R.string.requiredField));
+            view.edtTo.requestFocus();
+            return;
+        }
+
         progressDialog.show();
+
         Call<OrderCarResponse> call=userService_post.orderCar(
                 "Bearer "+userObject.getToken(),carData.getId(),view.edtFrom.getText().toString().trim(),
                 view.edtTo.getText().toString().trim(),lat,lng
@@ -93,7 +115,6 @@ public class CarOrderPresent implements CarOrderInterface {
         call.enqueue(new Callback<OrderCarResponse>() {
             @Override
             public void onResponse(Call<OrderCarResponse> call, Response<OrderCarResponse> response) {
-                SharedClass.hideWaiting();
                 if (response.isSuccessful()){
                     if (response.body().getStatus()==200){
                         Intent intent=new Intent(view, PaymentActivity.class);
@@ -112,7 +133,6 @@ public class CarOrderPresent implements CarOrderInterface {
 
             @Override
             public void onFailure(Call<OrderCarResponse> call, Throwable t) {
-                SharedClass.hideWaiting();
                 Toast.makeText(view, t.getMessage(), Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
             }

@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
+import com.agrawalsuneet.loaderspack.loaders.CurvesLoader;
 import com.example.svago.R;
 
 import butterknife.BindView;
@@ -24,8 +25,8 @@ public class OfferFragment extends Fragment {
 
     @BindView(R.id.recycleOffer)
     RecyclerView recycleOffer;
-    @BindView(R.id.bar)
-    ProgressBar bar;
+    @BindView(R.id.progress)
+    CurvesLoader progress;
     Unbinder unbinder;
     OfferPresenter mOfferPresenter;
 
@@ -34,7 +35,7 @@ public class OfferFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_offer, container, false);
         unbinder = ButterKnife.bind(this, view);
-        mOfferPresenter = new OfferPresenter(getActivity() , bar);
+        mOfferPresenter = new OfferPresenter(getActivity() , progress);
         mOfferPresenter.setRecycle(recycleOffer);
         SharedPreferences prefs = getActivity().getSharedPreferences(getActivity().getPackageName(), getActivity().MODE_PRIVATE);
         mOfferPresenter.callOffers(prefs.getInt("CurrencyID" , 1) , recycleOffer);

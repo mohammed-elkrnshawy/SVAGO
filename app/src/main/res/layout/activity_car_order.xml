@@ -41,7 +41,7 @@
                 android:id="@+id/photo_Img"
                 android:layout_below="@id/txtNameCar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="175dp"
                 android:src="@drawable/_ic_try_car"/>
 
 

@@ -8,21 +8,49 @@
     android:layout_height="match_parent"
     tools:context=".SvagoPackage.TripPackage.SvagoDetailsActivity">
 
-    <android.support.v7.widget.Toolbar
+    <RelativeLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"></android.support.v7.widget.Toolbar>
+        android:layout_height="?android:attr/actionBarSize">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_left_arrow"
+            android:layout_marginStart="5dp"
+            android:padding="10dp"
+            android:id="@+id/back"
+            android:tint="@color/colorPrimary"
+             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:text=""
+            android:id="@+id/toolbarTitle"
+            />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:fillViewport="true"
+        android:layout_height="match_parent">
 
     <android.support.v7.widget.CardView
         android:elevation="25dp"
         app:cardMaxElevation="25dp"
         app:cardElevation="25dp"
         app:contentPadding="20dp"
-        android:layout_below="@id/toolbar"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="25dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:cardCornerRadius="50dp">
 
         <RelativeLayout
@@ -37,99 +65,115 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
+                android:textStyle="bold"
                 android:textColor="@color/colorBlack"
-                android:text="Mercedes Benz E Class"
+                android:text="Mercedes Benz"
                 />
 
-            <ImageView
-                android:id="@+id/photo_Img"
-                android:layout_below="@id/txtNameCar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/_ic_try_car"/>
+            <android.support.v7.widget.CardView
+                android:layout_width="114dp"
+                android:layout_height="114dp"
+                app:cardElevation="7dp"
+                app:cardCornerRadius="57dp"
+                android:layout_below="@id/txtTitle"
+                android:id="@+id/cart"
+                android:layout_centerHorizontal="true"
+                >
 
-            <LinearLayout
-                android:layout_marginBottom="5dp"
-                android:gravity="center"
-                android:id="@+id/line"
-                android:layout_marginTop="5dp"
-                android:layout_below="@id/photo_Img"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-
-                <ImageView
-                    android:tint="@color/colorPrimary"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:src="@drawable/ic_user"/>
-
-                <TextView
-                    android:layout_marginStart="3dp"
-                    android:gravity="center"
-                    android:layout_width="wrap_content"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/photo_Img"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textColor="@color/ColorPink"
-                    android:id="@+id/txtPassenger"
-                    android:text="4"
-                    />
+                    android:src="@drawable/_ic_try_car"/>
 
-                <ImageView
-                    android:layout_marginStart="10dp"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:src="@drawable/ic_door"/>
+            </android.support.v7.widget.CardView>
 
-                <TextView
-                    android:layout_marginStart="3dp"
-                    android:id="@+id/txtDoor"
-                    android:gravity="center"
+
+
+            <RelativeLayout
+                android:id="@+id/rel"
+                android:layout_below="@+id/cart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/ColorPink"
-                    android:text="4"
-                    />
+                    android:orientation="vertical"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="25dp"
+                    >
 
-                <ImageView
-                    android:layout_marginStart="10dp"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:src="@drawable/ic_gear_shift"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/from"
+                        android:layout_gravity="center_horizontal"
+                        />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16sp"
+                        android:layout_marginTop="5dp"
+                        android:text="25 Jun"
+                        android:id="@+id/date1"
+                        />
+
+                </LinearLayout>
+
 
                 <TextView
-                    android:id="@+id/txtGear"
-                    android:gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:textColor="@color/ColorPink"
-                    android:text="4"
-                    />
-
-                <ImageView
-                    android:layout_marginStart="10dp"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:src="@drawable/ic_ice_crystal"/>
-
-                <TextView
-                    android:id="@+id/txtAir"
-                    android:layout_marginStart="3dp"
-                    android:gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/ColorPink"
-                    android:text="Yes"
+                    android:id="@+id/duration"
+                    android:layout_centerInParent="true"
+                    android:text="5 days"
                     />
 
 
-            </LinearLayout>
+                <LinearLayout
+                    android:layout_marginEnd="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/to"
+                        android:layout_gravity="center_horizontal"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/date2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16sp"
+                        android:layout_marginTop="5dp"
+                        android:text="25 Jun"
+
+                        />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
 
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_marginTop="5dp"
-                android:layout_below="@id/line"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/rel"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -145,27 +189,15 @@
                     android:letterSpacing="-0.02"
                     android:lineSpacingExtra="3.3sp"
                     android:gravity="center_horizontal"
-                    android:text="06 Jun, Mon "
+                    android:text="Trip descripton"
                     />
 
 
 
-                <TextView
-                    android:id="@+id/txtPrice"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15.3sp"
-                    android:textColor="@color/ColorPink"
-                    android:letterSpacing="-0.02"
-                    android:lineSpacingExtra="3.3sp"
-                    android:gravity="center_horizontal"
-                    android:text="$1400"
-                    />
+
 
                 <TextView
-                    android:id="@+id/txtAddress"
+                    android:id="@+id/txtDesc"
                     android:layout_marginBottom="5dp"
                     android:textAlignment="center"
                     android:layout_width="match_parent"
@@ -179,19 +211,10 @@
                     />
 
 
-                <TextView
-                    android:id="@+id/txtDriver"
-                    android:layout_marginBottom="5dp"
-                    android:textStyle="bold"
-                    android:textAlignment="center"
+                <android.support.v7.widget.RecyclerView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="@color/colorPrimary"
-                    android:letterSpacing="-0.02"
-                    android:lineSpacingExtra="3.3sp"
-                    android:gravity="center_horizontal"
-                    android:text="06 Jun, Mon "
+                    android:id="@+id/imageRec"
                     />
 
 
@@ -222,4 +245,5 @@
 
     </android.support.v7.widget.CardView>
 
+    </ScrollView>
 </RelativeLayout>

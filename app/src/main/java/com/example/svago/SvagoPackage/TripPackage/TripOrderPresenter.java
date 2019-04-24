@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.svago.Models.OrderCarResponses.OrderCarResponse;
 import com.example.svago.Models.OrderTripResponses.OrderTripResponse;
 import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.Models.TripDetailsResponses.TripData;
@@ -73,10 +74,9 @@ public class TripOrderPresenter implements TripOrderInterface {
                     Toast.makeText(view, response.message(), Toast.LENGTH_SHORT).show();
                 }
             }
-
             @Override
             public void onFailure(Call<OrderTripResponse> call, Throwable t) {
-
+                Toast.makeText(view, t.getMessage() , Toast.LENGTH_SHORT).show();
             }
         });
     }

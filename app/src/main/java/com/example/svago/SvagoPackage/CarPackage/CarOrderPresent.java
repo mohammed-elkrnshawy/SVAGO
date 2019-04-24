@@ -17,6 +17,7 @@ import com.example.svago.SharedPackage.Activity.MapsActivity;
 import com.example.svago.SharedPackage.Activity.PaymentActivity;
 import com.example.svago.SharedPackage.Classes.Constant;
 import com.example.svago.SharedPackage.Classes.SharedUtils;
+import com.example.svago.SharedPackage.Classes.SharedClass;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.Calendar;
@@ -67,7 +68,7 @@ public class CarOrderPresent implements CarOrderInterface {
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
 
-                        textView.setText(year + "-" + String.format("%02d",monthOfYear) + "-" + String.format("%02d",dayOfMonth));
+                        textView.setText(String.format("%d-%s-%s", year, String.format("%02d", monthOfYear), String.format("%02d", dayOfMonth)));
                     }
                 }, mYear, mMonth, mDay);
         datePickerDialog.getDatePicker().setMinDate(Calendar.getInstance().getTimeInMillis());
@@ -92,10 +93,11 @@ public class CarOrderPresent implements CarOrderInterface {
         call.enqueue(new Callback<OrderCarResponse>() {
             @Override
             public void onResponse(Call<OrderCarResponse> call, Response<OrderCarResponse> response) {
+                SharedClass.hideWaiting();
                 if (response.isSuccessful()){
                     if (response.body().getStatus()==200){
                         Intent intent=new Intent(view, PaymentActivity.class);
-                        intent.putExtra("URL",response.body().getDate().getUrl());
+                        intent.putExtra("URL",response.body().getData().getUrl());
                         view.startActivity(intent);
                         progressDialog.dismiss();
                     }else {
@@ -110,6 +112,7 @@ public class CarOrderPresent implements CarOrderInterface {
 
             @Override
             public void onFailure(Call<OrderCarResponse> call, Throwable t) {
+                SharedClass.hideWaiting();
                 Toast.makeText(view, t.getMessage(), Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
             }

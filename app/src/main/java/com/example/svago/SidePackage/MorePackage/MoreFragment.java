@@ -1,6 +1,7 @@
 package com.example.svago.SidePackage.MorePackage;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.svago.AuthPackage.LoginPackage.LoginActivity;
 import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.R;
 import com.example.svago.SharedPackage.Classes.Constant;
@@ -71,6 +73,9 @@ public class MoreFragment extends Fragment {
                 setFragment(new CurrenciesFragment() , getString(R.string.currencies));
                 break;
             case R.id.txtLogout:
+                morePresenter.SharedPreferencesPut("");
+                startActivity(new Intent(getActivity() , LoginActivity.class));
+                getActivity().finishAffinity();
                 break;
         }
     }

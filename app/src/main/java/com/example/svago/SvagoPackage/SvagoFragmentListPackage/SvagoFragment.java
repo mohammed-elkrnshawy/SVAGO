@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.agrawalsuneet.loaderspack.loaders.CurvesLoader;
 import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.R;
 import com.example.svago.SharedPackage.Classes.Constant;
@@ -29,6 +30,8 @@ public class SvagoFragment extends Fragment {
 
     @BindView(R.id.recycleSvago)
     RecyclerView recyclerSvago;
+    @BindView(R.id.progress)
+    CurvesLoader progress;
 
     public SvagoFragment() {
         // Required empty public constructor

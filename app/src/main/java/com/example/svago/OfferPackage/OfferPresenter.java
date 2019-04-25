@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.agrawalsuneet.loaderspack.loaders.CurvesLoader;
 import com.example.svago.Models.ResponseOffers.Offer;
 import com.example.svago.Models.ResponseOffers.ResponseOffers;
 import com.example.svago.Models.SharedResponses.userData;
@@ -32,7 +33,7 @@ public class OfferPresenter implements OfferViewPresenter {
     Context context ;
     UserService_POST userService ;
     userData userData ;
-    ProgressBar bar ;
+    CurvesLoader bar ;
     LinearLayoutManager layoutManager ;
     List<Offer> offerList ;
     OfferAdapter mOfferAdapter ;
@@ -40,7 +41,7 @@ public class OfferPresenter implements OfferViewPresenter {
     private int page=1;
     private boolean mLoading = false;
 
-    public OfferPresenter(Context context , ProgressBar bar) {
+    public OfferPresenter(Context context , CurvesLoader bar) {
         this.context = context;
         this.bar = bar ;
         userService = ApiUtlis.getUserServices_Post() ;

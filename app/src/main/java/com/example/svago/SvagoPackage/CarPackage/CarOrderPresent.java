@@ -1,10 +1,10 @@
 package com.example.svago.SvagoPackage.CarPackage;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
-import android.content.Context;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,11 +12,13 @@ import android.widget.Toast;
 import com.example.svago.Models.CarDetailsResponses.CarData;
 import com.example.svago.Models.OrderCarResponses.OrderCarResponse;
 import com.example.svago.Models.SharedResponses.userData;
+import com.example.svago.R;
 import com.example.svago.Remote.ApiUtlis;
 import com.example.svago.Remote.UserService_POST;
 import com.example.svago.SharedPackage.Activity.MapsActivity;
 import com.example.svago.SharedPackage.Activity.PaymentActivity;
 import com.example.svago.SharedPackage.Classes.Constant;
+import com.example.svago.SharedPackage.Classes.SharedUtils;
 import com.example.svago.SharedPackage.Classes.SharedClass;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -28,6 +30,7 @@ import retrofit2.Response;
 
 public class CarOrderPresent implements CarOrderInterface {
 
+    private Dialog progressDialog;
     private UserService_POST userService_post;
     private CarOrderActivity view;
     private userData userObject;
@@ -37,6 +40,7 @@ public class CarOrderPresent implements CarOrderInterface {
     public CarOrderPresent(CarOrderActivity context){
         this.view=context;
         userService_post= ApiUtlis.getUserServices_Post();
+        progressDialog= SharedUtils.ShowWaiting(view,progressDialog);
     }
 
     @Override
@@ -82,7 +86,27 @@ public class CarOrderPresent implements CarOrderInterface {
 
     @Override
     public void callConfirmOrder() {
-        SharedClass.ShowWaiting(view);
+
+        if(TextUtils.isEmpty(view.edtLocation.getText().toString().trim())){
+            view.edtLocation.setError(view.getResources().getString(R.string.requiredField));
+            view.edtLocation.requestFocus();
+            return;
+        }
+
+        if(TextUtils.isEmpty(view.edtFrom.getText().toString().trim())){
+            view.edtFrom.setError(view.getResources().getString(R.string.requiredField));
+            view.edtFrom.requestFocus();
+            return;
+        }
+
+        if(TextUtils.isEmpty(view.edtTo.getText().toString().trim())){
+            view.edtTo.setError(view.getResources().getString(R.string.requiredField));
+            view.edtTo.requestFocus();
+            return;
+        }
+
+        progressDialog.show();
+
         Call<OrderCarResponse> call=userService_post.orderCar(
                 "Bearer "+userObject.getToken(),carData.getId(),view.edtFrom.getText().toString().trim(),
                 view.edtTo.getText().toString().trim(),lat,lng
@@ -91,24 +115,26 @@ public class CarOrderPresent implements CarOrderInterface {
         call.enqueue(new Callback<OrderCarResponse>() {
             @Override
             public void onResponse(Call<OrderCarResponse> call, Response<OrderCarResponse> response) {
-                SharedClass.hideWaiting();
                 if (response.isSuccessful()){
                     if (response.body().getStatus()==200){
                         Intent intent=new Intent(view, PaymentActivity.class);
                         intent.putExtra("URL",response.body().getData().getUrl());
                         view.startActivity(intent);
+                        progressDialog.dismiss();
                     }else {
+                        progressDialog.dismiss();
                         Toast.makeText(view, response.body().getError(), Toast.LENGTH_SHORT).show();
                     }
                 }else {
+                    progressDialog.dismiss();
                     Toast.makeText(view, response.message(), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<OrderCarResponse> call, Throwable t) {
-                SharedClass.hideWaiting();
                 Toast.makeText(view, t.getMessage(), Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
             }
         });
     }

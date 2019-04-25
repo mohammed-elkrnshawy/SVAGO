@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.svago.Models.OrderCarResponses.OrderCarResponse;
+import com.example.svago.Models.OrderTripResponses.OrderTripResponse;
 import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.Models.TripDetailsResponses.TripData;
 import com.example.svago.Remote.ApiUtlis;
@@ -55,12 +56,12 @@ public class TripOrderPresenter implements TripOrderInterface {
     @Override
     public void callConfirmOrder() {
         userServicePost= ApiUtlis.getUserServices_Post();
-        Call<OrderCarResponse> call=userServicePost.orderTrip(
+        Call<OrderTripResponse> call=userServicePost.orderTrip(
                 "Bearer "+userObject.getToken(),tripData.getId(),Integer.parseInt(view.edtNumber.getText().toString().trim())
         );
-        call.enqueue(new Callback<OrderCarResponse>() {
+        call.enqueue(new Callback<OrderTripResponse>() {
             @Override
-            public void onResponse(Call<OrderCarResponse> call, Response<OrderCarResponse> response) {
+            public void onResponse(Call<OrderTripResponse> call, Response<OrderTripResponse> response) {
                 if (response.isSuccessful()){
                     if (response.body().getStatus()==200){
                         Intent intent=new Intent(view, PaymentActivity.class);
@@ -74,7 +75,7 @@ public class TripOrderPresenter implements TripOrderInterface {
                 }
             }
             @Override
-            public void onFailure(Call<OrderCarResponse> call, Throwable t) {
+            public void onFailure(Call<OrderTripResponse> call, Throwable t) {
                 Toast.makeText(view, t.getMessage() , Toast.LENGTH_SHORT).show();
             }
         });

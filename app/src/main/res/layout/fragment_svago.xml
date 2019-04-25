@@ -9,5 +9,17 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycleSvago"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <com.agrawalsuneet.loaderspack.loaders.CurvesLoader
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp">
+    </com.agrawalsuneet.loaderspack.loaders.CurvesLoader>
+
 </RelativeLayout>

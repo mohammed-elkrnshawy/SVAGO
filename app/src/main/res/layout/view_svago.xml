@@ -68,70 +68,68 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_gravity="center_vertical"
+                        android:tint="@color/colorPrimary"
                         android:layout_width="15dp"
                         android:layout_height="15dp"
-                        android:src="@drawable/ic_person"
-                        />
+                        android:src="@drawable/ic_user"/>
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="5"
                         android:layout_marginStart="3dp"
-                        android:textColor="@color/colorPink2"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/ColorPink"
+                        android:id="@+id/txtPassenger"
+                        android:text="4"
                         />
 
                     <ImageView
                         android:layout_marginStart="10dp"
-                        android:layout_gravity="center_vertical"
                         android:layout_width="15dp"
                         android:layout_height="15dp"
-                        android:src="@drawable/ic_door"
-                        />
+                        android:src="@drawable/ic_door"/>
 
                     <TextView
+                        android:layout_marginStart="3dp"
+                        android:id="@+id/txtDoor"
+                        android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="5"
-                        android:layout_marginStart="3dp"
-                        android:textColor="@color/colorPink2"
-                        />
-
-
-                    <ImageView
-                        android:layout_marginStart="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:src="@drawable/ic_gear_shift"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="5"
-                        android:layout_marginStart="3dp"
-                        android:textColor="@color/colorPink2"
+                        android:textColor="@color/ColorPink"
+                        android:text="4"
                         />
 
                     <ImageView
                         android:layout_marginStart="10dp"
-                        android:layout_gravity="center_vertical"
                         android:layout_width="15dp"
                         android:layout_height="15dp"
-                        android:src="@drawable/ic_ice_crystal"
-                        />
+                        android:src="@drawable/ic_gear_shift"/>
 
                     <TextView
+                        android:id="@+id/txtGear"
+                        android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="5"
                         android:layout_marginStart="3dp"
-                        android:textColor="@color/colorPink2"
+                        android:textColor="@color/ColorPink"
+                        android:text="4"
                         />
 
+                    <ImageView
+                        android:layout_marginStart="10dp"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/ic_ice_crystal"/>
 
+                    <TextView
+                        android:id="@+id/txtAir"
+                        android:layout_marginStart="3dp"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/ColorPink"
+                        android:text="Yes"
+                        />
 
                 </LinearLayout>
 
@@ -153,6 +151,7 @@
                         />
 
                     <TextView
+                        android:id="@+id/txtLocation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@+id/pin"
@@ -167,15 +166,16 @@
                     android:layout_marginStart="30dp"
                     android:layout_marginEnd="30dp"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="35dp"
                     android:layout_below="@+id/reel"
                     app:cardCornerRadius="15dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="8dp"
                     app:cardBackgroundColor="@color/ColorPink"
                     app:cardElevation="10dp"
                     >
 
                     <TextView
+                        android:id="@+id/txtPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -253,6 +253,7 @@
                         />
 
                     <TextView
+                        android:id="@+id/txtTripLocation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@+id/pin2"
@@ -267,15 +268,16 @@
                     android:layout_marginStart="30dp"
                     android:layout_marginEnd="30dp"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="35dp"
                     android:layout_below="@+id/reel2"
                     app:cardCornerRadius="15dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="8dp"
                     app:cardBackgroundColor="@color/ColorPink"
                     app:cardElevation="10dp"
                     >
 
                     <TextView
+                        android:id="@+id/txtTripPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"

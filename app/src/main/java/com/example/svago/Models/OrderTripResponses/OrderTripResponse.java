@@ -1,27 +1,28 @@
 
-package com.example.svago.Models.OrderCarResponses;
+package com.example.svago.Models.OrderTripResponses;
 
 import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
 
 @SuppressWarnings("unused")
-public class OrderCarResponse {
+public class OrderTripResponse {
 
-    @SerializedName("data")
     @Expose
     private Data data;
-    @SerializedName("status")
     @Expose
     private Long status;
-@Expose
-private String error;
+    @Expose
+    private String error;
+
+    public String getError() {
+        return error;
+    }
 
     public Data getData() {
         return data;
     }
 
-    public void setData(Data date) {
-        this.data = date;
+    public void setData(Data data) {
+        this.data = data;
     }
 
     public Long getStatus() {
@@ -32,7 +33,4 @@ private String error;
         this.status = status;
     }
 
-    public String getError() {
-        return error;
-    }
 }

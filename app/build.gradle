@@ -43,7 +43,6 @@ dependencies {
 
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
 
-
     //retrofit
     implementation 'com.google.code.gson:gson:2.8.2'
     implementation 'com.squareup.retrofit2:retrofit:2.0.2'
@@ -61,5 +60,6 @@ dependencies {
     implementation 'com.daimajia.easing:library:2.0@aar'
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
 
+    implementation 'com.booking:rtlviewpager:1.0.1'
 
 }

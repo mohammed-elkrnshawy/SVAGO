@@ -85,5 +85,9 @@
     <string name="sent_success">تم إرسال رسالتك بنجاح</string>
     <string name="number_of_tickets">Number Of Tickets</string>
     <string name="day">Day</string>
+    <string name="cars">Cars</string>
+    <string name="trips">Trips</string>
+    <string name="guides">Guides</string>
+    <string name="my_orders">My Orders</string>
 
 </resources>

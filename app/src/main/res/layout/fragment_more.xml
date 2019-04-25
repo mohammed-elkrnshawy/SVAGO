@@ -39,6 +39,29 @@
         />
 
     <TextView
+        android:id="@+id/txtOrders"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorBlack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/my_orders"
+        android:gravity="center_vertical"
+        android:drawablePadding="25dp"
+        android:drawableEnd="@drawable/ic_arrow_right"
+        android:drawableTint="@color/ColorGray"
+        android:drawableStart="@drawable/ic_contact"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/ColorGray"
+        />
+
+    <TextView
         android:id="@+id/txtContact"
         android:padding="10dp"
         android:textSize="16sp"

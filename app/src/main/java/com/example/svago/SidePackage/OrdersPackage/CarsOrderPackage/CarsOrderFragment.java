@@ -45,7 +45,7 @@ public class CarsOrderFragment extends Fragment {
         mCarsPresenter.initView();
         mCarsPresenter.setRecycler();
         mCarsPresenter.callCars("Bearer "+userData.getToken());
-        mCarsPresenter.listViewScroll();
+        ///mCarsPresenter.listViewScroll();
         return view;
     }
 

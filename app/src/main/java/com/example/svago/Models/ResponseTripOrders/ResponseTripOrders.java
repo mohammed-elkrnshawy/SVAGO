@@ -1,11 +1,11 @@
-package com.example.svago.Models.ResponseCarsOrder;
+package com.example.svago.Models.ResponseTripOrders;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class ResponseCars {
+public class ResponseTripOrders {
 
     @SerializedName("status")
     @Expose
@@ -16,7 +16,6 @@ public class ResponseCars {
     @SerializedName("errors")
     @Expose
     private List<String> errors = null;
-
 
     public Integer getStatus() {
         return status;
@@ -33,7 +32,6 @@ public class ResponseCars {
     public void setData(Data data) {
         this.data = data;
     }
-
 
     public List<String> getErrors() {
         return errors;

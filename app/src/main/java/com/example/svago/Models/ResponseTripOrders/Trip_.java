@@ -1,4 +1,4 @@
-package com.example.svago.Models.ResponseOrders;
+package com.example.svago.Models.ResponseTripOrders;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -28,7 +28,7 @@ public class Trip_ {
     private String price;
     @SerializedName("image")
     @Expose
-    private Object image;
+    private String image;
 
     public Integer getId() {
         return id;
@@ -86,11 +86,11 @@ public class Trip_ {
         this.price = price;
     }
 
-    public Object getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Object image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

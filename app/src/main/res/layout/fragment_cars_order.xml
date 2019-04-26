@@ -20,4 +20,13 @@
         android:id="@+id/bar"
         />
 
+    <TextView
+        android:id="@+id/empty"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="@string/no_previous_flights" />
+
+
 </RelativeLayout>

@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.R;
@@ -29,8 +30,9 @@ public class CarsOrderFragment extends Fragment {
     Unbinder unbinder;
     @BindView(R.id.bar)
     ProgressBar bar;
-
-    CarsPresenter mCarsPresenter ;
+    @BindView(R.id.empty)
+    TextView empty;
+    CarsPresenter mCarsPresenter;
 
     public CarsOrderFragment(com.example.svago.Models.SharedResponses.userData userData) {
         this.userData = userData;
@@ -41,10 +43,10 @@ public class CarsOrderFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cars_order, container, false);
         unbinder = ButterKnife.bind(this, view);
-        mCarsPresenter = new CarsPresenter(this , userData) ;
+        mCarsPresenter = new CarsPresenter(this, userData);
         mCarsPresenter.initView();
         mCarsPresenter.setRecycler();
-        mCarsPresenter.callCars("Bearer "+userData.getToken());
+        mCarsPresenter.callCars("Bearer " + userData.getToken());
         ///mCarsPresenter.listViewScroll();
         return view;
     }

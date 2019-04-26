@@ -93,5 +93,6 @@
     <string name="trips">Trips</string>
     <string name="guides">Guides</string>
     <string name="my_orders">My Orders</string>
+    <string name="no_previous_flights">No previous flights ):</string>
 
 </resources>

@@ -17,6 +17,7 @@ import com.example.svago.SidePackage.AboutUsPackage.AboutUsFragment;
 import com.example.svago.SidePackage.ContactUsPackage.ContactUsFragment;
 import com.example.svago.SidePackage.CurrenciesPackage.CurrenciesFragment;
 import com.example.svago.SidePackage.LanguagePackage.LanguageFragment;
+import com.example.svago.SidePackage.OrdersPackage.AllOrdersPackage.OrdersFragment;
 import com.example.svago.SidePackage.ProfilePackage.ProfileFragment;
 import com.example.svago.SidePackage.TermsPackage.TermsFragment;
 
@@ -51,7 +52,7 @@ public class MoreFragment extends Fragment {
 
 
 
-    @OnClick({R.id.txtProfile, R.id.txtContact, R.id.txtLanguage, R.id.txtAbout, R.id.txtTerms, R.id.txtLogout , R.id.txtCurrency})
+    @OnClick({R.id.txtProfile, R.id.txtContact, R.id.txtLanguage, R.id.txtAbout, R.id.txtTerms, R.id.txtLogout , R.id.txtCurrency , R.id.txtOrders})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.txtProfile:
@@ -71,6 +72,9 @@ public class MoreFragment extends Fragment {
                 break;
             case R.id.txtCurrency:
                 setFragment(new CurrenciesFragment() , getString(R.string.currencies));
+                break;
+            case R.id.txtOrders:
+                setFragment(new OrdersFragment() , getString(R.string.currencies));
                 break;
             case R.id.txtLogout:
                 morePresenter.SharedPreferencesPut("");

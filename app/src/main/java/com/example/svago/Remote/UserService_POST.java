@@ -4,10 +4,12 @@ package com.example.svago.Remote;
 import com.example.svago.Models.CarDetailsResponses.CarDetailsResponse;
 import com.example.svago.Models.LoginResponses.AuthResponse;
 import com.example.svago.Models.OrderCarResponses.OrderCarResponse;
+import com.example.svago.Models.ResponseCarsOrder.ResponseCars;
 import com.example.svago.Models.OrderTripResponses.OrderTripResponse;
 import com.example.svago.Models.ResponseOffers.ResponseOffers;
 import com.example.svago.Models.ResponseSimple.ResponseSimple;
 import com.example.svago.Models.ResponseStatus.ResponseStatus;
+import com.example.svago.Models.ResponseTripOrders.ResponseTripOrders;
 import com.example.svago.Models.SvagoResponses.SvagoResponse;
 import com.example.svago.Models.TripDetailsResponses.TripDetailsResponse;
 
@@ -117,6 +119,20 @@ public interface UserService_POST {
             @Query("name") String name,
             @Query("email") String email,
             @Query("description") String description
+    );
+
+    @Headers({ "Content-Type: application/json;charset=UTF-8"})
+    @POST("auth/orders/cars")
+    Call<ResponseCars> callCarsOrder(
+            @Header("Authorization") String Authorization,
+            @Query("page") int page
+    );
+
+    @Headers({ "Content-Type: application/json;charset=UTF-8"})
+    @POST("auth/orders/trips")
+    Call<ResponseTripOrders> callTripsOrder(
+            @Header("Authorization") String Authorization,
+            @Query("page") int page
     );
 
 }

@@ -85,5 +85,10 @@
     <string name="sent_success">The message sent successfully</string>
     <string name="number_of_tickets">Number Of Tickets</string>
     <string name="day">Day</string>
+    <string name="cars">Cars</string>
+    <string name="trips">Trips</string>
+    <string name="guides">Guides</string>
+    <string name="my_orders">My Orders</string>
+    <string name="no_previous_flights">No previous flights ):</string>
 
 </resources>

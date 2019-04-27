@@ -9,12 +9,16 @@
     tools:context=".SidePackage.ProfilePackage.ProfileFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
+    <TextView
+        android:textColor="@color/colorPrimary"
+        android:drawableTint="@color/colorPrimary"
+        android:drawablePadding="10dp"
+        android:text="@string/edit"
         android:padding="10dp"
         android:id="@+id/imgEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_eye_open"/>
+        android:drawableStart="@drawable/ic_edit"/>
 
     <LinearLayout
         android:layout_marginTop="75dp"

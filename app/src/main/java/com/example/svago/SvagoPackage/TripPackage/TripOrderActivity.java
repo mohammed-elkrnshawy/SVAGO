@@ -35,6 +35,7 @@ public class TripOrderActivity extends AppCompatActivity {
         orderPresenter=new TripOrderPresenter(this);
         orderPresenter.getIntentData(getIntent().getExtras());
         orderPresenter.initImageLoader();
+        orderPresenter.setData(photo_Img,txtNameTrip);
 
     }
 

@@ -35,6 +35,7 @@ public class OrdersFragment extends Fragment {
         mOrdersPresenter = new OrdersPresenter(getActivity());
         mOrdersPresenter.getData(getArguments());
         mOrdersPresenter.setupViewPager(viewpager , this);
+        tabs.setupWithViewPager(viewpager);
         return view;
     }
 

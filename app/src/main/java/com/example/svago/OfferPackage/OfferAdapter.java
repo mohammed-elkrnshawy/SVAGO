@@ -6,6 +6,7 @@ import android.graphics.Paint;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,7 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.ViewHolder> 
         this.context = context;
         this.offerList = offerList;
         this.userObject=userData;
+        Log.d("LOLO" , userObject.getToken());
     }
 
     @NonNull

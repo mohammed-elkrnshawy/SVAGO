@@ -6,6 +6,7 @@ import com.example.svago.Models.LoginResponses.AuthResponse;
 import com.example.svago.Models.OrderCarResponses.OrderCarResponse;
 import com.example.svago.Models.ResponseCarsOrder.ResponseCars;
 import com.example.svago.Models.OrderTripResponses.OrderTripResponse;
+import com.example.svago.Models.ResponseGuideOrders.ResponseGuideOrders;
 import com.example.svago.Models.ResponseOffers.ResponseOffers;
 import com.example.svago.Models.ResponseSimple.ResponseSimple;
 import com.example.svago.Models.ResponseStatus.ResponseStatus;
@@ -131,6 +132,13 @@ public interface UserService_POST {
     @Headers({ "Content-Type: application/json;charset=UTF-8"})
     @POST("auth/orders/trips")
     Call<ResponseTripOrders> callTripsOrder(
+            @Header("Authorization") String Authorization,
+            @Query("page") int page
+    );
+
+    @Headers({ "Content-Type: application/json;charset=UTF-8"})
+    @POST("auth/orders/guides")
+    Call<ResponseGuideOrders> callGuidesOrder(
             @Header("Authorization") String Authorization,
             @Query("page") int page
     );

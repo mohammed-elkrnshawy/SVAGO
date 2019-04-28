@@ -7,14 +7,14 @@ import com.google.gson.annotations.SerializedName;
 @SuppressWarnings("unused")
 public class OrderCarResponse {
 
-    @SerializedName("data")
+    @SerializedName("date")
     @Expose
     private Data data;
     @SerializedName("status")
     @Expose
     private Long status;
-@Expose
-private String error;
+    @Expose
+    private String error;
 
     public Data getData() {
         return data;

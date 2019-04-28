@@ -36,6 +36,7 @@ public class OfferFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_offer, container, false);
         unbinder = ButterKnife.bind(this, view);
         mOfferPresenter = new OfferPresenter(getActivity() , progress);
+        mOfferPresenter.getData(getArguments());
         mOfferPresenter.setRecycle(recycleOffer);
         SharedPreferences prefs = getActivity().getSharedPreferences(getActivity().getPackageName(), getActivity().MODE_PRIVATE);
         mOfferPresenter.callOffers(prefs.getInt("CurrencyID" , 1) , recycleOffer);

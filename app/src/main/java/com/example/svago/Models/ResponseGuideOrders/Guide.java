@@ -1,4 +1,4 @@
-package com.example.svago.Models.ResponseOrders;
+package com.example.svago.Models.ResponseGuideOrders;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

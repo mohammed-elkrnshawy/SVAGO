@@ -75,9 +75,10 @@
                        android:layout_height="wrap_content"
                        android:layout_centerInParent="true">
                        <ImageView
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:src="@drawable/ic_flight"/>
+                           android:layout_width="60dp"
+                           android:layout_height="60dp"
+                           android:padding="5dp"
+                           android:src="@drawable/ic_flightt"/>
                        <TextView
                            android:textStyle="bold"
                            android:textAlignment="center"
@@ -132,9 +133,10 @@
                         android:layout_centerInParent="true">
                         <ImageView
                             android:layout_gravity="center"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_hotel"/>
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_hotell"/>
                         <TextView
                             android:textStyle="bold"
                             android:textAlignment="center"
@@ -195,9 +197,10 @@
                         android:layout_centerInParent="true">
                         <ImageView
                             android:layout_gravity="center"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_car"/>
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_carr"/>
                         <TextView
                             android:textStyle="bold"
                             android:textAlignment="center"
@@ -252,9 +255,10 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true">
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_super_deals"/>
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_super"/>
                         <TextView
                             android:lines="1"
                             android:textStyle="bold"

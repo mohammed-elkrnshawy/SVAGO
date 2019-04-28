@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,6 +48,7 @@ public class CarOrderPresent implements CarOrderInterface {
     public void getIntentData(Bundle bundle) {
         if (!bundle.isEmpty()){
             userObject=(userData)bundle.getSerializable(Constant.userFlag);
+//            Log.d("LOLO" , userObject.getToken());
             carData=(CarData) bundle.getSerializable("carData");
             setData();
         }

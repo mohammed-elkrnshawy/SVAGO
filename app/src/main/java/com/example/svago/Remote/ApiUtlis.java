@@ -7,7 +7,7 @@ package com.example.svago.Remote;
 
 public class ApiUtlis {
 
-    public static final String Base_Url="http://svago.mkaney.com/api/";
+    public static final String Base_Url="http://svagotravels.com/api/";
 
 
 

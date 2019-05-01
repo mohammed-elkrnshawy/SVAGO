@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.example.svago.Models.SharedResponses.userData;
 import com.example.svago.R;
@@ -57,23 +58,28 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(Svago);
                 break;
             case R.id.cardHotel:
-                Intent Hotel=new Intent(HomeActivity.this, MainHomeActivity.class);
+               /* Intent Hotel=new Intent(HomeActivity.this, MainHomeActivity.class);
                 Hotel.putExtra(Constant.TypeTag,Constant.HotelTag);
-                startActivity(Hotel);
+                startActivity(Hotel);*/
+                Toast.makeText(this, getString(R.string.not_available_now), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.cardCar:
-                Intent Car=new Intent(HomeActivity.this, MainHomeActivity.class);
+               /* Intent Car=new Intent(HomeActivity.this, MainHomeActivity.class);
                 Car.putExtra(Constant.TypeTag,Constant.CarTag);
-                startActivity(Car);                break;
+                startActivity(Car); */
+                Toast.makeText(this, getString(R.string.not_available_now), Toast.LENGTH_SHORT).show();
+                break;
             case R.id.cardFlight:
-                Intent Flight=new Intent(HomeActivity.this, MainHomeActivity.class);
+                /*Intent Flight=new Intent(HomeActivity.this, MainHomeActivity.class);
                 Flight.putExtra(Constant.TypeTag,Constant.FlightTag);
-                startActivity(Flight);
+                startActivity(Flight);*/
+                Toast.makeText(this, getString(R.string.not_available_now), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.cardDeal:
-                Intent Offers=new Intent(HomeActivity.this, MainHomeActivity.class);
+               /* Intent Offers=new Intent(HomeActivity.this, MainHomeActivity.class);
                 Offers.putExtra(Constant.TypeTag,Constant.OfferTag);
-                startActivity(Offers);
+                startActivity(Offers);*/
+                Toast.makeText(this, getString(R.string.not_available_now), Toast.LENGTH_SHORT).show();
                 break;
         }
     }

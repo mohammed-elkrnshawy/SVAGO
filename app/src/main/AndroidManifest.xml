@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.svago">
+    package="com.travel.svago">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -18,38 +18,38 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SvagoPackage.TripPackage.TripOrderActivity"></activity>
-        <activity android:name=".SvagoPackage.CarPackage.CarOrderActivity" />
-        <activity android:name=".SharedPackage.Activity.ContactUs.ContactUSActivity" />
-        <activity android:name=".SidePackage.ProfilePackage.ProfileActivity" />
+        <activity android:name="com.travel.svago.SvagoPackage.TripPackage.TripOrderActivity"></activity>
+        <activity android:name="com.travel.svago.SvagoPackage.CarPackage.CarOrderActivity" />
+        <activity android:name="com.travel.svago.SharedPackage.Activity.ContactUs.ContactUSActivity" />
+        <activity android:name="com.travel.svago.SidePackage.ProfilePackage.ProfileActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".SharedPackage.Activity.MapsActivity"
+            android:name="com.travel.svago.SharedPackage.Activity.MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".SvagoPackage.TripPackage.SvagoDetailsActivity" />
-        <activity android:name=".SidePackage.ProfilePackage.EditProfileActivity" />
-        <activity android:name=".AuthPackage.LoginPackage.LoginActivity" />
-        <activity android:name=".AuthPackage.RegisterPackage.RegisterActivity" />
-        <activity android:name=".TravelPayPackage.HotelPackage.Activities.HotelResultActivity" />
-        <activity android:name=".TravelPayPackage.FlightPackage.Activities.FlightResultActivity" />
+        <activity android:name="com.travel.svago.SvagoPackage.TripPackage.SvagoDetailsActivity" />
+        <activity android:name="com.travel.svago.SidePackage.ProfilePackage.EditProfileActivity" />
+        <activity android:name="com.travel.svago.AuthPackage.LoginPackage.LoginActivity" />
+        <activity android:name="com.travel.svago.AuthPackage.RegisterPackage.RegisterActivity" />
+        <activity android:name="com.travel.svago.TravelPayPackage.HotelPackage.Activities.HotelResultActivity" />
+        <activity android:name="com.travel.svago.TravelPayPackage.FlightPackage.Activities.FlightResultActivity" />
         <activity
-            android:name=".SharedPackage.Activity.MainHomeActivity"
+            android:name="com.travel.svago.SharedPackage.Activity.MainHomeActivity"
             android:label=""
             android:windowSoftInputMode="stateAlwaysHidden|stateVisible" />
-        <activity android:name=".TravelPayPackage.FlightPackage.Activities.TripDetailsActivity" />
-        <activity android:name=".SvagoPackage.CarPackage.CarDetailsActivity" />
-        <activity android:name=".SharedPackage.Activity.WaitingSearchActivity" />
-        <activity android:name=".TravelPayPackage.FlightPackage.Activities.BookingInformationActivity" />
-        <activity android:name=".SharedPackage.Activity.PaymentSuccessActivity" />
-        <activity android:name=".SharedPackage.Activity.TicketStatusActivity" />
-        <activity android:name=".SharedPackage.Activity.PickDateActivity" />
-        <activity android:name=".SharedPackage.Activity.PaymentActivity" />
-        <activity android:name=".SharedPackage.Activity.HomeActivity" />
-        <activity android:name=".SharedPackage.Activity.SplashActivity">
+        <activity android:name="com.travel.svago.TravelPayPackage.FlightPackage.Activities.TripDetailsActivity" />
+        <activity android:name="com.travel.svago.SvagoPackage.CarPackage.CarDetailsActivity" />
+        <activity android:name="com.travel.svago.SharedPackage.Activity.WaitingSearchActivity" />
+        <activity android:name="com.travel.svago.TravelPayPackage.FlightPackage.Activities.BookingInformationActivity" />
+        <activity android:name="com.travel.svago.SharedPackage.Activity.PaymentSuccessActivity" />
+        <activity android:name="com.travel.svago.SharedPackage.Activity.TicketStatusActivity" />
+        <activity android:name="com.travel.svago.SharedPackage.Activity.PickDateActivity" />
+        <activity android:name="com.travel.svago.SharedPackage.Activity.PaymentActivity" />
+        <activity android:name="com.travel.svago.SharedPackage.Activity.HomeActivity" />
+        <activity android:name="com.travel.svago.SharedPackage.Activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

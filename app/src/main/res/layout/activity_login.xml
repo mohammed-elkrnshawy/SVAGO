@@ -93,6 +93,17 @@
                 android:text="@string/ForgetPassword"
                 />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:text="@string/skip"
+                android:padding="10dp"
+                android:id="@+id/skip"
+                android:layout_gravity="end"
+                android:layout_marginTop="5dp"
+                />
+
             <android.support.v7.widget.CardView
                 android:id="@+id/cartLogin"
                 android:layout_width="50dp"

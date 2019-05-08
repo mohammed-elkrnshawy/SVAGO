@@ -191,7 +191,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorWhite"
                             android:text="1400 $"
-                            android:textSize="14sp"
+                            android:textSize="10sp"
                             android:layout_marginEnd="3dp"
                             />
                         <TextView
@@ -201,7 +201,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorWhite"
                             android:text="1400 $"
-                            android:textSize="14sp"
+                            android:textSize="10sp"
                             />
                     </LinearLayout>
 

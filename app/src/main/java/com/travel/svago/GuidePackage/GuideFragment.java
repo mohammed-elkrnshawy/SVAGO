@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.travel.svago.R;
+import com.travel.svago.SharedPackage.Classes.Constant;
+import com.travel.svago.SharedPackage.Classes.SharedClass;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -66,7 +68,10 @@ public class GuideFragment extends Fragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.cartOrder:
-                mGuidePresenter.validate(edtLocation , edtFrom , edtTo , edtDesc , edtBudget , lat , lng);
+                if (Constant.isLogin)
+                    mGuidePresenter.validate(edtLocation , edtFrom , edtTo , edtDesc , edtBudget , lat , lng);
+                else
+                    SharedClass.setDialog(getActivity());
                 break;
         }
     }

@@ -93,4 +93,10 @@
     <string name="edit">Edit</string>
     <string name="not_available_now">Not available now</string>
 
+    <string name="login_alert">تنبيه تسجيل</string>
+    <string name="the_requested_operation_requires_a_login_log_on_to_continue">العملية المطلوبة تتطلب تسجيل دخول سجل دخولك للمتابعة</string>
+    <string name="log">تسجيل دخول</string>
+    <string name="cancel">إلغاء</string>
+    <string name="skip"><u>تخطى</u></string>
+
 </resources>

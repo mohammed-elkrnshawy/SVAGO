@@ -15,6 +15,7 @@ import com.travel.svago.SharedPackage.Classes.Constant;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.travel.svago.SharedPackage.Classes.SharedClass;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -70,7 +71,10 @@ public class CarOrderActivity extends AppCompatActivity {
                 carOrderPresent.openDateDialog(edtFrom);
                 break;
             case R.id.cartOrder:
-                carOrderPresent.callConfirmOrder();
+                if (Constant.isLogin)
+                    carOrderPresent.callConfirmOrder();
+                else
+                    SharedClass.setDialog(this);
                 break;
             case R.id.edtLocation:
                 carOrderPresent.openMap();

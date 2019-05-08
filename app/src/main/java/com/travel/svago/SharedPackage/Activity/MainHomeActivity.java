@@ -15,6 +15,7 @@ import com.travel.svago.Models.SharedResponses.userData;
 import com.travel.svago.OfferPackage.OfferFragment;
 import com.travel.svago.R;
 import com.travel.svago.SharedPackage.Classes.Constant;
+import com.travel.svago.SharedPackage.Classes.SharedClass;
 import com.travel.svago.SidePackage.MorePackage.MoreFragment;
 import com.travel.svago.SvagoPackage.SvagoFragmentListPackage.SvagoFragment;
 import com.travel.svago.TravelPayPackage.MainTravelFragment;

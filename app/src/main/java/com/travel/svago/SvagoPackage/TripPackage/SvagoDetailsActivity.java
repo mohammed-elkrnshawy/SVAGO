@@ -11,6 +11,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.travel.svago.R;
+import com.travel.svago.SharedPackage.Classes.Constant;
+import com.travel.svago.SharedPackage.Classes.SharedClass;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -65,7 +67,10 @@ public class SvagoDetailsActivity extends AppCompatActivity {
     void Clicked(View view) {
         switch (view.getId()) {
             case R.id.btnProcess:
-                detailsPresenter.onProcessClick();
+                if (Constant.isLogin)
+                    detailsPresenter.onProcessClick();
+                else
+                    SharedClass.setDialog(this);
                 break;
             case R.id.back:
                 finish();

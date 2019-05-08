@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.travel.svago.AuthPackage.LoginPackage.LoginActivity;
 import com.travel.svago.Models.LoginResponses.AuthResponse;
+import com.travel.svago.Models.SharedResponses.userData;
 import com.travel.svago.R;
 import com.travel.svago.Remote.ApiUtlis;
 import com.travel.svago.Remote.UserService_POST;
@@ -95,7 +96,9 @@ public class SplashActivity extends AppCompatActivity {
 
             public void onFinish() {
 
-                Intent intent = new Intent(SplashActivity.this , LoginActivity.class) ;
+                userData userData = new userData() ;
+                Intent intent = new Intent(SplashActivity.this , HomeActivity.class) ;
+                intent.putExtra(Constant.userFlag , userData) ;
                 startActivity(intent);
                 finish();
 

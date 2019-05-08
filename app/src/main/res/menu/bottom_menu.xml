@@ -15,7 +15,7 @@
 
     <item android:id="@+id/svago"
         android:title="@string/svago"
-        android:icon="@drawable/ic_ballon"/>
+        android:icon="@drawable/ic_icon"/>
 
     <item android:id="@+id/guide"
         android:title="@string/manage"

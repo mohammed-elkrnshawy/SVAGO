@@ -93,4 +93,10 @@
     <string name="edit">Edit</string>
     <string name="not_available_now">Not available now</string>
 
+    <string name="login_alert">Login Alert</string>
+    <string name="the_requested_operation_requires_a_login_log_on_to_continue">The requested operation requires a login log on to continue</string>
+    <string name="log">Login</string>
+    <string name="cancel">Cancel</string>
+    <string name="skip"><u>Skip</u></string>
+
 </resources>

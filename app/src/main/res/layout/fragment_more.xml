@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:background="@color/colorWhite"
     tools:context=".SidePackage.MorePackage.MoreFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
 
     <ImageView
         android:layout_margin="20dp"
@@ -227,4 +234,29 @@
         android:drawableStart="@drawable/ic_exit"
         />
 
-</LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/ColorGray"
+        />
+
+    <TextView
+        android:id="@+id/txtLogin"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorRed1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login_now"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        android:drawablePadding="25dp"
+        android:drawableTint="@color/colorRed1"
+        android:drawableStart="@drawable/ic_login"
+        />
+
+    </LinearLayout>
+
+</ScrollView>

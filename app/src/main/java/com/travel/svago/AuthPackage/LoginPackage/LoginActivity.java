@@ -1,10 +1,11 @@
 package com.travel.svago.AuthPackage.LoginPackage;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -14,6 +15,7 @@ import com.travel.svago.AuthPackage.RegisterPackage.RegisterActivity;
 import com.travel.svago.Models.SharedResponses.userData;
 import com.travel.svago.R;
 import com.travel.svago.SharedPackage.Activity.HomeActivity;
+import com.travel.svago.SharedPackage.Activity.SplashActivity;
 import com.travel.svago.SharedPackage.Classes.Constant;
 
 import butterknife.BindView;
@@ -33,6 +35,8 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
     CardView cartLogin;
     @BindView(R.id.txtRegister)
     TextView txtRegister;
+    @BindView(R.id.skip)
+    TextView skip;
 
     private LoginPresenter loginPresenter;
 
@@ -46,36 +50,43 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
     }
 
     private void initComponents() {
-        loginPresenter=new LoginPresenter(this);
+        loginPresenter = new LoginPresenter(this);
     }
 
-    @OnClick({R.id.cartLogin,R.id.txtRegister}) void onButtonClick(View view){
-        switch (view.getId()){
+    @OnClick({R.id.cartLogin, R.id.txtRegister , R.id.skip})
+    void onButtonClick(View view) {
+        switch (view.getId()) {
             case R.id.cartLogin:
                 loginPresenter.validData();
                 break;
             case R.id.txtRegister:
                 loginPresenter.openRegister();
                 break;
+            case R.id.skip:
+                Intent intent = new Intent(LoginActivity.this , HomeActivity.class) ;
+                intent.putExtra(Constant.userFlag ,  new userData()) ;
+                startActivity(intent);
+                finish();
+                break;
         }
     }
 
     @Override
     public void validDate() {
-        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(edtEmail.getText()).matches()){
+        if (!Patterns.EMAIL_ADDRESS.matcher(edtEmail.getText()).matches()) {
             edtEmail.setError(getResources().getString(R.string.requiredField));
             edtEmail.requestFocus();
             return;
         }
 
-        if(TextUtils.isEmpty(edtPassword.getText())){
+        if (TextUtils.isEmpty(edtPassword.getText())) {
             edtPassword.setError(getResources().getString(R.string.requiredField));
             edtPassword.requestFocus();
             return;
         }
 
         loginPresenter.callLogon(edtEmail.getText().toString().trim()
-                ,edtPassword.getText().toString().trim()
+                , edtPassword.getText().toString().trim()
         );
     }
 
@@ -86,9 +97,11 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
 
     @Override
     public void successLogin(userData userData) {
-        Intent intent=new Intent(this, HomeActivity.class);
-        intent.putExtra(Constant.userFlag,userData);
+        Intent intent = new Intent(this, HomeActivity.class);
+        intent.putExtra(Constant.userFlag, userData);
         startActivity(intent);
         finishAffinity();
     }
+
+
 }

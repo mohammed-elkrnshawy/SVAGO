@@ -6,6 +6,7 @@ import com.travel.svago.Models.SharedResponses.userData;
 
 public interface MoreViewPresenter {
 
+    void initView();
     userData getIntentData(Fragment fragment);
 
     void SharedPreferencesPut(String s);

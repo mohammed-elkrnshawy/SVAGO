@@ -30,10 +30,16 @@ import butterknife.OnClick;
  */
 public class MoreFragment extends Fragment {
 
+    @BindView(R.id.txtOrders)
+    TextView txtOrders;
+    @BindView(R.id.txtLogout)
+    TextView txtLogout;
+    @BindView(R.id.txtLogin)
+    TextView txtLogin;
     private View view;
     private userData userObject;
-    private Bundle bundleExtra=new Bundle();
-    MorePresenter morePresenter ;
+    private Bundle bundleExtra = new Bundle();
+    MorePresenter morePresenter;
 
     @BindView(R.id.txtProfile)
     TextView txtProfile;
@@ -42,52 +48,61 @@ public class MoreFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view= inflater.inflate(R.layout.fragment_more, container, false);
-        ButterKnife.bind(this,view);
-        morePresenter = new MorePresenter(getActivity()) ;
-        userObject=morePresenter.getIntentData(this);
+        view = inflater.inflate(R.layout.fragment_more, container, false);
+        ButterKnife.bind(this, view);
+        morePresenter = new MorePresenter(getActivity(), this);
+        morePresenter.initView();
+        userObject = morePresenter.getIntentData(this);
         return view;
     }
 
 
-
-
-    @OnClick({R.id.txtProfile, R.id.txtContact, R.id.txtLanguage, R.id.txtAbout, R.id.txtTerms, R.id.txtLogout , R.id.txtCurrency , R.id.txtOrders})
+    @OnClick({R.id.txtProfile, R.id.txtContact, R.id.txtLanguage, R.id.txtAbout, R.id.txtTerms, R.id.txtLogout, R.id.txtCurrency, R.id.txtOrders, R.id.txtLogin})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.txtProfile:
-                setFragment(new ProfileFragment(),getString(R.string.my_profile));
+                setFragment(new ProfileFragment(), getString(R.string.my_profile));
                 break;
             case R.id.txtContact:
-                setFragment(new ContactUsFragment() , getString(R.string.contact_us));
+                setFragment(new ContactUsFragment(), getString(R.string.contact_us));
                 break;
             case R.id.txtLanguage:
-                setFragment(new LanguageFragment() , getString(R.string.language));
+                setFragment(new LanguageFragment(), getString(R.string.language));
                 break;
             case R.id.txtAbout:
-                setFragment(new AboutUsFragment() , getString(R.string.about));
+                setFragment(new AboutUsFragment(), getString(R.string.about));
                 break;
             case R.id.txtTerms:
-                setFragment(new TermsFragment() , getString(R.string.terms_and_conditions));
+                setFragment(new TermsFragment(), getString(R.string.terms_and_conditions));
                 break;
             case R.id.txtCurrency:
-                setFragment(new CurrenciesFragment() , getString(R.string.currencies));
+                setFragment(new CurrenciesFragment(), getString(R.string.currencies));
                 break;
             case R.id.txtOrders:
-                setFragment(new OrdersFragment() , getString(R.string.currencies));
+                setFragment(new OrdersFragment(), getString(R.string.currencies));
                 break;
             case R.id.txtLogout:
                 morePresenter.SharedPreferencesPut("");
-                startActivity(new Intent(getActivity() , LoginActivity.class));
+                startActivity(new Intent(getActivity(), LoginActivity.class));
+                getActivity().finishAffinity();
+                break;
+            case R.id.txtLogin:
+                Intent intent = new Intent(getActivity() , LoginActivity.class) ;
+                startActivity(intent);
                 getActivity().finishAffinity();
                 break;
         }
     }
 
     private void setFragment(Fragment fragment, String Title) {
-        bundleExtra.putSerializable(Constant.userFlag,userObject);
+        bundleExtra.putSerializable(Constant.userFlag, userObject);
         fragment.setArguments(bundleExtra);
-        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.conainerHome,fragment).addToBackStack(Title)
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.conainerHome, fragment).addToBackStack(Title)
                 .commitAllowingStateLoss();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
     }
 }

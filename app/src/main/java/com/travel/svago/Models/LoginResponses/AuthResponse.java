@@ -1,8 +1,11 @@
 
 package com.travel.svago.Models.LoginResponses;
 
+import com.google.gson.annotations.SerializedName;
 import com.travel.svago.Models.SharedResponses.userData;
 import com.google.gson.annotations.Expose;
+
+import java.util.List;
 
 @SuppressWarnings("unused")
 public class AuthResponse {
@@ -13,6 +16,9 @@ public class AuthResponse {
     private int status;
     @Expose
     private String error;
+    @SerializedName("errors")
+    @Expose
+    private List<String> errors;
 
     public userData getData() {
         return data;
@@ -38,4 +44,11 @@ public class AuthResponse {
         this.error = error;
     }
 
+    public List<String> getErrors() {
+        return errors;
+    }
+
+    public void setErrors(List<String> errors) {
+        this.errors = errors;
+    }
 }

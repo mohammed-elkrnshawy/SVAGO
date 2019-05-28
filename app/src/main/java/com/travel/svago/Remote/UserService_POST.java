@@ -11,36 +11,60 @@ import com.travel.svago.Models.ResponseOffers.ResponseOffers;
 import com.travel.svago.Models.ResponseSimple.ResponseSimple;
 import com.travel.svago.Models.ResponseStatus.ResponseStatus;
 import com.travel.svago.Models.ResponseTripOrders.ResponseTripOrders;
+import com.travel.svago.Models.SimpleResponse.SimpleResponse;
 import com.travel.svago.Models.SvagoResponses.SvagoResponse;
 import com.travel.svago.Models.TripDetailsResponses.TripDetailsResponse;
 
+import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Header;
 import retrofit2.http.Headers;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface UserService_POST {
 
+    @Multipart
     @POST("auth/register")
     Call<AuthResponse> Register(
-            @Query("name") String name,
+            @Query("first_name") String first_name,
+            @Query("last_name") String last_name,
             @Query("email") String email,
             @Query("password") String password,
             @Query("device_token") String device_token,
             @Query("language") String language,
             @Query("country") int country,
-            @Query("phone") String phone
+            @Query("phone") String phone ,
+            @Query("code") String code ,
+            @Part MultipartBody.Part image
     );
 
-    @Headers({ "Content-Type: application/json;charset=UTF-8"})
+    @Multipart
     @POST("auth/profile")
     Call<AuthResponse> EditProfile(
             @Header("Authorization") String Authorization,
             @Query("name") String name,
             @Query("email") String email,
-            @Query("phone") String phone
+            @Query("phone") String phone ,
+            @Query("code") String code ,
+            @Query("country") Integer countryId ,
+            @Query("password") String password,
+            @Part MultipartBody.Part part
+    );
+
+    @Headers({ "Content-Type: application/json;charset=UTF-8"})
+    @POST("auth/profile")
+    Call<AuthResponse> EditProfileWithoutPhoto(
+            @Header("Authorization") String Authorization,
+            @Query("name") String name,
+            @Query("email") String email,
+            @Query("phone") String phone ,
+            @Query("code") String code ,
+            @Query("country") Integer countryId ,
+            @Query("password") String password
     );
 
     @Headers({ "Content-Type: application/json;charset=UTF-8"})
@@ -56,6 +80,12 @@ public interface UserService_POST {
             @Query("language") String language,
             @Query("device_token") String device_token
     );
+
+    @POST("auth/reset")
+    Call<SimpleResponse> resetPass(
+            @Query("email") String email
+    );
+
 
     @POST("svago/list")
     Call<SvagoResponse> svagoList(
@@ -141,6 +171,22 @@ public interface UserService_POST {
     Call<ResponseGuideOrders> callGuidesOrder(
             @Header("Authorization") String Authorization,
             @Query("page") int page
+    );
+
+    @Headers({ "Content-Type: application/json;charset=UTF-8"})
+    @POST("auth/vip-trips/order")
+    Call<SimpleResponse> orderVipTrip(
+            @Header("Authorization") String Authorization,
+            @Query("phone") String phone ,
+            @Query("email") String email ,
+            @Query("location") String location ,
+            @Query("nationality") String nationality ,
+            @Query("type") String type ,
+            @Query("from") String from ,
+            @Query("to") String to ,
+            @Query("from_budget") String from_budget ,
+            @Query("to_budget") String to_budget ,
+            @Query("description") String description
     );
 
 }

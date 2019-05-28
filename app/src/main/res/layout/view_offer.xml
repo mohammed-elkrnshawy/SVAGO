@@ -23,7 +23,7 @@
 
 
             <RelativeLayout
-                android:layout_weight="1"
+                android:layout_weight=".75"
                 android:id="@+id/rel"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -42,21 +42,21 @@
                     />
 
                 <ImageView
-                    android:layout_marginBottom="5dp"
                     android:id="@+id/image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@+id/name"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/mercedes"
-                    />
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/mercedes" />
 
             </RelativeLayout>
 
 
             <RelativeLayout
                 android:gravity="center"
-                android:layout_weight="1"
+                android:layout_weight=".5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -79,6 +79,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="5"
+                        android:textSize="12sp"
                         android:layout_marginStart="3dp"
                         android:textColor="@color/colorPink2"
                         />
@@ -96,6 +97,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="5"
+                        android:textSize="12sp"
                         android:layout_marginStart="3dp"
                         android:textColor="@color/colorPink2"
                         />
@@ -114,6 +116,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="5"
+                        android:textSize="12sp"
                         android:layout_marginStart="3dp"
                         android:textColor="@color/colorPink2"
                         />
@@ -131,6 +134,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="5"
+                        android:textSize="12sp"
                         android:layout_marginStart="3dp"
                         android:textColor="@color/colorPink2"
                         />
@@ -150,8 +154,8 @@
 
                     <ImageView
                         android:id="@+id/pin"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
                         android:layout_centerVertical="true"
                         android:src="@drawable/ic_placeholder"
                         />
@@ -177,7 +181,7 @@
                     app:cardCornerRadius="15dp"
                     android:layout_marginTop="15dp"
                     app:cardBackgroundColor="@color/ColorPink"
-                    app:cardElevation="10dp"
+                    app:cardElevation="8dp"
                     >
 
                     <LinearLayout

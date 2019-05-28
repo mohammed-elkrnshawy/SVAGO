@@ -2,6 +2,7 @@
 package com.travel.svago.Models.SharedResponses;
 
 import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
@@ -23,7 +24,26 @@ public class userData implements Serializable {
     @Expose
     private String country;
     @Expose
+    private String country_name;
+    @Expose
     private int countryID;
+    @SerializedName("code")
+    @Expose
+    private String code;
+    @SerializedName("first_name")
+    @Expose
+    private String firstName;
+    @SerializedName("last_name")
+    @Expose
+    private String lastName;
+    @SerializedName("picture")
+    @Expose
+    private String picture;
+    @SerializedName("currency")
+    @Expose
+    private String currency;
+
+
 
     public String getLanguage() {
         return language;
@@ -87,5 +107,53 @@ public class userData implements Serializable {
 
     public int getCountryID() {
         return countryID;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public String getCountry_name() {
+        return country_name;
+    }
+
+    public void setCountry_name(String country_name) {
+        this.country_name = country_name;
     }
 }

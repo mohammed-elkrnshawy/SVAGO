@@ -60,24 +60,28 @@
             <RelativeLayout
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="40dp">
+                android:background="@drawable/shape_gray"
+                android:layout_height="40dp"
+                android:padding="3dp"
+                >
                 <EditText
                     android:inputType="textPassword"
                     android:id="@+id/edtPassword"
                     android:paddingStart="15dp"
                     android:hint="@string/password"
-                    android:background="@drawable/shape_gray"
+                    android:background="@drawable/shape_white"
+                    android:layout_toStartOf="@+id/imgShow"
                     android:layout_width="match_parent"
                     android:layout_height="40dp" />
 
                 <ImageView
-                    android:layout_centerVertical="true"
                     android:id="@+id/imgShow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="22dp"
-                    android:layout_alignParentEnd="true"
                     android:padding="5dp"
-                    android:src="@drawable/ic_eye_open" />
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_hide"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent" />
             </RelativeLayout>
 
             <TextView
@@ -88,6 +92,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="9.3sp"
                 android:textColor="#cf0066"
+                android:id="@+id/forget"
                 android:letterSpacing="-0.02"
                 android:lineSpacingExtra="2sp"
                 android:text="@string/ForgetPassword"

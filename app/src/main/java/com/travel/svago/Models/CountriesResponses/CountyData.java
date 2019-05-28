@@ -6,6 +6,11 @@ import com.google.gson.annotations.Expose;
 @SuppressWarnings("unused")
 public class CountyData {
 
+    @Override
+    public String toString() {
+        return getTitle();
+    }
+
     @Expose
     private int id;
     @Expose

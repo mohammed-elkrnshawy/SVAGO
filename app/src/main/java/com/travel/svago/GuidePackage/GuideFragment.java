@@ -4,13 +4,16 @@ package com.travel.svago.GuidePackage;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.CardView;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.travel.svago.R;
+import com.travel.svago.SharedPackage.Activity.MainHomeActivity;
 import com.travel.svago.SharedPackage.Classes.Constant;
 import com.travel.svago.SharedPackage.Classes.SharedClass;
 
@@ -71,7 +74,7 @@ public class GuideFragment extends Fragment {
                 if (Constant.isLogin)
                     mGuidePresenter.validate(edtLocation , edtFrom , edtTo , edtDesc , edtBudget , lat , lng);
                 else
-                    SharedClass.setDialog(getActivity());
+                    SharedClass.setDialog(getActivity() , Constant.GuideTag);
                 break;
         }
     }
@@ -86,5 +89,24 @@ public class GuideFragment extends Fragment {
             edtLocation.setText(address);
         }
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        MainHomeActivity.setFragmentWithType(Constant.GuideTag);
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
+                    FragmentManager fm = getFragmentManager();
+                    fm.popBackStack();
+                    return true ;
+                }
+                return false;
+            }
+        });
     }
 }

@@ -7,8 +7,10 @@ import com.travel.svago.Models.LoginResponses.AuthResponse;
 import com.travel.svago.Models.SharedResponses.userData;
 import com.travel.svago.Remote.ApiUtlis;
 import com.travel.svago.Remote.UserService_POST;
+import com.travel.svago.SharedPackage.Classes.SharedClass;
 import com.travel.svago.SharedPackage.Classes.SharedUtils;
 
+import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -29,11 +31,11 @@ public class RegisterPresenter {
         view.validDate();
     }
 
-    public void callRegister(userData userData) {
+    public void callRegister(userData userData  , MultipartBody.Part part) {
         progressDialog.show();
         Call<AuthResponse> call=userServicePost.Register(
-                userData.getUsername(),userData.getEmail(),userData.getPassword(),
-                "token","en",userData.getCountryID(),userData.getPhone());
+                userData.getFirstName(),userData.getLastName(),userData.getEmail(),userData.getPassword(),
+                "token", SharedClass.getLocalization(view.getApplicationContext()),userData.getCountryID(),userData.getPhone() , userData.getCode() , part);
         call.enqueue(new Callback<AuthResponse>() {
             @Override
             public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {

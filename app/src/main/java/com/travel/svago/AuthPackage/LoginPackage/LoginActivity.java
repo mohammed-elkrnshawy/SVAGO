@@ -4,18 +4,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.text.InputType;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.travel.svago.AuthPackage.ForgetPasswordActivity;
 import com.travel.svago.AuthPackage.RegisterPackage.RegisterActivity;
 import com.travel.svago.Models.SharedResponses.userData;
 import com.travel.svago.R;
 import com.travel.svago.SharedPackage.Activity.HomeActivity;
-import com.travel.svago.SharedPackage.Activity.SplashActivity;
+import com.travel.svago.SharedPackage.Activity.MainHomeActivity;
 import com.travel.svago.SharedPackage.Classes.Constant;
 
 import butterknife.BindView;
@@ -38,14 +41,17 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
     @BindView(R.id.skip)
     TextView skip;
 
+    String tag = "";
+
     private LoginPresenter loginPresenter;
+    private boolean isHide = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-
+        getData();
         initComponents();
     }
 
@@ -53,7 +59,16 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
         loginPresenter = new LoginPresenter(this);
     }
 
-    @OnClick({R.id.cartLogin, R.id.txtRegister , R.id.skip})
+    @Override
+    public void getData() {
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            tag = bundle.getString("tag", "");
+            Log.d("OOO", tag);
+        }
+    }
+
+    @OnClick({R.id.cartLogin, R.id.txtRegister, R.id.skip, R.id.imgShow})
     void onButtonClick(View view) {
         switch (view.getId()) {
             case R.id.cartLogin:
@@ -63,10 +78,13 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
                 loginPresenter.openRegister();
                 break;
             case R.id.skip:
-                Intent intent = new Intent(LoginActivity.this , HomeActivity.class) ;
-                intent.putExtra(Constant.userFlag ,  new userData()) ;
+                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                intent.putExtra(Constant.userFlag, new userData());
                 startActivity(intent);
                 finish();
+                break;
+            case R.id.imgShow:
+                showAndHidePassword();
                 break;
         }
     }
@@ -97,11 +115,41 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
 
     @Override
     public void successLogin(userData userData) {
-        Intent intent = new Intent(this, HomeActivity.class);
-        intent.putExtra(Constant.userFlag, userData);
-        startActivity(intent);
-        finishAffinity();
+        if (tag.equals(Constant.GuideTag)) {
+            Intent intent = new Intent(this, MainHomeActivity.class);
+            intent.putExtra(Constant.userFlag, userData);
+            intent.putExtra(Constant.TypeTag, Constant.GuideTag);
+            HomeActivity.setData(userData);
+            startActivity(intent);
+            finishAffinity();
+        } else {
+            Intent intent = new Intent(this, HomeActivity.class);
+            intent.putExtra(Constant.userFlag, userData);
+            startActivity(intent);
+            finishAffinity();
+        }
     }
 
+    @Override
+    public void showAndHidePassword() {
+        if (isHide) {
+            isHide = false;
+            imgShow.setImageResource(R.drawable.ic_view);
+            edtPassword.setInputType(InputType.TYPE_CLASS_TEXT |
+                    InputType.TYPE_TEXT_VARIATION_NORMAL);
+            edtPassword.setSelection(edtPassword.getText().length());
+        } else {
+            isHide = true;
+            imgShow.setImageResource(R.drawable.ic_hide);
+            edtPassword.setInputType(InputType.TYPE_CLASS_TEXT |
+                    InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            edtPassword.setSelection(edtPassword.getText().length());
+        }
+    }
 
+    @OnClick(R.id.forget)
+    public void onViewClicked() {
+        Intent intent = new Intent(this , ForgetPasswordActivity.class) ;
+        startActivity(intent);
+    }
 }

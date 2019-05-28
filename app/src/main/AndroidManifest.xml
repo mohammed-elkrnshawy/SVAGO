@@ -18,44 +18,57 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.travel.svago.SvagoPackage.TripPackage.TripOrderActivity"></activity>
-        <activity android:name="com.travel.svago.SvagoPackage.CarPackage.CarOrderActivity" />
-        <activity android:name="com.travel.svago.SharedPackage.Activity.ContactUs.ContactUSActivity" />
-        <activity android:name="com.travel.svago.SidePackage.ProfilePackage.ProfileActivity" />
+        <activity android:name=".SharedPackage.Activity.OpenPictureActivity"></activity>
+        <activity android:name=".SharedPackage.Activity.ParentActivity" />
+        <activity android:name=".AuthPackage.ForgetPasswordActivity" />
+        <activity android:name=".SvagoPackage.TripPackage.TripOrderActivity" />
+        <activity android:name=".SvagoPackage.CarPackage.CarOrderActivity" />
+        <activity android:name=".SharedPackage.Activity.ContactUs.ContactUSActivity" />
+        <activity android:name=".SidePackage.ProfilePackage.ProfileActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name="com.travel.svago.SharedPackage.Activity.MapsActivity"
+            android:name=".SharedPackage.Activity.MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name="com.travel.svago.SvagoPackage.TripPackage.SvagoDetailsActivity" />
-        <activity android:name="com.travel.svago.SidePackage.ProfilePackage.EditProfileActivity" />
-        <activity android:name="com.travel.svago.AuthPackage.LoginPackage.LoginActivity" />
-        <activity android:name="com.travel.svago.AuthPackage.RegisterPackage.RegisterActivity" />
-        <activity android:name="com.travel.svago.TravelPayPackage.HotelPackage.Activities.HotelResultActivity" />
-        <activity android:name="com.travel.svago.TravelPayPackage.FlightPackage.Activities.FlightResultActivity" />
+        <activity android:name=".SvagoPackage.TripPackage.SvagoDetailsActivity" />
+        <activity android:name=".SidePackage.ProfilePackage.EditProfileActivity" />
+        <activity android:name=".AuthPackage.LoginPackage.LoginActivity" />
+        <activity android:name=".AuthPackage.RegisterPackage.RegisterActivity" />
+        <activity android:name=".TravelPayPackage.HotelPackage.Activities.HotelResultActivity" />
+        <activity android:name=".TravelPayPackage.FlightPackage.Activities.FlightResultActivity" />
         <activity
-            android:name="com.travel.svago.SharedPackage.Activity.MainHomeActivity"
+            android:name=".SharedPackage.Activity.MainHomeActivity"
             android:label=""
             android:windowSoftInputMode="stateAlwaysHidden|stateVisible" />
-        <activity android:name="com.travel.svago.TravelPayPackage.FlightPackage.Activities.TripDetailsActivity" />
-        <activity android:name="com.travel.svago.SvagoPackage.CarPackage.CarDetailsActivity" />
-        <activity android:name="com.travel.svago.SharedPackage.Activity.WaitingSearchActivity" />
-        <activity android:name="com.travel.svago.TravelPayPackage.FlightPackage.Activities.BookingInformationActivity" />
-        <activity android:name="com.travel.svago.SharedPackage.Activity.PaymentSuccessActivity" />
-        <activity android:name="com.travel.svago.SharedPackage.Activity.TicketStatusActivity" />
-        <activity android:name="com.travel.svago.SharedPackage.Activity.PickDateActivity" />
-        <activity android:name="com.travel.svago.SharedPackage.Activity.PaymentActivity" />
-        <activity android:name="com.travel.svago.SharedPackage.Activity.HomeActivity" />
-        <activity android:name="com.travel.svago.SharedPackage.Activity.SplashActivity">
+        <activity android:name=".TravelPayPackage.FlightPackage.Activities.TripDetailsActivity" />
+        <activity android:name=".SvagoPackage.CarPackage.CarDetailsActivity" />
+        <activity android:name=".SharedPackage.Activity.WaitingSearchActivity" />
+        <activity android:name=".TravelPayPackage.FlightPackage.Activities.BookingInformationActivity" />
+        <activity android:name=".SharedPackage.Activity.PaymentSuccessActivity" />
+        <activity android:name=".SharedPackage.Activity.TicketStatusActivity" />
+        <activity android:name=".SharedPackage.Activity.PickDateActivity" />
+        <activity android:name=".SharedPackage.Activity.PaymentActivity" />
+        <activity android:name=".SharedPackage.Activity.HomeActivity" />
+        <activity android:name=".SharedPackage.Activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.travel.svago.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

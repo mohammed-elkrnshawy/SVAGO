@@ -25,6 +25,7 @@ public class CurrenciesAdapter extends RecyclerView.Adapter<CurrenciesAdapter.Vi
     Context context ;
     int isSelect = -1 ;
     String s = SharedClass.Currency ;
+    public static boolean save = false ;
 
     public CurrenciesAdapter(List<Currency> currencyList, Context context) {
         this.currencyList = currencyList;
@@ -47,8 +48,10 @@ public class CurrenciesAdapter extends RecyclerView.Adapter<CurrenciesAdapter.Vi
         if (isSelect == i){
             holder.checkBox.setChecked(true);
             ChangeCurrency(currencyList.get(i).getSymbol() , currencyList.get(i).getId());
+            save=true;
         }else {
             if (s.equals(currencyList.get(i).getSymbol())){
+                save=true;
                 holder.checkBox.setChecked(true);
             }else {
                 holder.checkBox.setChecked(false);

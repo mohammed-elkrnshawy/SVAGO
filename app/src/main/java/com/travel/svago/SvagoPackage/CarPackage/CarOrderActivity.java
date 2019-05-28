@@ -74,7 +74,7 @@ public class CarOrderActivity extends AppCompatActivity {
                 if (Constant.isLogin)
                     carOrderPresent.callConfirmOrder();
                 else
-                    SharedClass.setDialog(this);
+                    SharedClass.setDialog(this , Constant.CarTag);
                 break;
             case R.id.edtLocation:
                 carOrderPresent.openMap();

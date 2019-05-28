@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import com.travel.svago.Models.SharedResponses.userData;
 import com.travel.svago.R;
+import com.travel.svago.SidePackage.OrdersPackage.GuideOrdersPackage.GuidePresenter;
+import com.travel.svago.SidePackage.OrdersPackage.TripsOrdersPackage.TripPresenter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -55,5 +57,19 @@ public class CarsOrderFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+//        GuidePresenter.hide=false;
+  //      TripPresenter.hide=false ;
+    }
+
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        CarsPresenter.hide=false;
     }
 }

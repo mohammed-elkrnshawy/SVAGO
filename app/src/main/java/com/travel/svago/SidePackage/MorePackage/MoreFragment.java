@@ -4,6 +4,8 @@ package com.travel.svago.SidePackage.MorePackage;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 import com.travel.svago.AuthPackage.LoginPackage.LoginActivity;
 import com.travel.svago.Models.SharedResponses.userData;
 import com.travel.svago.R;
+import com.travel.svago.SharedPackage.Activity.MainHomeActivity;
 import com.travel.svago.SharedPackage.Classes.Constant;
 import com.travel.svago.SidePackage.AboutUsPackage.AboutUsFragment;
 import com.travel.svago.SidePackage.ContactUsPackage.ContactUsFragment;
@@ -20,6 +23,7 @@ import com.travel.svago.SidePackage.LanguagePackage.LanguageFragment;
 import com.travel.svago.SidePackage.OrdersPackage.AllOrdersPackage.OrdersFragment;
 import com.travel.svago.SidePackage.ProfilePackage.ProfileFragment;
 import com.travel.svago.SidePackage.TermsPackage.TermsFragment;
+import com.travel.svago.SidePackage.VipTripsPackage.VipTripsFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -57,7 +61,7 @@ public class MoreFragment extends Fragment {
     }
 
 
-    @OnClick({R.id.txtProfile, R.id.txtContact, R.id.txtLanguage, R.id.txtAbout, R.id.txtTerms, R.id.txtLogout, R.id.txtCurrency, R.id.txtOrders, R.id.txtLogin})
+    @OnClick({R.id.txtProfile, R.id.txtVip,R.id.txtContact, R.id.txtLanguage, R.id.txtAbout, R.id.txtTerms, R.id.txtLogout, R.id.txtCurrency, R.id.txtOrders, R.id.txtLogin})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.txtProfile:
@@ -81,13 +85,16 @@ public class MoreFragment extends Fragment {
             case R.id.txtOrders:
                 setFragment(new OrdersFragment(), getString(R.string.currencies));
                 break;
+            case R.id.txtVip:
+                setFragment(new VipTripsFragment(), getString(R.string.currencies));
+                break;
             case R.id.txtLogout:
                 morePresenter.SharedPreferencesPut("");
                 startActivity(new Intent(getActivity(), LoginActivity.class));
                 getActivity().finishAffinity();
                 break;
             case R.id.txtLogin:
-                Intent intent = new Intent(getActivity() , LoginActivity.class) ;
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
                 getActivity().finishAffinity();
                 break;
@@ -101,8 +108,25 @@ public class MoreFragment extends Fragment {
                 .commitAllowingStateLoss();
     }
 
+
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
+    public void onResume() {
+        super.onResume();
+        MainHomeActivity.setFragmentWithType(Constant.MoreTag);
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
+                    FragmentManager fm = getFragmentManager();
+                    fm.popBackStack();
+                    return true;
+                }
+                return false;
+            }
+        });
     }
+
+
 }

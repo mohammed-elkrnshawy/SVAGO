@@ -44,7 +44,7 @@ public class SharedClass {
         progressDialog.dismiss();
     }
 
-    public   static void setDialog(final Context context){
+    public   static void setDialog(final Context context , final String tag){
         final AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.dialog_login , null) ;
@@ -77,6 +77,7 @@ public class SharedClass {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context , LoginActivity.class) ;
+                intent.putExtra("tag" , tag) ;
                 context.startActivity(intent);
                 ((Activity)context).finishAffinity();
             }

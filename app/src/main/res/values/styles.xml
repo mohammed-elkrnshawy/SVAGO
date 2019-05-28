@@ -6,6 +6,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPink2</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@style/SvagoTextViewStyle</item>
+        <item name="android:buttonStyle">@style/SvagoButtonStyle</item>
+        <item name="android:editTextStyle">@style/SvagoEditTextStyle</item>
     </style>
 
     <style name="HomeAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -14,6 +17,17 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorControlActivated">@color/colorBlack</item>
+
+    </style>
+
+    <style name="SvagoTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/lato_bold_font</item>
+    </style>
+    <style name="SvagoButtonStyle" parent="android:Widget.Button">
+        <item name="android:fontFamily">@font/lato_bold_font</item>
+    </style>
+    <style name="SvagoEditTextStyle" parent="android:Widget.EditText">
+        <item name="android:fontFamily">@font/lato_bold_font</item>
     </style>
 
 </resources>

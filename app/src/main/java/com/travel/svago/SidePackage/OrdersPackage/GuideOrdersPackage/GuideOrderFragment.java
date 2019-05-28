@@ -12,6 +12,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.travel.svago.R;
+import com.travel.svago.SidePackage.OrdersPackage.CarsOrderPackage.CarsPresenter;
+import com.travel.svago.SidePackage.OrdersPackage.TripsOrdersPackage.TripPresenter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -57,4 +59,19 @@ public class GuideOrderFragment extends Fragment {
         super.onDestroyView();
         unbinder.unbind();
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+       // CarsPresenter.hide=false;
+       // TripPresenter.hide=false ;
+    }
+
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        GuidePresenter.hide=false;
+    }
+
 }

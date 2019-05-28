@@ -29,10 +29,12 @@ public class TripPresenter implements TripViewPresenter {
     private TripOrderFragment view ;
     private TripAdapter mTripAdapter ;
     List<Trip> tripList ;
+    public static boolean  hide = true ;
 
     public TripPresenter(com.travel.svago.Models.SharedResponses.userData userData, TripOrderFragment view) {
         this.userData = userData;
         this.view = view;
+        hide=true;
         userService = ApiUtlis.getUserServices_Post();
     }
 
@@ -48,7 +50,7 @@ public class TripPresenter implements TripViewPresenter {
         call.enqueue(new Callback<ResponseTripOrders>() {
             @Override
             public void onResponse(Call<ResponseTripOrders> call, Response<ResponseTripOrders> response) {
-                view.bar.setVisibility(View.GONE);
+                hideBar();
                 if (response.isSuccessful()){
                     if (response.body().getStatus()==200){
                         if (page == 1) {
@@ -59,14 +61,10 @@ public class TripPresenter implements TripViewPresenter {
                         tripList.addAll(response.body().getData().getTrips());
                         mTripAdapter.notifyDataSetChanged();
 
-                        if (page == 2)
+                        /*if (page == 2)
                             view.recTrip.smoothScrollToPosition(0);
-
-                        if (tripList.size()==0)
-                            view.empty.setVisibility(View.VISIBLE);
-                        else
-                            view.empty.setVisibility(View.GONE);
-
+*/
+                        hideEmpty(tripList.size());
                     }else {
                         Toast.makeText(view.getActivity(), response.body().getErrors().get(0), Toast.LENGTH_SHORT).show();
                     }
@@ -77,7 +75,7 @@ public class TripPresenter implements TripViewPresenter {
 
             @Override
             public void onFailure(Call<ResponseTripOrders> call, Throwable t) {
-                view.bar.setVisibility(View.GONE);
+                hideBar();
                 Toast.makeText(view.getActivity(), t.getMessage() , Toast.LENGTH_SHORT).show();
             }
         });
@@ -112,4 +110,19 @@ public class TripPresenter implements TripViewPresenter {
             }
         });
     }
+
+    private void hideBar(){
+        if (hide)
+            view.bar.setVisibility(View.GONE);
+    }
+    private void hideEmpty(int size){
+        if (hide){
+            if (size == 0) {
+                view.empty.setVisibility(View.VISIBLE);
+            } else {
+                view.empty.setVisibility(View.GONE);
+            }
+        }
+    }
+
 }

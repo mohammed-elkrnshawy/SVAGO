@@ -14,7 +14,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_marginTop="75dp"
+            android:layout_marginTop="45dp"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             android:orientation="vertical"
@@ -22,6 +22,16 @@
             android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:src="@drawable/man"
+                android:layout_margin="20dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:id="@+id/userImage"
+                android:layout_gravity="center|top"/>
+
+
 
 
 
@@ -38,25 +48,60 @@
 
             <EditText
                 android:lines="1"
-                android:inputType="text"
+                android:inputType="textEmailAddress"
+                android:id="@+id/edtEmail"
+                android:paddingStart="15dp"
+                android:hint="@string/email"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_gray"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+            <RelativeLayout
+                android:background="@drawable/shape_gray"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:paddingStart="15dp"
                 android:id="@+id/edtCountry"
-                android:paddingStart="15dp"
-                android:hint="@string/country"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/shape_gray"
                 android:layout_width="match_parent"
                 android:layout_height="40dp" />
 
-            <EditText
-                android:inputType="number"
-                android:id="@+id/edtPhone"
-                android:paddingStart="15dp"
-                android:hint="@string/phone"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/shape_gray"
-                android:layout_width="match_parent"
-                android:layout_height="40dp" />
+            </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <EditText
+                    android:inputType="number"
+                    android:id="@+id/edtCode"
+                    android:paddingStart="15dp"
+                    android:hint="@string/code"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:maxLength="5"
+                    android:background="@drawable/shape_gray"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp" />
+
+
+                <EditText
+                    android:layout_toEndOf="@id/edtCode"
+                    android:layout_marginStart="8dp"
+                    android:inputType="number"
+                    android:id="@+id/edtPhone"
+                    android:paddingStart="15dp"
+                    android:hint="@string/phone"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/shape_gray"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_marginTop="20dp"
@@ -75,10 +120,10 @@
                     android:id="@+id/imgShow"
                     android:padding="5dp"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_eye_open"
+                    android:src="@drawable/ic_hide"
                     android:layout_alignParentEnd="true"
                     android:layout_width="wrap_content"
-                    android:layout_height="22dp" />
+                    android:layout_height="match_parent" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -89,14 +134,14 @@
                 <android.support.v7.widget.CardView
                     android:layout_centerHorizontal="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_width="250dp"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="70dp"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="50dp"
                     android:layout_below="@+id/lin"
                     app:cardCornerRadius="15dp"
                     android:id="@+id/cardSave"
                     app:cardBackgroundColor="@color/ColorPink"
-                    app:cardElevation="10dp"
+                    app:cardElevation="5dp"
                     >
 
                     <TextView

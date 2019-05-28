@@ -31,8 +31,13 @@
     <string name="details">Details</string>
     <string name="booking_information">Booking Information</string>
     <string name="personal_information">Personal Information</string>
-    <string name="first_name">First Name</string>
-    <string name="last_name">Last Name</string>
+    <string name="takephot">Take Photo</string>
+    <string name="choocegallary">Choose Form Gallery</string>
+    <string name="cancel_dialog">Cancel Dialog</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="choose_photo">Choose Photo</string>
+    <string name="choosegallery">Choose Form Gallery</string>
+
     <string name="date_of_birth">Date of birth</string>
     <string name="phone">Phone No</string>
     <string name="email">Email</string>
@@ -98,5 +103,33 @@
     <string name="log">تسجيل دخول</string>
     <string name="cancel">إلغاء</string>
     <string name="skip"><u>تخطى</u></string>
+    <string name="password_must_be">Password must be larger than 8 character</string>
+    <string name="guide">Guide</string>
+    <string name="submit">حجز</string>
+    <string name="choose_currency">Choose currency !</string>
+    <string name="currency_changed_successfully">Currency changed successfully</string>
+    <string name="no_trips">No trips :(</string>
+    <string name="your_email">Your email</string>
+    <string name="check_your_email_inbox">Check your email inbox</string>
+    <string name="error">Error :</string>
+    <string name="required_fielddd">Required field</string>
+    <string name="code">Code</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="not_equal">Not equal !</string>
+    <string name="select_photo">Select photo</string>
+    <string name="Choose_country">Choose country</string>
+    <string name="pho">Phone</string>
+    <string name="nationality">Nationality</string>
+    <string name="type">Type</string>
+    <string name="budget_from">Budget(From)</string>
+    <string name="budget_to">Budget(To)</string>
+    <string name="religious">Religious</string>
+    <string name="culture">Cultural</string>
+    <string name="Entertainment">Entertainment</string>
+    <string name="haj">Haj</string>
+    <string name="Trip_requested_successfully">Trip requested successfully</string>
+    <string name="vip_trips">Vip Trips</string>
 
 </resources>

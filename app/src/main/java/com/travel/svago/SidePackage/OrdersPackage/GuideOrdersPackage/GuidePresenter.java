@@ -29,10 +29,12 @@ public class GuidePresenter implements GuideViewPresenter {
     private int page = 1;
     private GuideAdapter mGuideAdapter ;
     private List<Guide> guideList ;
+    public static boolean  hide = true ;
 
     public GuidePresenter(GuideOrderFragment view, com.travel.svago.Models.SharedResponses.userData userData) {
         this.view = view;
         this.userData = userData;
+        hide=true;
         userService = ApiUtlis.getUserServices_Post() ;
     }
 
@@ -48,7 +50,7 @@ public class GuidePresenter implements GuideViewPresenter {
         call.enqueue(new Callback<ResponseGuideOrders>() {
             @Override
             public void onResponse(Call<ResponseGuideOrders> call, Response<ResponseGuideOrders> response) {
-                view.bar.setVisibility(View.GONE);
+                hideBar();
                 if (response.isSuccessful()){
                     if (response.body().getStatus()==200){
                         if (page == 1) {
@@ -59,14 +61,10 @@ public class GuidePresenter implements GuideViewPresenter {
                         guideList.addAll(response.body().getData().getGuides());
                         mGuideAdapter.notifyDataSetChanged();
 
-                        if (page == 2)
+                        /*if (page == 2)
                             view.recGuides.smoothScrollToPosition(0);
-
-                        if (guideList.size()==0)
-                            view.empty.setVisibility(View.VISIBLE);
-                        else
-                            view.empty.setVisibility(View.GONE);
-
+*/
+                        hideEmpty(guideList.size());
 
                     }else {
                         Toast.makeText(view.getActivity(), response.body().getErrors().get(0) , Toast.LENGTH_SHORT).show();
@@ -78,7 +76,8 @@ public class GuidePresenter implements GuideViewPresenter {
 
             @Override
             public void onFailure(Call<ResponseGuideOrders> call, Throwable t) {
-
+                hideBar();
+                Toast.makeText(view.getActivity(), t.getMessage() , Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -112,4 +111,19 @@ public class GuidePresenter implements GuideViewPresenter {
             }
         });
     }
+
+    private void hideBar(){
+        if (hide)
+            view.bar.setVisibility(View.GONE);
+    }
+    private void hideEmpty(int size){
+        if (hide){
+            if (size == 0) {
+                view.empty.setVisibility(View.VISIBLE);
+            } else {
+                view.empty.setVisibility(View.GONE);
+            }
+        }
+    }
+
 }

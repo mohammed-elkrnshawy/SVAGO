@@ -29,11 +29,13 @@ public class CarsPresenter implements CarsViewPresenter {
     private boolean mLoading = false;
     private int breDy = 0;
     private int page = 1;
+    public static  boolean  hide = true ;
 
     public CarsPresenter(CarsOrderFragment view, com.travel.svago.Models.SharedResponses.userData userData) {
         this.view = view;
         this.userData = userData;
         carList = new ArrayList<>();
+        hide=true;
         userService = ApiUtlis.getUserServices_Post() ;
     }
 
@@ -49,7 +51,7 @@ public class CarsPresenter implements CarsViewPresenter {
         call.enqueue(new Callback<ResponseCars>() {
             @Override
             public void onResponse(Call<ResponseCars> call, Response<ResponseCars> response) {
-                view.bar.setVisibility(View.GONE);
+                hideBar();
                 if (response.isSuccessful()){
                     if (response.body().getStatus()==200){
                         if (page == 1) {
@@ -60,14 +62,15 @@ public class CarsPresenter implements CarsViewPresenter {
                         carList.addAll(response.body().getData().getCars());
                         mCarsAdapter.notifyDataSetChanged();
 
-                        if (page == 2)
+                       /* if (page == 2)
                             view.recCars.smoothScrollToPosition(0);
-
-                        if (carList.size()==0)
+*/
+                        /*if (carList.size()==0)
                             view.empty.setVisibility(View.VISIBLE);
                         else
                             view.empty.setVisibility(View.GONE);
-
+*/
+                        hideEmpty(carList.size());
 
                     }else {
                         Toast.makeText(view.getActivity(), response.body().getErrors().get(0) , Toast.LENGTH_SHORT).show();
@@ -114,4 +117,21 @@ public class CarsPresenter implements CarsViewPresenter {
             }
         });
     }
+
+    private void hideBar(){
+        if (hide)
+            view.bar.setVisibility(View.GONE);
+    }
+
+    private void hideEmpty(int size){
+        if (hide){
+            if (size == 0) {
+                view.empty.setVisibility(View.VISIBLE);
+            } else {
+                view.empty.setVisibility(View.GONE);
+            }
+        }
+    }
+
+
 }

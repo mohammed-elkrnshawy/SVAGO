@@ -18,7 +18,7 @@
         android:icon="@drawable/ic_icon"/>
 
     <item android:id="@+id/guide"
-        android:title="@string/manage"
+        android:title="@string/guide"
         android:icon="@drawable/ic_credit_cards"/>
 
     <item android:id="@+id/more"

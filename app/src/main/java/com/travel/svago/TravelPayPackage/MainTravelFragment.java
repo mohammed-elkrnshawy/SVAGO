@@ -39,6 +39,7 @@ public class MainTravelFragment extends Fragment {
     @BindView(R.id.relativeHotel) RelativeLayout relativeHotel;
     @BindView(R.id.relativeCar) RelativeLayout relativeCar;
 
+    private String preTitle="";
 
     public MainTravelFragment() {
         // Required empty public constructor
@@ -76,8 +77,10 @@ public class MainTravelFragment extends Fragment {
         /*fragmentBundle.putSerializable(Constant.userFlag,userObject);
         fragmentBundle.putString(Constant.TypeTag,stringType);
         fragment.setArguments(fragmentBundle);*/
-        getFragmentManager().beginTransaction().replace(R.id.conainerTravel,fragment)
-                .addToBackStack(Title).commitAllowingStateLoss();
+        if (!preTitle.equals(Title)) {
+            getFragmentManager().beginTransaction().replace(R.id.conainerTravel, fragment)
+                    .addToBackStack(Title).commitAllowingStateLoss();
+        }
     }
 
     @OnClick({R.id.relativeCar,R.id.relativeFlight,R.id.relativeHotel}) void onClick(View view) {

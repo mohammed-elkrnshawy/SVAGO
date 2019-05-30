@@ -48,9 +48,10 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.ViewHolder> {
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context , SvagoDetailsActivity.class);
+                Intent intent = new Intent(context , TripOrderDetailsActivity.class);
                 intent.putExtra(Constant.userFlag , userData );
-                intent.putExtra("tripID" , tripList.get(i).getTrip().getId());
+                intent.putExtra("trip" , tripList.get(i));
+                intent.putExtra("position" , i);
                 context.startActivity(intent);
             }
         });

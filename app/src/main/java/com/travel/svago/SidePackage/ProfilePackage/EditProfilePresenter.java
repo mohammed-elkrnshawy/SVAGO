@@ -32,6 +32,7 @@ public class EditProfilePresenter {
 
     private void setData(){
         view.setData();
+
     }
     
     public void validData() {

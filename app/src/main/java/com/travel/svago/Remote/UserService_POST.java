@@ -1,6 +1,7 @@
 package com.travel.svago.Remote;
 
 
+import com.travel.svago.Models.AffiliateResponse.AffiliateResponse;
 import com.travel.svago.Models.CarDetailsResponses.CarDetailsResponse;
 import com.travel.svago.Models.LoginResponses.AuthResponse;
 import com.travel.svago.Models.OrderCarResponses.OrderCarResponse;
@@ -9,6 +10,7 @@ import com.travel.svago.Models.OrderTripResponses.OrderTripResponse;
 import com.travel.svago.Models.ResponseGuideOrders.ResponseGuideOrders;
 import com.travel.svago.Models.ResponseOffers.ResponseOffers;
 import com.travel.svago.Models.ResponseSimple.ResponseSimple;
+import com.travel.svago.Models.ResponseSocialLogin.ResponseSocialLogin;
 import com.travel.svago.Models.ResponseStatus.ResponseStatus;
 import com.travel.svago.Models.ResponseTripOrders.ResponseTripOrders;
 import com.travel.svago.Models.SimpleResponse.SimpleResponse;
@@ -171,6 +173,44 @@ public interface UserService_POST {
     Call<ResponseGuideOrders> callGuidesOrder(
             @Header("Authorization") String Authorization,
             @Query("page") int page
+    );
+
+    @Headers({ "Content-Type: application/json;charset=UTF-8"})
+    @POST("payments/car/cancel")
+    Call<SimpleResponse> cancelCarOrder(
+            @Header("Authorization") String Authorization,
+            @Query("order_id") String order_id
+    );
+ @Headers({ "Content-Type: application/json;charset=UTF-8"})
+    @POST("payments/trip/cancel")
+    Call<SimpleResponse> cancelTripOrder(
+            @Header("Authorization") String Authorization,
+            @Query("order_id") String order_id
+    );
+
+ @Headers({ "Content-Type: application/json;charset=UTF-8"})
+    @POST("cars/link")
+    Call<AffiliateResponse> getCarLink(
+            @Header("Authorization") String Authorization,
+            @Query("car_id") int car_id
+    );
+
+
+ @Headers({ "Content-Type: application/json;charset=UTF-8"})
+    @POST("trips/link")
+    Call<AffiliateResponse> getTripLink(
+            @Header("Authorization") String Authorization,
+            @Query("car_id") int car_id
+    );
+
+
+ @Headers({ "Content-Type: application/json;charset=UTF-8"})
+ @POST("auth/social")
+    Call<ResponseSocialLogin> socialLogin(
+            @Query("email") String email  ,
+            @Query("name") String name  ,
+            @Query("driver") String driver  ,
+            @Query("id") String id
     );
 
     @Headers({ "Content-Type: application/json;charset=UTF-8"})

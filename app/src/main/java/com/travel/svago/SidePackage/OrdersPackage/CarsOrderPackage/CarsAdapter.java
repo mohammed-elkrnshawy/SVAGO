@@ -1,6 +1,7 @@
 package com.travel.svago.SidePackage.OrdersPackage.CarsOrderPackage;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -15,6 +16,8 @@ import com.travel.svago.Models.ResponseCarsOrder.Car;
 import com.travel.svago.Models.SharedResponses.userData;
 import com.travel.svago.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.travel.svago.SharedPackage.Classes.Constant;
+import com.travel.svago.SvagoPackage.TripPackage.SvagoDetailsActivity;
 
 import java.util.List;
 
@@ -38,7 +41,7 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int i) {
+    public void onBindViewHolder(@NonNull ViewHolder holder,  final int i) {
         ImageLoader.getInstance().displayImage(carList.get(i).getCar().getImage(),holder.imageView);
         holder.TxtPassenger.setText(carList.get(i).getCar().getPassengers());
         holder.TxtDoor.setText(carList.get(i).getCar().getDoors());
@@ -46,6 +49,16 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.ViewHolder> {
         holder.TxtCrystal.setText(carList.get(i).getCar().getAc());
         holder.TxtName.setText(carList.get(i).getCar().getName());
         holder.TxtLocation.setText(carList.get(i).getCar().getAddress());
+        holder.parent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context , CarOrderDetailsActivity.class);
+                intent.putExtra(Constant.userFlag , userData );
+                intent.putExtra("car" , carList.get(i));
+                intent.putExtra("position" , i);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

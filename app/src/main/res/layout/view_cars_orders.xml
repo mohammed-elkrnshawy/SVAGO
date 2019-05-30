@@ -33,11 +33,10 @@
 
 
                 <ImageView
-                    android:layout_marginBottom="5dp"
                     android:id="@+id/image"
+                    android:scaleType="fitXY"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
                     android:src="@drawable/mercedes"
                     />
 
@@ -155,8 +154,8 @@
 
                     <ImageView
                         android:id="@+id/pin"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
                         android:layout_centerVertical="true"
                         android:src="@drawable/ic_placeholder"
                         />
@@ -168,6 +167,7 @@
                         android:layout_toEndOf="@+id/pin"
                         android:layout_marginStart="5dp"
                         android:textSize="12sp"
+                        android:layout_centerVertical="true"
                         android:text="Borg El Alarb Airport"
                         />
 

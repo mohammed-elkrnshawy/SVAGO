@@ -43,6 +43,7 @@ public class userData implements Serializable {
     @Expose
     private String currency;
 
+    private boolean isSocial = false ;
 
 
     public String getLanguage() {
@@ -155,5 +156,13 @@ public class userData implements Serializable {
 
     public void setCountry_name(String country_name) {
         this.country_name = country_name;
+    }
+
+    public boolean isSocial() {
+        return isSocial;
+    }
+
+    public void setSocial(boolean social) {
+        isSocial = social;
     }
 }

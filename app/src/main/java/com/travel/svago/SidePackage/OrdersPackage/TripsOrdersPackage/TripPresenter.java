@@ -26,9 +26,9 @@ public class TripPresenter implements TripViewPresenter {
     private boolean mLoading = false;
     private int breDy = 0;
     private int page = 1;
-    private TripOrderFragment view ;
+    private static TripOrderFragment view ;
     private TripAdapter mTripAdapter ;
-    List<Trip> tripList ;
+    private  static List<Trip> tripList ;
     public static boolean  hide = true ;
 
     public TripPresenter(com.travel.svago.Models.SharedResponses.userData userData, TripOrderFragment view) {
@@ -123,6 +123,13 @@ public class TripPresenter implements TripViewPresenter {
                 view.empty.setVisibility(View.GONE);
             }
         }
+    }
+
+
+    public static void updateOrder(int pos){
+        tripList.get(pos).setStatus("cancelled");
+        view.recTrip.getAdapter().notifyDataSetChanged();
+        //view.recCars.getAdapter().notifyItemRangeChanged(pos , carList.size());
     }
 
 }

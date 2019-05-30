@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.facebook.login.LoginManager;
 import com.travel.svago.AuthPackage.LoginPackage.LoginActivity;
 import com.travel.svago.Models.SharedResponses.userData;
 import com.travel.svago.R;
@@ -89,6 +90,7 @@ public class MoreFragment extends Fragment {
                 setFragment(new VipTripsFragment(), getString(R.string.currencies));
                 break;
             case R.id.txtLogout:
+                LoginManager.getInstance().logOut();
                 morePresenter.SharedPreferencesPut("");
                 startActivity(new Intent(getActivity(), LoginActivity.class));
                 getActivity().finishAffinity();

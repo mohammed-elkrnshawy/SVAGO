@@ -86,6 +86,10 @@ public class EditProfileActivity extends ParentActivity implements EditProfileIn
         Bundle bundle = getIntent().getExtras();
         if (!bundle.isEmpty()) {
             userObject = (userData) bundle.getSerializable(Constant.userFlag);
+            if (userObject.isSocial()){
+                edtEmail.setEnabled(false);
+                edtName.setEnabled(false);
+            }
         }
     }
 

@@ -27,13 +27,13 @@
 
             <ImageView
                 android:src="@drawable/ic_logo"
-                android:layout_margin="20dp"
+                android:layout_margin="10dp"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center|top"/>
 
             <TextView
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:layout_gravity="start"
                 android:gravity="start"
                 android:layout_width="wrap_content"
@@ -115,7 +115,7 @@
                 android:layout_height="50dp"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_margin="25dp"
+                android:layout_margin="10dp"
                 custom:cardElevation="10dp"
                 custom:cardBackgroundColor="@color/colorPink1"
                 custom:cardCornerRadius="25dp"
@@ -133,11 +133,12 @@
 
             <RelativeLayout
                 android:padding="5dp"
-                android:gravity="center|top"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <LinearLayout
+                    android:id="@+id/lin"
+                    android:layout_centerHorizontal="true"
                     android:orientation="horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
@@ -158,6 +159,24 @@
                         android:text="@string/SignUp_Now"
                         />
                 </LinearLayout>
+
+                <com.google.android.gms.common.SignInButton
+                    android:id="@+id/sign_in_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/lin"
+                    android:layout_marginTop="15dp"
+                    />
+
+
+                <com.facebook.login.widget.LoginButton
+                    android:id="@+id/faceBook_login_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/sign_in_button"
+                    />
 
 
             </RelativeLayout>

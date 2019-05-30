@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Svago</string>
+    <string name="facebook_app_id">310706023185279</string>
+    <string name="fb_login_protocol_scheme">fb310706023185279</string>
+
     <string name="Quote">Welcome to SVAGO</string>
     <string name="what_want">Please select waht you want</string>
     <string name="super_deals">Super Deal</string>
@@ -135,5 +138,10 @@
     <string name="haj">Haj</string>
     <string name="Trip_requested_successfully">Trip requested successfully</string>
     <string name="vip_trips">Vip Trips</string>
+    <string name="cancelll">Cancel</string>
+    <string name="share">Share</string>
+    <string name="order_canelled">Order Cancelled</string>
+    <string name="cancelled">cancelled</string>
+    <string name="url_is_copied">Url is copied</string>
 
 </resources>

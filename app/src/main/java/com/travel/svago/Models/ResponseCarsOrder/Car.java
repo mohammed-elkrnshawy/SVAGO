@@ -3,7 +3,9 @@ package com.travel.svago.Models.ResponseCarsOrder;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Car {
+import java.io.Serializable;
+
+public class Car implements Serializable {
 
     @SerializedName("id")
     @Expose

@@ -20,12 +20,12 @@ import retrofit2.Response;
 
 public class CarsPresenter implements CarsViewPresenter {
 
-    private CarsOrderFragment view ;
+    private static CarsOrderFragment view ;
     private UserService_POST userService ;
     private com.travel.svago.Models.SharedResponses.userData userData ;
     private CarsAdapter mCarsAdapter ;
     private LinearLayoutManager layoutManager ;
-    private List<Car> carList ;
+    private static List<Car> carList ;
     private boolean mLoading = false;
     private int breDy = 0;
     private int page = 1;
@@ -133,5 +133,10 @@ public class CarsPresenter implements CarsViewPresenter {
         }
     }
 
+    public static void updateOrder(int pos){
+        carList.get(pos).setStatus("cancelled");
+        view.recCars.getAdapter().notifyDataSetChanged();
+        //view.recCars.getAdapter().notifyItemRangeChanged(pos , carList.size());
+    }
 
 }

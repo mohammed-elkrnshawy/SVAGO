@@ -3,7 +3,9 @@ package com.travel.svago.Models.ResponseTripOrders;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Trip {
+import java.io.Serializable;
+
+public class Trip implements Serializable {
 
     @SerializedName("id")
     @Expose

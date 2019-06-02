@@ -37,6 +37,16 @@ import com.travel.svago.R;
 import com.travel.svago.SharedPackage.Activity.HomeActivity;
 import com.travel.svago.SharedPackage.Activity.MainHomeActivity;
 import com.travel.svago.SharedPackage.Classes.Constant;
+import com.twitter.sdk.android.core.Callback;
+import com.twitter.sdk.android.core.Result;
+import com.twitter.sdk.android.core.Twitter;
+import com.twitter.sdk.android.core.TwitterCore;
+import com.twitter.sdk.android.core.TwitterException;
+import com.twitter.sdk.android.core.TwitterSession;
+import com.twitter.sdk.android.core.identity.TwitterAuthClient;
+import com.twitter.sdk.android.core.identity.TwitterLoginButton;
+import com.twitter.sdk.android.core.models.User;
+import com.twitter.sdk.android.core.services.AccountService;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -46,6 +56,7 @@ import java.util.Arrays;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit2.Call;
 
 public class LoginActivity extends AppCompatActivity implements LoginInterface {
 
@@ -72,6 +83,8 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
     SignInButton signInButton;
     @BindView(R.id.faceBook_login_button)
     LoginButton faceBookLoginButton;
+    @BindView(R.id.login_button)
+    TwitterLoginButton loginButton;
 
     private LoginPresenter loginPresenter;
     private boolean isHide = true;
@@ -80,6 +93,12 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /*TwitterConfig config = new TwitterConfig.Builder(this)
+                .logger(new DefaultLogger(Log.DEBUG))
+                .twitterAuthConfig(new TwitterAuthConfig("CONSUMER_KEY", "CONSUMER_SECRET"))
+                .debug(true)
+                .build();*/
+        Twitter.initialize(this);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         initGoogleSignin();
@@ -87,11 +106,13 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
         initComponents();
         register();
         setFaceBookLoginButton();
+        setLoginWithTwitter();
     }
 
     private void initComponents() {
         loginPresenter = new LoginPresenter(this);
         callbackManager = CallbackManager.Factory.create();
+        faceBookLoginButton.setLoginText(getResources().getString(R.string.log_in_with_facebook));
     }
 
     @Override
@@ -236,6 +257,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         callbackManager.onActivityResult(requestCode, resultCode, data);
+        loginButton.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
 
         // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
@@ -281,7 +303,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
                                     // Application code
                                     try {
                                         String email = object.getString("email");
-                                        loginPresenter.socialLogin(email , profile.getName() , "facebook" , loginResult.getAccessToken().getUserId() , profile.getProfilePictureUri(512 , 512).toString());
+                                        loginPresenter.socialLogin(email, profile.getName(), "facebook", loginResult.getAccessToken().getUserId(), profile.getProfilePictureUri(512, 512).toString());
                                     } catch (JSONException e) {
                                         e.printStackTrace();
                                     }
@@ -326,7 +348,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
                                             // Application code
                                             try {
                                                 String email = object.getString("email");
-                                                loginPresenter.socialLogin(email , profile.getName() , "facebook" , loginResult.getAccessToken().getUserId() , profile.getProfilePictureUri(512 , 512).toString());
+                                                loginPresenter.socialLogin(email, profile.getName(), "facebook", loginResult.getAccessToken().getUserId(), profile.getProfilePictureUri(512, 512).toString());
                                             } catch (JSONException e) {
                                                 e.printStackTrace();
                                             }
@@ -358,9 +380,80 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
 
     @OnClick(R.id.faceBook_login_button)
     public void onFaceBookBtnClicked() {
-        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile","email", "user_birthday", "user_friends"));
+        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "email", "user_birthday", "user_friends"));
     }
+
+
     //endregion
 
+
+    //region Twitter
+
+    @OnClick(R.id.login_button)
+    public void onTwitterBtnClicked() {
+
+    }
+
+    private void setLoginWithTwitter(){
+        loginButton.setCallback(new Callback<TwitterSession>() {
+            @Override
+            public void success(final Result<TwitterSession> result) {
+                // Do something with result, which provides a TwitterSession for making API calls
+                //loginPresenter.socialLogin(result.data.getAuthToken().);
+
+                Log.d("TAG", "Twitter user is: " + result.data.getUserName());
+
+                final TwitterSession twitterSession = result.data;
+                AccountService accountService = TwitterCore.getInstance().getApiClient(twitterSession).getAccountService();
+                accountService.verifyCredentials(true, true , true).enqueue(new retrofit2.Callback<User>() {
+                    @Override
+                    public void onResponse(Call<User> call, retrofit2.Response<User> response) {
+                        Log.d("TAG", "Twitter user is: " + response.toString());
+                        Log.d("TAG", "Twitter-Email  " + response.body().email);
+                        Log.d("TAG", "Twitter-Name  " + response.body().name);
+                        Log.d("TAG", "Twitter-profileImage  " + response.body().profileImageUrl);
+                        Log.d("TAG", "Twitter-ID  " + response.body().id);
+                        Log.d("TAG", "Twitter-ID  " + result.data.getUserId());
+                        ///twitterDetails = response.body().email + "," + response.body().profileImageUrl + "," + response.body().id;
+
+                        loginPresenter.socialLogin(response.body().email  , response.body().name , "twitter" , result.data.getUserId()+"" , response.body().profileImageUrl);
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<User> call, Throwable t) {
+                        Log.e("TAG", "verifyCredentials failed! " + t.getLocalizedMessage());
+                    }
+                });
+
+
+                /*TwitterAuthClient twitterAuthClient ;
+                twitterAuthClient.requestEmail(twitterSession, new com.twitter.sdk.android.core.Callback<String>() {
+                    @Override
+                    public void success(Result<String> emailResult) {
+                        String email = emailResult.data;
+                        // ...
+                    }
+
+                    @Override
+                    public void failure(TwitterException e) {
+                        //this.onTwitterSignInFailed(e);
+                    }
+                });*/
+            }
+
+            @Override
+            public void failure(TwitterException exception) {
+                // Do something on failure
+            }
+        });
+    }
+
+
+    private void requestTwitterEmail(){
+
+    }
+
+    //endregion
 
 }

@@ -83,7 +83,7 @@ public class LoginPresenter {
                         userData.setSocial(true);
                         view.successLogin(userData);
                     }else {
-
+                        Toast.makeText(view, response.message(), Toast.LENGTH_SHORT).show();
                     }
                 }else {
                     Toast.makeText(view, response.message(), Toast.LENGTH_SHORT).show();

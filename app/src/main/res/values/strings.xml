@@ -3,6 +3,10 @@
     <string name="facebook_app_id">310706023185279</string>
     <string name="fb_login_protocol_scheme">fb310706023185279</string>
 
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">J2C0ZFFfSh5h3MqIxf9oc22RF</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">XFUTRADLeu3C1Z8pvK94deTchaNQgTAbw9uacdTHinMXBM2aKM</string>
+
+
     <string name="Quote">Welcome to SVAGO</string>
     <string name="what_want">Please select waht you want</string>
     <string name="super_deals">Super Deal</string>
@@ -143,5 +147,6 @@
     <string name="order_canelled">Order Cancelled</string>
     <string name="cancelled">cancelled</string>
     <string name="url_is_copied">Url is copied</string>
+    <string name="log_in_with_facebook">Log in with facebook</string>
 
 </resources>

@@ -7,7 +7,7 @@ package com.travel.svago.Remote;
 
 public class ApiUtlis {
 
-    public static final String Base_Url="https://svagotravels.com/api/";
+    public static final String Base_Url="https://turvist.com/api/";
 
 
 

@@ -9,6 +9,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.facebook.login.LoginManager;
@@ -41,6 +42,14 @@ public class MoreFragment extends Fragment {
     TextView txtLogout;
     @BindView(R.id.txtLogin)
     TextView txtLogin;
+    @BindView(R.id.linProfile)
+    LinearLayout linProfile;
+    @BindView(R.id.linOrder)
+    LinearLayout linOrder;
+    @BindView(R.id.linLogout)
+    LinearLayout linLogout;
+    @BindView(R.id.linLogin)
+    LinearLayout linLogin;
     private View view;
     private userData userObject;
     private Bundle bundleExtra = new Bundle();
@@ -62,7 +71,7 @@ public class MoreFragment extends Fragment {
     }
 
 
-    @OnClick({R.id.txtProfile, R.id.txtVip,R.id.txtContact, R.id.txtLanguage, R.id.txtAbout, R.id.txtTerms, R.id.txtLogout, R.id.txtCurrency, R.id.txtOrders, R.id.txtLogin})
+    @OnClick({R.id.txtProfile, R.id.txtVip, R.id.txtContact, R.id.txtLanguage, R.id.txtAbout, R.id.txtTerms, R.id.txtLogout, R.id.txtCurrency, R.id.txtOrders, R.id.txtLogin})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.txtProfile:
@@ -129,6 +138,7 @@ public class MoreFragment extends Fragment {
             }
         });
     }
+
 
 
 }

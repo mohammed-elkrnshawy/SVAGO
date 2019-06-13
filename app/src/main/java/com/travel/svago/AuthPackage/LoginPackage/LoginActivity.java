@@ -120,7 +120,6 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             tag = bundle.getString("tag", "");
-            Log.d("OOO", tag);
         }
     }
 

@@ -342,8 +342,7 @@
                         android:textColor="#ffffff"
                         android:letterSpacing="-0.02"
                         android:lineSpacingExtra="-2.7sp"
-                        android:text="Svago
-Offers"
+                        android:text="@string/turvist_offers"
                         />
 
                 </RelativeLayout>

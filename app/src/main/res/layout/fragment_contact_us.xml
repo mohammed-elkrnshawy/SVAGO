@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:id="@+id/rel"
+    android:fillViewport="true"
     android:background="@color/colorWhite"
     tools:context=".SidePackage.ContactUsPackage.ContactUsFragment">
 
@@ -18,7 +18,7 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:background="@drawable/shape_edit_txt"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
@@ -32,7 +32,7 @@
         <EditText
             android:id="@+id/EdtEmail"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:background="@drawable/shape_edit_txt"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
@@ -52,25 +52,26 @@
             android:hint="@string/message"
             android:padding="12dp"
             android:gravity="start|top"
-            android:lines="8"
+            android:lines="7"
             android:layout_marginBottom="20dp"
             />
+
+
+        <Button
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="60dp"
+            android:elevation="8dp"
+            android:id="@+id/send"
+            android:background="@drawable/shape_btn_book"
+            android:text="@string/send"
+            android:textColor="@color/colorWhite"
+            />
+
 
     </LinearLayout>
 
 
-    <Button
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
-        android:elevation="15dp"
-        android:id="@+id/send"
-        android:background="@color/colorPrimary"
-        android:text="@string/send"
-        android:textColor="@color/colorWhite"
-        />
-
-
-</RelativeLayout>
+</ScrollView>

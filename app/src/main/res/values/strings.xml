@@ -1,13 +1,14 @@
 <resources>
-    <string name="app_name">Svago</string>
+    <string name="app_name">TURVIST</string>
     <string name="facebook_app_id">310706023185279</string>
-    <string name="fb_login_protocol_scheme">fb310706023185279</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb310706023185279</string>
 
     <string name="com.twitter.sdk.android.CONSUMER_KEY">J2C0ZFFfSh5h3MqIxf9oc22RF</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">XFUTRADLeu3C1Z8pvK94deTchaNQgTAbw9uacdTHinMXBM2aKM</string>
 
 
-    <string name="Quote">Welcome to SVAGO</string>
+
+    <string name="Quote">Welcome to TURVIST</string>
     <string name="what_want">Please select waht you want</string>
     <string name="super_deals">Super Deal</string>
     <string name="Proceed_Book">Proceed to Book</string>
@@ -17,7 +18,7 @@
     <string name="pick_your_target_date_from_here">Pick your target date from here</string>
     <string name="booking">Booking</string>
     <string name="offers">Offers</string>
-    <string name="svago">Svago</string>
+    <string name="svago">TURVIST</string>
     <string name="manage">Manage</string>
     <string name="my_profile">My Profile</string>
     <string name="origin">Origin</string>
@@ -43,7 +44,7 @@
     <string name="email">Email</string>
     <string name="promo_code">Promo Code</string>
     <string name="f_b_details">Flight and Baggage details</string>
-    <string name="SignUpwithSVAGO">SignUp with SVAGO  :</string>
+    <string name="SignUpwithSVAGO">SignUp with TURVIST  :</string>
     <string name="name">Name</string>
     <string name="country">Country</string>
     <string name="password">Password</string>
@@ -148,5 +149,6 @@
     <string name="cancelled">cancelled</string>
     <string name="url_is_copied">Url is copied</string>
     <string name="log_in_with_facebook">Log in with facebook</string>
+    <string name="turvist_offers">Turvist Offers</string>
 
 </resources>

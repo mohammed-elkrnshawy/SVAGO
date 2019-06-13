@@ -22,6 +22,13 @@
         android:layout_height="100dp"
         android:src="@drawable/ic_logo"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linProfile"
+            >
+
     <TextView
         android:id="@+id/txtProfile"
         android:padding="10dp"
@@ -43,6 +50,14 @@
         android:layout_marginTop="8dp"
         android:background="@color/ColorGray"
         />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linOrder"
+        >
 
     <TextView
         android:id="@+id/txtOrders"
@@ -55,7 +70,6 @@
         android:gravity="center_vertical"
         android:drawablePadding="25dp"
         android:drawableEnd="@drawable/ic_arrow_right"
-        android:drawableTint="@color/ColorGray"
         android:drawableStart="@drawable/ic_choices"
         />
 
@@ -66,6 +80,7 @@
         android:layout_marginTop="8dp"
         android:background="@color/ColorGray"
         />
+    </LinearLayout>
 
         <TextView
             android:id="@+id/txtVip"
@@ -78,7 +93,6 @@
             android:gravity="center_vertical"
             android:drawablePadding="25dp"
             android:drawableEnd="@drawable/ic_arrow_right"
-            android:drawableTint="@color/ColorGray"
             android:drawableStart="@drawable/ic_worldwide"
             />
 
@@ -102,7 +116,6 @@
         android:gravity="center_vertical"
         android:drawablePadding="25dp"
         android:drawableEnd="@drawable/ic_arrow_right"
-        android:drawableTint="@color/ColorGray"
         android:drawableStart="@drawable/ic_contact"
         />
 
@@ -125,7 +138,6 @@
         android:gravity="center_vertical"
         android:drawablePadding="25dp"
         android:drawableEnd="@drawable/ic_arrow_right"
-        android:drawableTint="@color/ColorGray"
         android:drawableStart="@drawable/ic_language"
         />
 
@@ -148,7 +160,6 @@
         android:gravity="center_vertical"
         android:drawablePadding="25dp"
         android:drawableEnd="@drawable/ic_arrow_right"
-        android:drawableTint="@color/ColorGray"
         android:drawableStart="@drawable/ic_about"
         />
 
@@ -171,7 +182,6 @@
         android:gravity="center_vertical"
         android:drawablePadding="25dp"
         android:drawableEnd="@drawable/ic_arrow_right"
-        android:drawableTint="@color/ColorGray"
         android:drawableStart="@drawable/ic_terms"
         />
 
@@ -194,7 +204,6 @@
         android:gravity="center_vertical"
         android:drawablePadding="25dp"
         android:drawableEnd="@drawable/ic_arrow_right"
-        android:drawableTint="@color/ColorGray"
         android:drawableStart="@drawable/ic_money"
         />
 
@@ -220,7 +229,6 @@
         android:text="@string/version"
         android:gravity="center_vertical"
         android:drawablePadding="25dp"
-        android:drawableTint="@color/ColorGray"
         android:drawableStart="@drawable/ic_smartphone"
         />
 
@@ -243,6 +251,13 @@
         android:background="@color/ColorGray"
         />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linLogout"
+        >
+
     <TextView
         android:id="@+id/txtLogout"
         android:padding="10dp"
@@ -253,7 +268,6 @@
         android:text="@string/logout"
         android:gravity="center_vertical"
         android:drawablePadding="25dp"
-        android:drawableTint="@color/colorRed1"
         android:drawableStart="@drawable/ic_exit"
         />
 
@@ -264,21 +278,39 @@
         android:layout_marginTop="8dp"
         android:background="@color/ColorGray"
         />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linLogin"
+        android:visibility="gone"
+        >
 
     <TextView
         android:id="@+id/txtLogin"
         android:padding="10dp"
         android:textSize="16sp"
-        android:textColor="@color/colorRed1"
+        android:textColor="@color/colorBlack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/login_now"
         android:gravity="center_vertical"
-        android:visibility="gone"
+
         android:drawablePadding="25dp"
-        android:drawableTint="@color/colorRed1"
         android:drawableStart="@drawable/ic_login"
         />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/ColorGray"
+            />
+
+    </LinearLayout>
 
     </LinearLayout>
 

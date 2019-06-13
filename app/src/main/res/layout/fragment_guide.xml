@@ -12,10 +12,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_alignParentBottom="true"/>
+
         <LinearLayout
             android:paddingStart="20dp"
             android:paddingEnd="20dp"

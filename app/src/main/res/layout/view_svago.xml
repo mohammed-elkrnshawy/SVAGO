@@ -113,7 +113,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@+id/lin"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="6dp"
                     android:layout_marginEnd="8dp"
                     android:scaleType="fitXY"
                     android:src="@drawable/ic_logo" />
@@ -208,7 +208,7 @@
 
 
             <RelativeLayout
-                android:layout_weight=".75"
+                android:layout_weight=".5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 >
@@ -218,6 +218,7 @@
                 <ImageView
                     android:id="@+id/imgTrip"
                     android:scaleType="fitXY"
+                    android:layout_marginEnd="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_logo"

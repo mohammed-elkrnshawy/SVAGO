@@ -2,7 +2,9 @@
 <resources>
     <string name="app_name">Svago</string>
     <string name="facebook_app_id">310706023185279</string>
-    <string name="fb_login_protocol_scheme">fb310706023185279</string>
+   <!-- <string name="fb_login_protocol_scheme">fb310706023185279</string>
+-->
+
     <string name="com.twitter.sdk.android.CONSUMER_KEY">J2C0ZFFfSh5h3MqIxf9oc22RF</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">XFUTRADLeu3C1Z8pvK94deTchaNQgTAbw9uacdTHinMXBM2aKM</string>
 
@@ -142,5 +144,6 @@
     <string name="cancelled">cancelled</string>
     <string name="url_is_copied">Url is copied</string>
     <string name="log_in_with_facebook">Log in with facebook</string>
+    <string name="turvist_offers">Turvist Offers</string>
 
 </resources>

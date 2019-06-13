@@ -8,7 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 
 import com.travel.svago.R;
 
@@ -34,7 +36,7 @@ public class ContactUsFragment extends Fragment {
     Unbinder unbinder;
     ContactUsPresenter mContactUsPresenter;
     @BindView(R.id.rel)
-    RelativeLayout rel;
+    ScrollView rel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -25,15 +25,15 @@ public class MorePresenter implements MoreViewPresenter {
     @Override
     public void initView() {
         if (!Constant.isLogin){
-            view.txtLogin.setVisibility(View.VISIBLE);
-            view.txtOrders.setVisibility(View.GONE);
-            view.txtProfile.setVisibility(View.GONE);
-            view.txtLogout.setVisibility(View.GONE);
+            view.linLogin.setVisibility(View.VISIBLE);
+            view.linOrder.setVisibility(View.GONE);
+            view.linProfile.setVisibility(View.GONE);
+            view.linLogout.setVisibility(View.GONE);
         }else {
-            view.txtLogin.setVisibility(View.GONE);
-            view.txtOrders.setVisibility(View.VISIBLE);
-            view.txtProfile.setVisibility(View.VISIBLE);
-            view.txtLogout.setVisibility(View.VISIBLE);
+            view.linLogin.setVisibility(View.GONE);
+            view.linOrder.setVisibility(View.VISIBLE);
+            view.linProfile.setVisibility(View.VISIBLE);
+            view.linLogout.setVisibility(View.VISIBLE);
         }
     }
 
